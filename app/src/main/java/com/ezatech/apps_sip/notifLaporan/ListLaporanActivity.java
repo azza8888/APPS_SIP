@@ -1,5 +1,6 @@
-package com.ezatech.apps_sip.riwayatNotif;
+package com.ezatech.apps_sip.notifLaporan;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,37 +9,41 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.ezatech.apps_sip.R;
+import com.ezatech.apps_sip.adapter.AdapterLLaporan;
 import com.ezatech.apps_sip.adapter.RiwayatAdapter;
 import com.ezatech.apps_sip.data.FeedbackData;
+import com.ezatech.apps_sip.data.ListLaporan;
+import com.ezatech.apps_sip.riwayatNotif.RiwayatActivity;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Date;
 
-public class RiwayatActivity extends AppCompatActivity {
+public class ListLaporanActivity extends AppCompatActivity {
 
-    private ArrayList<FeedbackData> riwayatl;
+    private ArrayList<ListLaporan> listlaporan;
     private RecyclerView recyclerView;
     private Toolbar mActionToolbar;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_riwayat);
+        setContentView(R.layout.activity_list_laporan);
 
-        mActionToolbar = (Toolbar) findViewById(R.id.tabs_riwayat);
+        mActionToolbar = (Toolbar) findViewById(R.id.tabs_listlaporan);
         setSupportActionBar(mActionToolbar);
-        getSupportActionBar().setTitle("Riwayat Anda");
+        getSupportActionBar().setTitle("Laporan Anda");
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
-        recyclerView = findViewById(R.id.rv_riwayat);
+        recyclerView = findViewById(R.id.rv_listlaporan);
         recyclerView.setHasFixedSize(true);
         final LinearLayoutManager mLayoutManager;
         mLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(mLayoutManager);
-        riwayatl = new ArrayList<>();
+        listlaporan = new ArrayList<>();
 
         getData();
 
@@ -46,14 +51,14 @@ public class RiwayatActivity extends AppCompatActivity {
     }
 
     private void getData() {
-        FeedbackData data = new FeedbackData();
-        data.setId("1");
-        data.setNama("azza");
-        data.setWaktu("15:00");
-        data.setKonfirm("accept");
+        ListLaporan list = new ListLaporan();
+        list.setNama("EzaTech");
+        list.setAlamat("Gemah Raya");
+        list.setWaktu("15:00");
+        list.setImage("Foto Gak Muncul");
 
-        riwayatl.add(data);
-        RiwayatAdapter adapter = new RiwayatAdapter(RiwayatActivity.this, riwayatl);
+        listlaporan.add(list);
+        AdapterLLaporan adapter = new AdapterLLaporan(ListLaporanActivity.this, listlaporan);
         recyclerView.setAdapter(adapter);
     }
 

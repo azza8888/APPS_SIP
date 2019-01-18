@@ -31,6 +31,11 @@ public class PengaturanActivity extends AppCompatActivity {
         setSupportActionBar(mActionToolbar);
         getSupportActionBar().setTitle("Pengaturan");
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
         tvTentang = (TextView) findViewById(R.id.tv_tentang);
         tvInfo = (TextView) findViewById(R.id.tv_info);
         tvKeluar = (TextView) findViewById(R.id.tv_keluar);

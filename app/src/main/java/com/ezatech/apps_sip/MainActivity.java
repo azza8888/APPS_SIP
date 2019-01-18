@@ -10,7 +10,10 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.ezatech.apps_sip.notifLaporan.ListLaporanActivity;
 import com.ezatech.apps_sip.pengaturan.PengaturanActivity;
+import com.ezatech.apps_sip.pengguna.ProfilActivity;
+import com.ezatech.apps_sip.riwayatNotif.RiwayatActivity;
 import com.ezatech.apps_sip.slide.SlideScreenActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -51,10 +54,33 @@ public class MainActivity extends AppCompatActivity {
         editTextWaktu = (EditText) findViewById(R.id.editTextWaktu);
         editTextJam = (EditText) findViewById(R.id.editTextJam);
 
+        pengguna.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ProfilActivity.class);
+                startActivity(intent);
+            }
+        });
+
         pengaturan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, PengaturanActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        riwayatNotifikasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RiwayatActivity.class);
+                startActivity(intent);
+            }
+        });
+        konfirmasiPelapor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ListLaporanActivity.class);
                 startActivity(intent);
             }
         });

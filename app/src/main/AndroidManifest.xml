@@ -24,7 +24,10 @@
         <activity android:name=".logRes.LoginActivity" />
         <activity android:name=".riwayatNotif.RiwayatActivity" />
         <activity android:name=".pengguna.ProfilActivity" />
-        <activity android:name=".uploadLaporan.FormActivity"></activity>
+        <activity android:name=".uploadLaporan.FormActivity" />
+        <activity android:name=".notifLaporan.ListLaporanActivity" />
+        <activity android:name=".pengaturan.InfoActivity" />
+        <activity android:name=".pengaturan.TentangActivity"></activity>
     </application>
 
 </manifest>
