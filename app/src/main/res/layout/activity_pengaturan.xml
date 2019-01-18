@@ -127,22 +127,38 @@
                     android:orientation="horizontal">
 
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="15dp">
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="vertical"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:layout_marginLeft="15dp">-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:drawableLeft="@drawable/ic_exit_to_app_black_24dp"
-                            android:text="  Keluar Aplikasi"
-                            android:textSize="28sp"
-                            android:lineSpacingExtra="5sp"
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:drawableLeft="@drawable/ic_exit_to_app_black_24dp"-->
+                            <!--android:text="  Keluar "-->
+                            <!--android:textSize="28sp"-->
+                            <!--android:lineSpacingExtra="5sp"-->
+                            <!--android:id="@+id/tv_keluar"-->
+                            <!--android:textAppearance="@style/TextAppearance.AppCompat.Title"/>-->
+                    <!--</LinearLayout>-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="160dp"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
+                        <Button
                             android:id="@+id/tv_keluar"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ripple_effect"
+                            android:text="Keluar"
+                            android:layout_weight="1"/>
+
                     </LinearLayout>
 
                 </LinearLayout>

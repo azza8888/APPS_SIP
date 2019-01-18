@@ -16,7 +16,7 @@ public class InfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        mActionToolbar = (Toolbar) findViewById(R.id.tabs_riwayat);
+        mActionToolbar = (Toolbar) findViewById(R.id.tabs_info);
         setSupportActionBar(mActionToolbar);
         getSupportActionBar().setTitle("Info Aplikasi");
 

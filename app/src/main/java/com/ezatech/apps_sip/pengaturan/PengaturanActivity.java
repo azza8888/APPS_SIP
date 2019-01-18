@@ -67,6 +67,22 @@ public class PengaturanActivity extends AppCompatActivity {
                 alert.show();
             }
         });
+
+        tvTentang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PengaturanActivity.this, TentangActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        tvInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PengaturanActivity.this, InfoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     //button back toolbar

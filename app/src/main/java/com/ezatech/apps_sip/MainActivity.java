@@ -15,6 +15,7 @@ import com.ezatech.apps_sip.pengaturan.PengaturanActivity;
 import com.ezatech.apps_sip.pengguna.ProfilActivity;
 import com.ezatech.apps_sip.riwayatNotif.RiwayatActivity;
 import com.ezatech.apps_sip.slide.SlideScreenActivity;
+import com.ezatech.apps_sip.uploadLaporan.FormActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -81,6 +82,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ListLaporanActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnLapor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FormActivity.class);
                 startActivity(intent);
             }
         });

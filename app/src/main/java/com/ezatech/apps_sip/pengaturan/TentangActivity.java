@@ -16,7 +16,7 @@ public class TentangActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tentang);
 
-        mActionToolbar = (Toolbar) findViewById(R.id.tabs_riwayat);
+        mActionToolbar = (Toolbar) findViewById(R.id.tabs_tentang);
         setSupportActionBar(mActionToolbar);
         getSupportActionBar().setTitle("Tentang Aplikasi");
 
