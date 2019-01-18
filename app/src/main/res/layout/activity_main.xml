@@ -16,13 +16,14 @@
 
     </android.support.v7.widget.Toolbar>
 
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="900dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="#dad2d2">
-
         <RelativeLayout
             android:id="@+id/rel"
             android:layout_width="match_parent"
@@ -283,49 +284,5 @@
     </RelativeLayout>
 
 
-    <!--Visibility Gone-->
-    <EditText
-        android:id="@+id/editTextKonfirm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Message Title"
-        android:visibility="gone" />
-
-
-    <EditText
-        android:id="@+id/editTextTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Message Title"
-        android:visibility="gone" />
-
-    <EditText
-        android:id="@+id/editTextMessage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Message"
-        android:visibility="gone" />
-
-    <EditText
-        android:id="@+id/editTextTelp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Message"
-        android:visibility="gone" />
-
-    <EditText
-        android:id="@+id/editTextWaktu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Message"
-        android:visibility="gone" />
-
-
-    <EditText
-        android:id="@+id/editTextJam"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Message"
-        android:visibility="gone" />
 
 </LinearLayout>
