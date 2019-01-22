@@ -1,15 +1,19 @@
 package com.ezatech.apps_sip.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ezatech.apps_sip.R;
 import com.ezatech.apps_sip.data.ListLaporan;
+import com.ezatech.apps_sip.notifLaporan.DetailLapActivity;
+import com.ezatech.apps_sip.notifLaporan.ListLaporanActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -38,8 +42,15 @@ public class AdapterLLaporan extends RecyclerView.Adapter<AdapterLLaporan.Adapte
         holder.tvNamalist.setText(laporan.getNama());
         holder.tvAlamatlist.setText(laporan.getAlamat());
         holder.tvWaktulist.setText(laporan.getWaktu());
-        Picasso.with(context).load(R.drawable.ic_info_black_24dp)
-                .into(holder.ivList);
+        holder.btn_nopel.setText(laporan.getNopel());
+        holder.btn_nopel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((ListLaporanActivity) context).functionToRun();
+            }
+        });
+//        Picasso.with(context).load(R.drawable.ic_info_black_24dp)
+//                .into(holder.ivList);
 
     }
 
@@ -51,13 +62,15 @@ public class AdapterLLaporan extends RecyclerView.Adapter<AdapterLLaporan.Adapte
 
     public class AdapterViewHolder extends RecyclerView.ViewHolder {
         private TextView tvNamalist, tvAlamatlist, tvWaktulist;
-        private ImageView ivList;
+        private Button btn_nopel;
+//        private ImageView ivList;
 
         public AdapterViewHolder(View itemView) {
             super(itemView);
 
-            ivList = (ImageView) itemView.findViewById(R.id.iv_list);
+//            ivList = (ImageView) itemView.findViewById(R.id.iv_list);
             tvNamalist = (TextView) itemView.findViewById(R.id.tv_namalist);
+            btn_nopel = (Button) itemView.findViewById(R.id.btn_nopel);
             tvAlamatlist = (TextView) itemView.findViewById(R.id.tv_alamatlist);
             tvWaktulist = (TextView) itemView.findViewById(R.id.tv_waktulist);
         }

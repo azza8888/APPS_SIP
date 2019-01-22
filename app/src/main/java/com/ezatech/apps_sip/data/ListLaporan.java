@@ -3,15 +3,26 @@ package com.ezatech.apps_sip.data;
 public class ListLaporan {
 
     private String nama;
+    private String nopel;
     private String alamat;
     private String waktu;
     private String image;
 
     public ListLaporan() {
         this.nama = nama;
+        this.nopel = nopel;
         this.alamat = alamat;
         this.waktu = waktu;
         this.image = image;
+    }
+
+
+    public String getNopel() {
+        return nopel;
+    }
+
+    public void setNopel(String nopel) {
+        this.nopel = nopel;
     }
 
     public String getNama() {

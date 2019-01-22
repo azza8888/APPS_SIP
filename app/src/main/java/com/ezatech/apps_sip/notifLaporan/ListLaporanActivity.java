@@ -1,6 +1,11 @@
 package com.ezatech.apps_sip.notifLaporan;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -54,8 +59,9 @@ public class ListLaporanActivity extends AppCompatActivity {
         ListLaporan list = new ListLaporan();
         list.setNama("EzaTech");
         list.setAlamat("Gemah Raya");
-        list.setWaktu("15:00");
-        list.setImage("Foto Gak Muncul");
+        list.setWaktu("19-01-2019");
+        list.setNopel("X2018282010");
+//        list.setImage("Foto Gak Muncul");
 
         listlaporan.add(list);
         AdapterLLaporan adapter = new AdapterLLaporan(ListLaporanActivity.this, listlaporan);
@@ -68,6 +74,12 @@ public class ListLaporanActivity extends AppCompatActivity {
         if (item.getItemId()== android.R.id.home)
             finish();
         return super.onOptionsItemSelected(item);
+    }
+
+    public void functionToRun() {
+
+        Intent intent = new Intent(ListLaporanActivity.this, DetailLapActivity.class);
+        startActivity(intent);
     }
 
 }

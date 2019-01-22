@@ -18,9 +18,12 @@
 
 
 
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="900dp"
+        android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="#dad2d2">
@@ -49,7 +52,7 @@
                         android:textSize="16sp"
                         android:layout_width="250dp"
                         android:layout_height="match_parent"
-                        android:text="Tekan Tombol Dibawah jika Anda  "
+                        android:text="Tekan Gambar Dibawah jika Anda  "
                         android:textColor="#045d8e" />
                 </TableRow>
 
@@ -64,7 +67,7 @@
                         android:textSize="16sp"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="ingin melapor "
+                        android:text="ingin melakukan pengecekan "
                         android:textColor="#045d8e" />
 
                 </TableRow>
@@ -73,12 +76,12 @@
 
             <Button
                 android:id="@+id/btn_lapor"
-                android:layout_width="160dp"
+                android:layout_width="250dp"
                 android:layout_height="160dp"
                 android:layout_below="@id/tableLayout"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/logosiiip"
+                android:background="@drawable/logsip"
                 android:textSize="34sp" />
 
             <TextView
@@ -95,6 +98,7 @@
                 android:textColor="@color/colorPrimary" />
 
         </RelativeLayout>
+
 
         <LinearLayout
             android:layout_marginTop="5dp"
@@ -131,19 +135,17 @@
                         android:padding="5dp">
 
                         <ImageView
-                            android:layout_width="55dp"
-                            android:layout_height="55dp"
+                            android:layout_width="65dp"
+                            android:layout_height="66dp"
                             android:layout_gravity="center_horizontal"
-                            android:backgroundTint="#e62626"
-                            android:layout_marginTop="5dp"
                             android:src="@drawable/ic_history_black_24dp" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginTop="5dp"
-                            android:text="Riwayat Notifikasi"
+                            android:text="Riwayat Laporan"
                             android:textAlignment="center"
                             android:textColor="#045d8e" />
 
@@ -171,18 +173,18 @@
                         android:padding="5dp">
 
                         <ImageView
-                            android:layout_width="55dp"
-                            android:layout_height="55dp"
+                            android:layout_width="65dp"
+                            android:layout_height="66dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="5dp"
                             android:src="@drawable/ic_list_black_24dp" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginTop="5dp"
-                            android:text="Konfirmasi Pelapor"
+                            android:text="Surat perintah"
                             android:textAlignment="center"
                             android:textColor="#045d8e" />
 
@@ -225,11 +227,11 @@
                             android:src="@drawable/ic_person_black_24dp" />
 
                         <TextView
-                            android:layout_marginTop="-3dp"
-                            android:layout_width="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="Pengguna"
+                            android:text="Profil"
                             android:textAlignment="center"
                             android:textColor="#045d8e" />
 
@@ -257,14 +259,14 @@
                         android:padding="5dp">
 
                         <ImageView
-                            android:layout_width="55dp"
-                            android:layout_height="55dp"
+                            android:layout_width="65dp"
+                            android:layout_height="66dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="5dp"
                             android:src="@drawable/ic_settings_black_24dp" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginTop="5dp"
@@ -282,6 +284,7 @@
         </LinearLayout>
 
     </RelativeLayout>
+</ScrollView>
 
 
 

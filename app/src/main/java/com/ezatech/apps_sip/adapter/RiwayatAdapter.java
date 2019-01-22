@@ -38,8 +38,6 @@ public class RiwayatAdapter extends RecyclerView.Adapter<RiwayatAdapter.RiwayatV
         holder.tvNama.setText(data1.getNama());
         holder.tvUpdateWaktu.setText(data1.getWaktu());
         holder.tvConfrim.setText(data1.getKonfirm());
-        Picasso.with(context).load(R.drawable.ic_account_circle_black_24dp)
-                .into(holder.img6);
 
     }
 

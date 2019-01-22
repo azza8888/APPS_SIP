@@ -27,7 +27,9 @@
         <activity android:name=".uploadLaporan.FormActivity" />
         <activity android:name=".notifLaporan.ListLaporanActivity" />
         <activity android:name=".pengaturan.InfoActivity" />
-        <activity android:name=".pengaturan.TentangActivity"></activity>
+        <activity android:name=".pengaturan.TentangActivity" />
+        <activity android:name=".notifLaporan.DetailLapActivity" />
+        <activity android:name=".logRes.LupaPasswordActivity"></activity>
     </application>
 
 </manifest>

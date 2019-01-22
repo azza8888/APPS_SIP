@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        app:cardBackgroundColor="#55add6"
+        app:cardBackgroundColor="#065e8f"
         android:layout_marginLeft="5dp"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="5dp"
@@ -77,9 +77,9 @@
                         android:layout_height="wrap_content"
                         android:hint="Email"
                         android:textSize="20sp"
-                        android:textColorHint="@color/Black"
+                        android:textColorHint="@color/white"
                         android:inputType="textEmailAddress"
-                        android:textColor="@color/Black"/>
+                        android:textColor="@color/white"/>
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>
 
@@ -106,11 +106,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Password"
-                        android:textColorHint="@color/Black"
+                        android:textColorHint="@color/white"
                         android:textSize="20sp"
                         android:password="true"
                         android:inputType="textPassword"
-                        android:textColor="@color/Black"/>
+                        android:textColor="@color/white"/>
                 </android.support.design.widget.TextInputLayout>
 
 

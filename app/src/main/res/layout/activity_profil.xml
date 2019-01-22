@@ -78,12 +78,34 @@
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
                         android:backgroundTint="@color/Black"
+                        android:background="@drawable/ic_code_black_24dp"/>
+                    <EditText
+                        android:id="@+id/et_kode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Kode Pemeriksa"
+                        android:layout_marginLeft="10sp"
+                        android:textColorHint="@color/Black"
+                        android:textSize="18sp"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/Black"
+                        android:backgroundTint="@color/white"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/Black"
                         android:background="@drawable/ic_person_black_24dp"/>
                     <EditText
                         android:id="@+id/et_namapsr"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Name"
+                        android:hint="EzaTech"
                         android:layout_marginLeft="10sp"
                         android:textColorHint="@color/Black"
                         android:textSize="18sp"
@@ -109,7 +131,7 @@
                         android:id="@+id/et_emailpsr"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Email"
+                        android:hint="Ezatech@gmail.com"
                         android:backgroundTint="@color/white"
                         android:textSize="18sp"
                         android:textColorHint="@color/Black"
@@ -132,7 +154,7 @@
                         android:id="@+id/et_alamatpsr"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Alamat"
+                        android:hint="Jalan Gemah Permai"
                         android:textSize="18sp"
                         android:backgroundTint="@color/white"
                         android:textColorHint="@color/Black"
@@ -157,7 +179,7 @@
                         android:id="@+id/et_notelppsr"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Telephone"
+                        android:hint="012345678"
                         android:textSize="18sp"
                         android:backgroundTint="@color/white"
                         android:textColorHint="@color/Black"

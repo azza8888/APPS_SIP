@@ -3,4 +3,6 @@
 
     <string name="go_to_permissions_settings">Go to App settings and enable permissions</string>
     <string name="permission_dialog">Accessing Location Permissions required</string>
+
+    <string name="tentang_1"></string>
 </resources>
