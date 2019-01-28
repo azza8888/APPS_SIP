@@ -1,16 +1,12 @@
 package com.ezatech.apps_sip;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,7 +15,6 @@ import com.ezatech.apps_sip.notifLaporan.ListLaporanActivity;
 import com.ezatech.apps_sip.pengaturan.PengaturanActivity;
 import com.ezatech.apps_sip.pengguna.ProfilActivity;
 import com.ezatech.apps_sip.riwayatNotif.RiwayatActivity;
-import com.ezatech.apps_sip.slide.SlideScreenActivity;
 import com.ezatech.apps_sip.uploadLaporan.FormActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -92,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         btnLapor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, FormActivity.class);
+                final Intent intent = new Intent(MainActivity.this, FormActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }

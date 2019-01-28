@@ -43,7 +43,7 @@ public class FormActivity extends AppCompatActivity {
 
         mActionToolbar = (Toolbar) findViewById(R.id.tabs_upload);
         setSupportActionBar(mActionToolbar);
-        getSupportActionBar().setTitle("Unggah Data");
+        getSupportActionBar().setTitle("Unggah Data Pemeriksa");
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

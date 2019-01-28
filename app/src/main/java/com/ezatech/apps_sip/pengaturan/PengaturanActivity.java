@@ -1,7 +1,9 @@
 package com.ezatech.apps_sip.pengaturan;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -13,7 +15,16 @@ import android.widget.TextView;
 
 import com.ezatech.apps_sip.MainActivity;
 import com.ezatech.apps_sip.R;
+import com.ezatech.apps_sip.api.BaseApi;
+import com.ezatech.apps_sip.api.UtilsApi;
 import com.ezatech.apps_sip.logRes.LoginActivity;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static com.ezatech.apps_sip.logRes.LoginActivity.my_shared_preferences;
 
 public class PengaturanActivity extends AppCompatActivity {
 
@@ -21,6 +32,8 @@ public class PengaturanActivity extends AppCompatActivity {
     private TextView tvTentang;
     private TextView tvInfo;
     private TextView tvKeluar;
+    private String token;
+    private BaseApi baseApi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,32 +52,26 @@ public class PengaturanActivity extends AppCompatActivity {
         tvTentang = (TextView) findViewById(R.id.tv_tentang);
         tvInfo = (TextView) findViewById(R.id.tv_info);
         tvKeluar = (TextView) findViewById(R.id.tv_keluar);
+        baseApi = UtilsApi.getAPIService();
 
         tvKeluar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(PengaturanActivity.this);
-                builder.setTitle("Aplikasi SIP");
-                builder.setMessage("Jika anda ingin keluar takan (YA) !!!")
+
+                android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(PengaturanActivity.this);
+                builder.setTitle("Ingin Keluar dari Akun ini?")
                         .setIcon(android.R.drawable.ic_lock_power_off)
-                        .setCancelable(false)
-                        .setPositiveButton("YA", new DialogInterface.OnClickListener() {
+                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                                    Intent intent = new Intent(PengaturanActivity.this, LoginActivity.class);
-                                    startActivity(intent);
-                                }
-
+                                keluar();
                             }
-                        }).setNegativeButton("TIDAK", new DialogInterface.OnClickListener() {
+                        }).setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
+
                     }
-                });
-                AlertDialog alert = builder.create();
-                alert.show();
+                }).show();
             }
         });
 
@@ -81,6 +88,48 @@ public class PengaturanActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(PengaturanActivity.this, InfoActivity.class);
                 startActivity(intent);
+            }
+        });
+    }
+
+    private void keluar() {
+
+        baseApi.LogOut(token).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                SharedPreferences sharedPreferences = PengaturanActivity.this.getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+
+                //Creating editor to store values to shared preferences
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean(LoginActivity.session_status, false);
+                editor.putString("id", null);
+                editor.putString("nip", null);
+                editor.putString("nama", null);
+                editor.putString("email", null);
+                editor.putString("jabatan", null);
+                editor.putString("departemen", null);
+                editor.putString("wewenang", null);
+                editor.putString("id_Kwilayah", null);
+                editor.putString("id_Karea", null);
+                editor.putString("id_Subarea", null);
+                editor.putString("status", null);
+                editor.putString("email_verified_at", null);
+                editor.putString("created_at", null);
+                editor.putString("update_at", null);
+                editor.putString("username", null);
+                editor.putString("acccess_token", null);
+                editor.clear();
+                editor.commit();
+                finish();
+
+                Intent intent1 = new Intent(PengaturanActivity.this, LoginActivity.class);
+                intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent1);
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
             }
         });
     }

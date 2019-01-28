@@ -12,10 +12,10 @@
         android:layout_height="match_parent"
         android:gravity="center"
         app:cardBackgroundColor="#065e8f"
-        android:layout_marginLeft="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp">
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="3dp">
 
 
         <LinearLayout
@@ -126,6 +126,28 @@
                 android:layout_marginTop="7dp"
                 android:layout_gravity="right"/>
 
+            <TextView
+                android:id="@+id/tv_remeberme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Remember me ?"
+                android:visibility="invisible"
+                android:layout_marginTop="7dp"
+                android:layout_gravity="right"/>
+            <TextView
+                android:id="@+id/tv_token"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:visibility="invisible"
+                android:textStyle="bold"
+                android:text="Token ?"
+                android:layout_marginTop="7dp"
+                android:layout_gravity="right"/>
 
         </LinearLayout>
 

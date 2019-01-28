@@ -27,8 +27,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="#dad2d2">
-        <RelativeLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:id="@+id/rel"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="260dp">
 
@@ -37,7 +39,6 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
                 android:gravity="center">
 
                 <TableRow>
@@ -74,15 +75,30 @@
 
             </TableLayout>
 
+
+            <!--<com.spark.submitbutton.SubmitButton-->
+                <!--android:id="@+id/btn_lapor"-->
+                <!--android:layout_marginTop="50dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:text="Tap Disini"-->
+                <!--android:textColor="@color/gray"-->
+                <!--android:textSize="12sp"-->
+                <!--app:sub_btn_background="@color/white"-->
+                <!--app:sub_btn_duration="1000"-->
+                <!--app:sub_btn_line_color="@color/colorPrimary"-->
+                <!--app:sub_btn_ripple_color="@color/colorPrimaryDark"-->
+                <!--app:sub_btn_tick_color="@color/white" />-->
+
             <Button
                 android:id="@+id/btn_lapor"
-                android:layout_width="250dp"
-                android:layout_height="160dp"
-                android:layout_below="@id/tableLayout"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/logsip"
-                android:textSize="34sp" />
+                android:layout_marginTop="25dp"
+                android:background="@drawable/ripple_effect"
+                android:text="Periksa"
+                android:textSize="18sp"/>
 
             <TextView
                 android:visibility="invisible"
@@ -97,7 +113,7 @@
                 android:text="Konfirmasi Keadaan Anda"
                 android:textColor="@color/colorPrimary" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
 
         <LinearLayout
