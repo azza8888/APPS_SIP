@@ -24,4 +24,15 @@ public interface BaseApi {
     @Headers({"Autorization : token"})
     @GET("logout")
     Call<ResponseBody> LogOut(@Query("token")String token);
+
+    @FormUrlEncoded
+    @Headers({"Autorization : token"})
+    @POST("profile")
+    Call<ResponseBody> profile(@Field("id")String id,
+                               @Field("nip")String nip,
+                               @Field("nama")String nama,
+                               @Field("email")String email,
+                               @Field("jabatan")String jabatan,
+                               @Field("departemen")String departemen,
+                               @Field("wewenang")String wewenang);
 }
