@@ -30,7 +30,7 @@ public class PengaturanActivity extends AppCompatActivity {
 
     private Toolbar mActionToolbar;
     private TextView tvTentang;
-    private TextView tvInfo;
+    private TextView tvInfo, tvGantipass;
     private TextView tvKeluar;
     private String token;
     private BaseApi baseApi;
@@ -51,6 +51,7 @@ public class PengaturanActivity extends AppCompatActivity {
 
         tvTentang = (TextView) findViewById(R.id.tv_tentang);
         tvInfo = (TextView) findViewById(R.id.tv_info);
+        tvGantipass = (TextView) findViewById(R.id.tv_gantipass);
         tvKeluar = (TextView) findViewById(R.id.tv_keluar);
         baseApi = UtilsApi.getAPIService();
 
@@ -87,6 +88,13 @@ public class PengaturanActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PengaturanActivity.this, InfoActivity.class);
+                startActivity(intent);
+            }
+        });
+        tvGantipass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PengaturanActivity.this, GantiPasswordActivity.class);
                 startActivity(intent);
             }
         });

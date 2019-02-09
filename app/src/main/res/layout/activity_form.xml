@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:focusableInTouchMode="true"
     tools:context=".uploadLaporan.FormActivity">
 
     <android.support.v7.widget.Toolbar
@@ -1400,47 +1401,55 @@
             android:orientation="vertical"
             android:paddingTop="10dp"
             android:layout_margin="2dp">
-            <TextView
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/btn_fotod"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
+                android:paddingLeft="10dp"
                 android:layout_margin="2dp"
-                android:text="Foto Tampak Depan"
+                android:text="Upload Foto Tampak Depan"
                 android:textColor="#000000"
                 android:textSize="18dp" />
 
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                app:cardElevation="5dp">
-                <ImageView
-                    android:id="@+id/iv_fotodepan"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/logosiiip"/>
+            <!--<android.support.v7.widget.CardView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="15dp"-->
+                <!--app:cardElevation="5dp">-->
+                <!--<ImageView-->
+                    <!--android:id="@+id/iv_fotodepan"-->
+                    <!--android:layout_width="200dp"-->
+                    <!--android:layout_height="200dp"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:background="@drawable/logosiiip"/>-->
 
-            </android.support.v7.widget.CardView>
+            <!--</android.support.v7.widget.CardView>-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <Button
-                    android:id="@+id/btn_gallery"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Buka Gallery"
-                    android:layout_weight="1"/>
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal">-->
+                <!--<Button-->
+                    <!--android:id="@+id/btn_gallery"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="60dp"-->
+                    <!--android:text="Buka Galeri"-->
+                    <!--android:layout_weight="1"/>-->
 
-                <Button
-                    android:id="@+id/btn_upload1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Unggah"
-                    android:layout_weight="1"/>
-            </LinearLayout>
+                <!--<Button-->
+                    <!--android:id="@+id/btn_upload1"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="60dp"-->
+                    <!--android:text="Camera"-->
+                    <!--android:layout_weight="1"/>-->
+
+                <!--<Button-->
+                    <!--android:id="@+id/btn_unggah1"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="60dp"-->
+                    <!--android:text="Unggah"-->
+                    <!--android:layout_weight="1"/>-->
+            <!--</LinearLayout>-->
 
         </LinearLayout>
 
@@ -1450,47 +1459,48 @@
             android:orientation="vertical"
             android:paddingTop="10dp"
             android:layout_margin="2dp">
-            <TextView
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/btn_fotokn"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:layout_margin="2dp"
-                android:text="Foto Tampak Samping Kanan"
+                android:text="Upload Foto Dari Samping Kanan"
                 android:textColor="#000000"
                 android:textSize="18dp" />
 
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                app:cardElevation="5dp">
-                <ImageView
-                    android:id="@+id/iv_fotokanan"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/logosiiip"/>
+            <!--<android.support.v7.widget.CardView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="15dp"-->
+                <!--app:cardElevation="5dp">-->
+                <!--<ImageView-->
+                    <!--android:id="@+id/iv_fotokanan"-->
+                    <!--android:layout_width="200dp"-->
+                    <!--android:layout_height="200dp"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:background="@drawable/logosiiip"/>-->
 
-            </android.support.v7.widget.CardView>
+            <!--</android.support.v7.widget.CardView>-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <Button
-                    android:id="@+id/btn_gallery2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Buka Gallery"
-                    android:layout_weight="1"/>
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal">-->
+                <!--<Button-->
+                    <!--android:id="@+id/btn_gallery2"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Buka Gallery"-->
+                    <!--android:layout_weight="1"/>-->
 
-                <Button
-                    android:id="@+id/btn_upload2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Unggah"
-                    android:layout_weight="1"/>
-            </LinearLayout>
+                <!--<Button-->
+                    <!--android:id="@+id/btn_upload2"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Camera"-->
+                    <!--android:layout_weight="1"/>-->
+            <!--</LinearLayout>-->
 
         </LinearLayout>
 
@@ -1538,7 +1548,7 @@
                     android:id="@+id/btn_upload3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Unggah"
+                    android:text="Camera"
                     android:layout_weight="1"/>
             </LinearLayout>
 
@@ -1588,7 +1598,7 @@
                     android:id="@+id/btn_upload4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Unggah"
+                    android:text="Camera"
                     android:layout_weight="1"/>
             </LinearLayout>
 

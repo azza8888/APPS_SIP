@@ -42,6 +42,24 @@ public class LoginActivity extends AppCompatActivity {
     private ProgressDialog loading;
     public static final String my_shared_preferences = "login";
     public static final String session_status = "session_status";
+    private String TAG;
+    private SharedPreferences sharedpreferences;
+    private String nip;
+    private String nama;
+    private String email;
+    private String jabatan;
+    private String departemen;
+    private String wewenang;
+    private String id_Kwilayah;
+    private String id_Karea;
+    private String id_Subarea;
+    private String status;
+    private String email_verified_at;
+    private String created_at;
+    private String update_at;
+    private String access_token;
+//    private String token_type;
+    private String expires_at;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,28 +75,28 @@ public class LoginActivity extends AppCompatActivity {
         mContext = this;
         baseApi = UtilsApi.getAPIService();
 
-        SharedPreferences sharedpreferences = getSharedPreferences(my_shared_preferences, MODE_PRIVATE);
-        sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+
+        sharedpreferences = getSharedPreferences(my_shared_preferences, MODE_PRIVATE);
         session = sharedpreferences.getBoolean(session_status, false);
         String id = sharedpreferences.getString("id", null);
-        String nip = sharedpreferences.getString("nip",null);
-        String nama = sharedpreferences.getString("nama", null);
-        String email = sharedpreferences.getString("email",null);
-        String jabatan = sharedpreferences.getString("jabatan", null);
-        String departemen = sharedpreferences.getString("departemen",null);
-        String wewenang = sharedpreferences.getString("wewenang", null);
-        String id_Kwilayah = sharedpreferences.getString("id_Kwilayah",null);
-        String id_Karea = sharedpreferences.getString("id_Karea", null);
-        String id_Subarea = sharedpreferences.getString("id_Subarea",null);
-        String status = sharedpreferences.getString("status", null);
-        String email_verified_at = sharedpreferences.getString("email_verified_at",null);
-        String created_at = sharedpreferences.getString("created_at", null);
-        String update_at = sharedpreferences.getString("update_at",null);
-        String username = sharedpreferences.getString("username", null);
+        nip = sharedpreferences.getString("nip",null);
+        nama = sharedpreferences.getString("nama", null);
+        email = sharedpreferences.getString("email",null);
+        jabatan = sharedpreferences.getString("jabatan", null);
+        departemen = sharedpreferences.getString("departemen",null);
+        wewenang = sharedpreferences.getString("wewenang", null);
+        id_Kwilayah = sharedpreferences.getString("id_Kwilayah",null);
+        id_Karea = sharedpreferences.getString("id_Karea", null);
+        id_Subarea = sharedpreferences.getString("id_Subarea",null);
+        status = sharedpreferences.getString("status", null);
+        email_verified_at = sharedpreferences.getString("email_verified_at",null);
+        created_at = sharedpreferences.getString("created_at", null);
+        update_at = sharedpreferences.getString("update_at",null);
+        username = sharedpreferences.getString("username", null);
 
-        String access_token = sharedpreferences.getString("access_token",null);
-        String token_type = sharedpreferences.getString("token_type",null);
-        String expires_at = sharedpreferences.getString("expires_at",null);
+        access_token = sharedpreferences.getString("acces_token",null);
+//        token_type = sharedpreferences.getString("token_type",null);
+        expires_at = sharedpreferences.getString("expires_at",null);
 
 
         if (session){
@@ -138,8 +156,9 @@ public class LoginActivity extends AppCompatActivity {
                                     String created_at = JsonResult.getJSONObject("user").getString("created_at");
                                     String updated_at = JsonResult.getJSONObject("user").getString("updated_at");
                                     String username = JsonResult.getJSONObject("user").getString("username");
-                                    String access_token =JsonResult.getString("access_token");
-                                    String token_type = JsonResult.getString("token_type");
+                                    String access_token =JsonResult.getString("acces_token");
+                                    Log.d(TAG, "AAAAAAAAAA: "+access_token);
+//                                    String token_type = JsonResult.getString("token_type");
                                     String expires_at = JsonResult.getString("expires_at");
 
                                     SharedPreferences sharedPreferences = LoginActivity.this.getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
@@ -161,12 +180,13 @@ public class LoginActivity extends AppCompatActivity {
                                     editor.putString("created_at",created_at);
                                     editor.putString("updated_at", updated_at);
                                     editor.putString("username", username);
-                                    editor.putString("acccess_token", access_token);
+                                    editor.putString("acces_token", access_token);
                                     editor.commit();
                                     loading.dismiss();
 
                                     Intent intent = new Intent(mContext, MainActivity.class);
-                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    finish();
                                     startActivity(intent);
 
 

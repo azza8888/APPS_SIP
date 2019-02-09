@@ -1,9 +1,17 @@
 package com.ezatech.apps_sip.uploadLaporan;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -16,6 +24,8 @@ import com.ezatech.apps_sip.MainActivity;
 import com.ezatech.apps_sip.R;
 import com.ezatech.apps_sip.logRes.LoginActivity;
 import com.ezatech.apps_sip.pengaturan.PengaturanActivity;
+
+import java.io.File;
 
 public class FormActivity extends AppCompatActivity {
 
@@ -35,6 +45,9 @@ public class FormActivity extends AppCompatActivity {
     private Button btnSimpanupload;
     private Button btnBatal;
     private int REQUEST_GALLERY = 9544;
+    private int CAMERA_REQUEST = 7777;
+    private int MY_PERMISSIONS_REQUEST_FINE_LOCATION= 1;
+    private String part_image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +57,22 @@ public class FormActivity extends AppCompatActivity {
         mActionToolbar = (Toolbar) findViewById(R.id.tabs_upload);
         setSupportActionBar(mActionToolbar);
         getSupportActionBar().setTitle("Unggah Data Pemeriksa");
+
+        if (ContextCompat.checkSelfPermission(FormActivity.this,
+                Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            //
+            if (ActivityCompat.shouldShowRequestPermissionRationale(FormActivity.this,
+                    Manifest.permission.READ_EXTERNAL_STORAGE)) {
+
+            } else {
+
+                ActivityCompat.requestPermissions(FormActivity.this,
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                        MY_PERMISSIONS_REQUEST_FINE_LOCATION);
+
+            }
+        }
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -75,6 +104,14 @@ public class FormActivity extends AppCompatActivity {
             }
         });
 
+        btnUpload1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(Intent.createChooser(cameraIntent,"Ambil Foto"), CAMERA_REQUEST);
+            }
+        });
+
         btnGallery2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,6 +119,13 @@ public class FormActivity extends AppCompatActivity {
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_PICK);
                 startActivityForResult(Intent.createChooser(intent, "Buka Galeri"), REQUEST_GALLERY);
+            }
+        });
+        btnUpload2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cameraIntent, CAMERA_REQUEST);
             }
         });
 
@@ -95,6 +139,14 @@ public class FormActivity extends AppCompatActivity {
             }
         });
 
+        btnUpload3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cameraIntent, CAMERA_REQUEST);
+            }
+        });
+
         btnGallery4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,6 +154,14 @@ public class FormActivity extends AppCompatActivity {
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_PICK);
                 startActivityForResult(Intent.createChooser(intent, "Buka Galeri"), REQUEST_GALLERY);
+            }
+        });
+
+        btnUpload4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cameraIntent, CAMERA_REQUEST);
             }
         });
 
@@ -133,6 +193,35 @@ public class FormActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            if (requestCode == REQUEST_GALLERY) {
+                Uri dataimage = data.getData();
+                String[] imageprojection = {MediaStore.Images.Media.DATA};
+                Cursor cursor = getContentResolver().query(dataimage, imageprojection, null, null, null);
+                if (requestCode == CAMERA_REQUEST) {
+                    Uri dataimage1 = data.getData();
+                    String[] imageprojection1 = {MediaStore.Images.Media.DATA};
+                    Cursor cursor1 = getContentResolver().query(dataimage1, imageprojection1, null, null, null);
+                }
+
+                if (cursor != null) {
+                    cursor.moveToFirst();
+                    int indexImage = cursor.getColumnIndex(imageprojection[0]);
+                    part_image = cursor.getString(indexImage);
+
+                    if (part_image != null) {
+                        File image = new File(part_image);
+                        ivFotodepan.setImageBitmap(BitmapFactory.decodeFile(image.getAbsolutePath()));
+                    }
+                }
+            }
+        }
+    }
+
 
     //button back toolbar
     @Override

@@ -14,25 +14,36 @@ import retrofit2.http.Query;
 public interface BaseApi {
 
     @FormUrlEncoded
-    @Headers({"Autorization : token"})
+    @Headers({"Autorization : Bearer token"})
     @POST("login")
     Call<ResponseBody> login(
                              @Field("username")String username,
                              @Field("password")String password);
 
 
-    @Headers({"Autorization : token"})
+    @Headers({"Autorization : Bearer token"})
     @GET("logout")
-    Call<ResponseBody> LogOut(@Query("token")String token);
+    Call<ResponseBody> LogOut(@Query("acces_token")String token);
+
+//    @Headers({"Autorization : Bearer token"})
+    @GET("profile/app")
+    Call<ResponseBody> profile(@Header("acces_token")String acces_token);
+
+    @Multipart
+    @POST("profile/edit")
+    Call<ResponseBody> token_edt(@Header("acces_token")String acces_token);
 
     @FormUrlEncoded
-    @Headers({"Autorization : token"})
-    @POST("profile")
-    Call<ResponseBody> profile(@Field("id")String id,
-                               @Field("nip")String nip,
-                               @Field("nama")String nama,
-                               @Field("email")String email,
-                               @Field("jabatan")String jabatan,
-                               @Field("departemen")String departemen,
-                               @Field("wewenang")String wewenang);
+    @Headers({"Autorization : Bearer token"})
+    @POST("profile/edit")
+    Call<ResponseBody> EditProfile(@Field("nama")String nama,
+                                   @Field("nip")String nip,
+                                   @Field("username")String username);
+
+    @FormUrlEncoded
+    @Headers({"Autorization : Bearer token"})
+    @POST("edit-password")
+    Call<ResponseBody> ubahPassword(@Field("current_password")String current_password,
+                                    @Field("new_password")String new_password,
+                                    @Field("new_password_confirmation")String new_password_confirmation);
 }

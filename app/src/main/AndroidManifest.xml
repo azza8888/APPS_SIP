@@ -4,6 +4,12 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/logsip"
@@ -29,7 +35,12 @@
         <activity android:name=".pengaturan.InfoActivity" />
         <activity android:name=".pengaturan.TentangActivity" />
         <activity android:name=".notifLaporan.DetailLapActivity" />
-        <activity android:name=".logRes.LupaPasswordActivity"></activity>
+        <activity android:name=".logRes.LupaPasswordActivity" />
+        <activity android:name=".pengaturan.GantiPasswordActivity" />
+        <activity android:name=".uploadLaporan.UploadFotoDepan" />
+        <activity android:name=".uploadLaporan.UploadFotoBelakang" />
+        <activity android:name=".uploadLaporan.UploadFotoKiri" />
+        <activity android:name=".uploadLaporan.UploadFotoKanan"></activity>
     </application>
 
 </manifest>
