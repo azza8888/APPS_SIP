@@ -55,18 +55,17 @@
                     android:id="@+id/cv_profilsr"
                     android:layout_width="119dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/ic_person_black_24dp"
-                    app:civ_border_color="@color/white"
+                    android:src="@drawable/ic_mode_edit_black_24dp"
+                    app:civ_border_color="@color/Black"
                     android:layout_gravity="center"
                     app:civ_border_width="2dp"
-                    app:civ_circle_background_color="@color/white" />
+                    app:civ_circle_background_color="@color/Black" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Klik Gambar"
-                    android:textSize="20sp"
+                    android:text="Klik Gambar Untuk Edit Profil"
+                    android:textSize="14sp"
                     android:gravity="center"
-                    android:textStyle="bold"
                     android:textColorHint="@color/white"
                     android:padding="8dp"
                     android:textColor="@color/Black"/>
@@ -236,31 +235,31 @@
                         android:textColor="@color/Black"/>
                 </LinearLayout>
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp">
+                <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="20dp">-->
 
-                    <Button
-                        android:id="@+id/btn_simpanpsr"
-                        android:layout_gravity="center"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:textColor="@color/colorPrimary"
-                        android:text="SIMPAN"
-                        android:background="@drawable/ripple_effect"/>
+                    <!--<Button-->
+                        <!--android:id="@+id/btn_simpanpsr"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:layout_width="150dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:textSize="18sp"-->
+                        <!--android:textColor="@color/colorPrimary"-->
+                        <!--android:text="SIMPAN"-->
+                        <!--android:background="@drawable/ripple_effect"/>-->
 
-                    <Button
-                        android:id="@+id/btn_edit"
-                        android:layout_gravity="center"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:textColor="@color/colorPrimary"
-                        android:text="EDIT DATA"
-                        android:background="@drawable/ripple_effect"/>
-                </RelativeLayout>
+                    <!--<Button-->
+                        <!--android:id="@+id/btn_edit"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:layout_width="150dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:textSize="18sp"-->
+                        <!--android:textColor="@color/colorPrimary"-->
+                        <!--android:text="EDIT DATA"-->
+                        <!--android:background="@drawable/ripple_effect"/>-->
+                <!--</RelativeLayout>-->
 
 
             </LinearLayout>

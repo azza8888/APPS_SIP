@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:layout_margin="2dp"
-                android:text="No Pendaftaran  :"
+                android:text="No Pendaftaran  "
                 android:textColor="#000000"
                 android:textSize="18dp" />
 
@@ -58,13 +58,14 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45sp"
+                android:gravity="center"
                 android:layout_marginLeft="4sp"
                 android:layout_marginRight="3sp"
                 android:hint="JKI-00119-22741"
                 android:textSize="18sp"
-                android:inputType="textPersonName|textMultiLine"
-                android:textColor="@color/Black"/>
+                android:background="@android:color/transparent"
+                android:inputType="textPersonName|textMultiLine"/>
 
             </android.support.v7.widget.CardView>
 
@@ -92,11 +93,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="EzaTech"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -125,11 +127,12 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45sp"
                 android:layout_marginLeft="4sp"
                 android:layout_marginRight="3sp"
                 android:hint="Jalan Gemah Raya"
                 android:textSize="18sp"
+                android:background="@android:color/transparent"
                 android:inputType="textPersonName|textMultiLine"
                 android:textColor="@color/Black"/>
 
@@ -159,11 +162,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="R1/450"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -192,11 +196,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="PT. RAJAWALI MAS SINDORO"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -226,11 +231,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="Telp"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -259,11 +265,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="Telp"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -292,11 +299,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="223231/0119/107"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -325,11 +333,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="Spinner1"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -358,11 +367,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="Spinner2"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -391,11 +401,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="LHI-0119-263-7419-014-107"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -424,11 +435,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="2019-01-10"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -457,11 +469,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="Ada"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -490,11 +503,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="Ada"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -523,11 +537,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="Ada"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -556,11 +571,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="Ada"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -589,11 +605,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="NYM"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -622,11 +639,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="0"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -655,11 +673,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="NYA"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -688,11 +707,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="BC"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -721,11 +741,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="4 mm2"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -754,11 +775,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="TTN-C-S"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -800,11 +822,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="MCB 10 A"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -833,11 +856,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="0"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -866,11 +890,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="0"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -899,11 +924,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="MCB 2 A"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -932,11 +958,12 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45sp"
                 android:layout_marginLeft="4sp"
                 android:layout_marginRight="3sp"
                 android:hint="0"
                 android:textSize="18sp"
+                android:background="@android:color/transparent"
                 android:inputType="textPersonName|textMultiLine"
                 android:textColor="@color/Black"/>
 
@@ -965,11 +992,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="0"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -998,11 +1026,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="3x4 mm2"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -1031,11 +1060,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="0"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -1064,11 +1094,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="3x1.5 mm2"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -1097,11 +1128,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="0"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -1141,11 +1173,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="sesuai"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -1174,11 +1207,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="sesuai"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -1207,11 +1241,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="sesuai"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -1240,11 +1275,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="140"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -1273,11 +1309,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="180"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -1317,11 +1354,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="Enter A Locatioan"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -1350,11 +1388,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="-7.565906"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 
@@ -1383,11 +1422,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="109.185246"
                     android:textSize="18sp"
+                    android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
                     android:textColor="@color/Black"/>
 

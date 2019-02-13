@@ -40,7 +40,8 @@
         <activity android:name=".uploadLaporan.UploadFotoDepan" />
         <activity android:name=".uploadLaporan.UploadFotoBelakang" />
         <activity android:name=".uploadLaporan.UploadFotoKiri" />
-        <activity android:name=".uploadLaporan.UploadFotoKanan"></activity>
+        <activity android:name=".uploadLaporan.UploadFotoKanan" />
+        <activity android:name=".pengguna.EditProfilActivity"></activity>
     </application>
 
 </manifest>

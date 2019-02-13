@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.ezatech.apps_sip.MainActivity;
 import com.ezatech.apps_sip.R;
 import com.ezatech.apps_sip.api.BaseApi;
+import com.ezatech.apps_sip.api.RetrofitClient;
 import com.ezatech.apps_sip.api.UtilsApi;
 
 import org.json.JSONException;
@@ -127,7 +128,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void requestLogin() {
-        baseApi.login(
+        BaseApi api = RetrofitClient.getInstanceRetrofit();
+        api.login(
 //                tvtoken.getText().toString().
                 etEmaill.getText().toString(), etPassword.getText().toString())
                 .enqueue(new Callback<ResponseBody>() {
@@ -137,7 +139,7 @@ public class LoginActivity extends AppCompatActivity {
                             loading.dismiss();
                             try {
                                 JSONObject JsonResult = new JSONObject(response.body().string());
-                                if (JsonResult != null){
+
 
 //                                    String  success = JsonResult.getString("message");
 //                                    Toast.makeText(mContext, success, Toast.LENGTH_SHORT).show();
@@ -190,7 +192,7 @@ public class LoginActivity extends AppCompatActivity {
                                     startActivity(intent);
 
 
-                                }
+
                                 Toast.makeText(mContext, "Berhasil Login", Toast.LENGTH_SHORT).show();
                             } catch (JSONException e) {
                                 Toast.makeText(mContext, "Password atau Email Salah", Toast.LENGTH_SHORT).show();

@@ -25,18 +25,20 @@ public interface BaseApi {
     @GET("logout")
     Call<ResponseBody> LogOut(@Query("acces_token")String token);
 
-//    @Headers({"Autorization : Bearer token"})
+    @Headers({"Autorization : Bearer token",
+    "Accept : application/json"})
     @GET("profile/app")
-    Call<ResponseBody> profile(@Header("acces_token")String acces_token);
+    Call<ResponseBody> profile(@Header("Autorization")String acces_token);
 
     @Multipart
     @POST("profile/edit")
-    Call<ResponseBody> token_edt(@Header("acces_token")String acces_token);
+    Call<ResponseBody> token_edt(@Header("Autorization")String acces_token);
 
     @FormUrlEncoded
-    @Headers({"Autorization : Bearer token"})
+//    @Headers({"Autorization : Bearer token"})
     @POST("profile/edit")
-    Call<ResponseBody> EditProfile(@Field("nama")String nama,
+    Call<ResponseBody> EditProfile(@Header("Autorization")String token,
+                                   @Field("nama")String nama,
                                    @Field("nip")String nip,
                                    @Field("username")String username);
 
