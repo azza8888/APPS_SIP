@@ -235,20 +235,20 @@
                         android:textColor="@color/Black"/>
                 </LinearLayout>
 
-                <!--<RelativeLayout-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_marginTop="20dp">-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
 
-                    <!--<Button-->
-                        <!--android:id="@+id/btn_simpanpsr"-->
-                        <!--android:layout_gravity="center"-->
-                        <!--android:layout_width="150dp"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:textSize="18sp"-->
-                        <!--android:textColor="@color/colorPrimary"-->
-                        <!--android:text="SIMPAN"-->
-                        <!--android:background="@drawable/ripple_effect"/>-->
+                    <Button
+                        android:id="@+id/btn_simpanpsr"
+                        android:layout_gravity="center"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textColor="@color/colorPrimary"
+                        android:text="EDIT"
+                        android:background="@drawable/ripple_effect"/>
 
                     <!--<Button-->
                         <!--android:id="@+id/btn_edit"-->
@@ -259,7 +259,7 @@
                         <!--android:textColor="@color/colorPrimary"-->
                         <!--android:text="EDIT DATA"-->
                         <!--android:background="@drawable/ripple_effect"/>-->
-                <!--</RelativeLayout>-->
+                </RelativeLayout>
 
 
             </LinearLayout>

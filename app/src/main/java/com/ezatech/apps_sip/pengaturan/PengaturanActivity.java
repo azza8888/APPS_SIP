@@ -11,11 +11,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.ezatech.apps_sip.MainActivity;
 import com.ezatech.apps_sip.R;
 import com.ezatech.apps_sip.api.BaseApi;
+import com.ezatech.apps_sip.api.RetrofitClient;
 import com.ezatech.apps_sip.api.UtilsApi;
 import com.ezatech.apps_sip.logRes.LoginActivity;
 
@@ -33,7 +35,9 @@ public class PengaturanActivity extends AppCompatActivity {
     private TextView tvInfo, tvGantipass;
     private TextView tvKeluar;
     private String token;
+    private EditText tv_tokenext;
     private BaseApi baseApi;
+    private SharedPreferences sharedpreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +54,16 @@ public class PengaturanActivity extends AppCompatActivity {
         }
 
         tvTentang = (TextView) findViewById(R.id.tv_tentang);
+        tv_tokenext =(EditText) findViewById(R.id.et_tokenext);
         tvInfo = (TextView) findViewById(R.id.tv_info);
         tvGantipass = (TextView) findViewById(R.id.tv_gantipass);
         tvKeluar = (TextView) findViewById(R.id.tv_keluar);
-        baseApi = UtilsApi.getAPIService();
+//        baseApi = UtilsApi.getAPIService();
+
+        sharedpreferences = getSharedPreferences(my_shared_preferences, MODE_PRIVATE);
+        String token = (sharedpreferences.getString("acces_token",""));
+        tv_tokenext.setText(token);
+
 
         tvKeluar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,7 +111,8 @@ public class PengaturanActivity extends AppCompatActivity {
     }
 
     private void keluar() {
-
+        baseApi = RetrofitClient.getInstanceRetrofit();
+        final String token = tv_tokenext.getText().toString();
         baseApi.LogOut(token).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {

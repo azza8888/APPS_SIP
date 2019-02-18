@@ -74,7 +74,6 @@ public class LoginActivity extends AppCompatActivity {
         tvtoken = (TextView) findViewById(R.id.tv_token);
         btnLogin = (Button) findViewById(R.id.btn_login);
         mContext = this;
-        baseApi = UtilsApi.getAPIService();
 
 
         sharedpreferences = getSharedPreferences(my_shared_preferences, MODE_PRIVATE);
@@ -102,8 +101,8 @@ public class LoginActivity extends AppCompatActivity {
 
         if (session){
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            intent.putExtra(username,"username");
-            intent.putExtra(password, "password");
+            intent.putExtra(access_token,"acces_token");
+//            intent.putExtra(password, "password");
             finish();
             startActivity(intent);
         }
@@ -140,7 +139,6 @@ public class LoginActivity extends AppCompatActivity {
                             try {
                                 JSONObject JsonResult = new JSONObject(response.body().string());
 
-
 //                                    String  success = JsonResult.getString("message");
 //                                    Toast.makeText(mContext, success, Toast.LENGTH_SHORT).show();
                                     String id = JsonResult.getJSONObject("user").getString("id");
@@ -174,13 +172,13 @@ public class LoginActivity extends AppCompatActivity {
                                     editor.putString("jabatan", jabatan);
                                     editor.putString("departemen", departemen);
                                     editor.putString("wewenang", wewenang);
-                                    editor.putString("id_Kwilayah", id_kwilayah);
-                                    editor.putString("id_Karea", id_karea);
-                                    editor.putString("id_Subarea", id_subarea);
+//                                    editor.putString("id_Kwilayah", id_kwilayah);
+//                                    editor.putString("id_Karea", id_karea);
+//                                    editor.putString("id_Subarea", id_subarea);
                                     editor.putString("status", status);
                                     editor.putString("email_verified_at", email_verified_at);
                                     editor.putString("created_at",created_at);
-                                    editor.putString("updated_at", updated_at);
+//                                    editor.putString("updated_at", updated_at);
                                     editor.putString("username", username);
                                     editor.putString("acces_token", access_token);
                                     editor.commit();

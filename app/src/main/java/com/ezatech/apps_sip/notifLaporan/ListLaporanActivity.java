@@ -3,6 +3,7 @@ package com.ezatech.apps_sip.notifLaporan;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
@@ -16,12 +17,28 @@ import android.view.MenuItem;
 import com.ezatech.apps_sip.R;
 import com.ezatech.apps_sip.adapter.AdapterLLaporan;
 import com.ezatech.apps_sip.adapter.RiwayatAdapter;
+import com.ezatech.apps_sip.api.BaseApi;
+import com.ezatech.apps_sip.api.RetrofitClient;
 import com.ezatech.apps_sip.data.FeedbackData;
 import com.ezatech.apps_sip.data.ListLaporan;
+import com.ezatech.apps_sip.logRes.LoginActivity;
 import com.ezatech.apps_sip.riwayatNotif.RiwayatActivity;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static com.ezatech.apps_sip.logRes.LoginActivity.my_shared_preferences;
+import static com.ezatech.apps_sip.logRes.LoginActivity.session_status;
 
 public class ListLaporanActivity extends AppCompatActivity {
 
@@ -29,6 +46,10 @@ public class ListLaporanActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private Toolbar mActionToolbar;
     private Context context;
+    private SharedPreferences sharedpreferences;
+    private String token;
+    private String id;
+    private int i=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +58,17 @@ public class ListLaporanActivity extends AppCompatActivity {
 
         mActionToolbar = (Toolbar) findViewById(R.id.tabs_listlaporan);
         setSupportActionBar(mActionToolbar);
-        getSupportActionBar().setTitle("Laporan Anda");
+        getSupportActionBar().setTitle("Surat Perintah");
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
+
+        sharedpreferences = getSharedPreferences(my_shared_preferences, MODE_PRIVATE);
+        token = sharedpreferences.getString("acces_token","");
+        id = sharedpreferences.getString("id",null);
+
         recyclerView = findViewById(R.id.rv_listlaporan);
         recyclerView.setHasFixedSize(true);
         final LinearLayoutManager mLayoutManager;
@@ -56,16 +82,56 @@ public class ListLaporanActivity extends AppCompatActivity {
     }
 
     private void getData() {
-        ListLaporan list = new ListLaporan();
-        list.setNama("EzaTech");
-        list.setAlamat("Gemah Raya");
-        list.setWaktu("19-01-2019");
-        list.setNopel("X2018282010");
-//        list.setImage("Foto Gak Muncul");
+        BaseApi api = RetrofitClient.getInstanceRetrofit();
+        api.suratPerintah(token).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()){
+                    try {
+                        JSONArray jsonArray = new JSONArray(response.body().string());
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+                        final String id = jsonObject.getString("id");
+                        String no_surat = jsonObject.getString("no_surat");
+                        String id_pemeriksa1= jsonObject.getString("id_pemeriksa1");
+                        String id_pemeriksa2= jsonObject.getString("id_pemeriksa2");
 
-        listlaporan.add(list);
-        AdapterLLaporan adapter = new AdapterLLaporan(ListLaporanActivity.this, listlaporan);
-        recyclerView.setAdapter(adapter);
+
+                        JSONObject object1 = jsonObject.optJSONObject("pemeriksa1");
+                        String nama1= object1.getString("nama");
+
+                        JSONObject object2 = jsonObject.optJSONObject("pemeriksa2");
+                        String nama2 = object2.getString("nama");
+
+                        SharedPreferences sharedPreferences = ListLaporanActivity.this.getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putBoolean(session_status, true);
+                        editor.putString("id", id);
+                        editor.commit();
+
+                        ListLaporan laporan = new ListLaporan();
+                        laporan.setId(id);
+                        laporan.setNo_surat(no_surat);
+                        laporan.setNama_pemeriksa1(nama1);
+                        laporan.setNama_pemeriksa2(nama2);
+
+                        listlaporan.add(laporan);
+                        AdapterLLaporan adapterLLaporan = new AdapterLLaporan(ListLaporanActivity.this, listlaporan);
+                        recyclerView.setAdapter(adapterLLaporan);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
     }
 
     //button back toolbar
@@ -78,8 +144,12 @@ public class ListLaporanActivity extends AppCompatActivity {
 
     public void functionToRun() {
 
-        Intent intent = new Intent(ListLaporanActivity.this, DetailLapActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(ListLaporanActivity.this, DetailLapActivity.class);
+//        startActivity(intent);
+
+        Uri uriUrl = Uri.parse("https://slo.sertifikasiinstalasiprima.co.id/pdf/surat-tugas/print/"+id);
+        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
+        startActivity(launchBrowser);
     }
 
 }

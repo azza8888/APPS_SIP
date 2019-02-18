@@ -14,38 +14,48 @@ import retrofit2.http.Query;
 public interface BaseApi {
 
     @FormUrlEncoded
-    @Headers({"Autorization : Bearer token"})
     @POST("login")
     Call<ResponseBody> login(
-                             @Field("username")String username,
-                             @Field("password")String password);
+            @Field("username")String username,
+            @Field("password")String password);
 
 
-    @Headers({"Autorization : Bearer token"})
+//    @Headers({"Authorization : Bearer token"})
     @GET("logout")
-    Call<ResponseBody> LogOut(@Query("acces_token")String token);
+    Call<ResponseBody> LogOut(@Header("Authorization") String token);
 
-    @Headers({"Autorization : Bearer token",
-    "Accept : application/json"})
+    //    @Headers({"Accept : application/json"})
     @GET("profile/app")
-    Call<ResponseBody> profile(@Header("Autorization")String acces_token);
+    Call<ResponseBody> profile(
+            @Header("Authorization")String acces_token
+    );
+
+    @GET("suratku")
+    Call<ResponseBody> suratPerintah(@Header("Authorization")String token);
 
     @Multipart
     @POST("profile/edit")
-    Call<ResponseBody> token_edt(@Header("Autorization")String acces_token);
+    Call<ResponseBody> token_edt(@Header("Authorization")String acces_token);
 
     @FormUrlEncoded
-//    @Headers({"Autorization : Bearer token"})
+//    @Headers({"Authorization : Bearer token"})
     @POST("profile/edit")
-    Call<ResponseBody> EditProfile(@Header("Autorization")String token,
-                                   @Field("nama")String nama,
-                                   @Field("nip")String nip,
-                                   @Field("username")String username);
+    Call<ResponseBody> editProfile(
+            @Header("Authorization") String auth,
+            @Field("nama")String nama,
+            @Field("username")String username,
+            @Field("nip")String nip);
 
     @FormUrlEncoded
-    @Headers({"Autorization : Bearer token"})
+//    @Headers({"Authorization : Bearer token"})
     @POST("edit-password")
-    Call<ResponseBody> ubahPassword(@Field("current_password")String current_password,
+    Call<ResponseBody> ubahPassword(@Header("Authorization")String token,
+                                    @Field("current_password")String current_password,
                                     @Field("new_password")String new_password,
                                     @Field("new_password_confirmation")String new_password_confirmation);
+
+
+
+    @GET("load-daya")
+    Call<ResponseBody> load_daya(@Header("Authorization")String token);
 }

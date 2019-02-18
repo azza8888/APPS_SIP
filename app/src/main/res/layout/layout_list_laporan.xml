@@ -13,6 +13,11 @@
         app:cardElevation="2dp"
         android:layout_margin="4dp">
 
+        <TextView
+            android:id="@+id/tv_idlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -31,85 +36,74 @@
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            card_view:cardBackgroundColor="#121111"
+            card_view:cardBackgroundColor="#39aae9"
             card_view:cardCornerRadius="8dp"
             card_view:cardElevation="8dp"
             android:layout_margin="4dp">
-        <Button
-            android:id="@+id/btn_nopel"
-            android:background="@drawable/ripple_effect"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#39aae9"
-            android:text="Nomer Laporan"/>
+        <!--<Button-->
+            <!--android:id="@+id/btn_nopel"-->
+            <!--android:background="@drawable/ripple_effect"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:backgroundTint="#39aae9"-->
+            <!--android:text="Nomer Laporan"/>-->
+            <TextView
+                android:id="@+id/tv_nosurat"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:background="@drawable/ripple_effect"
+                android:text="NOMOR SURAT"/>
+
         </android.support.v7.widget.CardView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
             android:layout_margin="2dp">
 
 
             <TextView
-                android:layout_width="80sp"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:text="Nama     :"
-                android:textSize="14dp" />
-            <TextView
-                android:id="@+id/tv_namalist"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
-                android:text="Nama "
-                android:textSize="14sp" />
+                android:text="nama_pemeriksa 1 :"
+                android:textSize="18dp" />
+            <EditText
+                android:id="@+id/et_namap1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Pemeriksa1"
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_margin="2dp">
             <TextView
-                android:layout_width="80sp"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:text="Alamat   :"
-                android:textSize="14dp" />
-            <TextView
-                android:id="@+id/tv_alamatlist"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
-                android:text="Alamat "
-                android:textSize="14dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="359dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="80sp"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:text="Waktu     :"
-                android:textSize="14dp" />
-
-            <TextView
-                android:id="@+id/tv_waktulist"
+                android:text="nama_pemeriksa 2    :"
+                android:textSize="18sp" />
+            <EditText
+                android:id="@+id/et_namap2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:text="Waktu "
-                android:textSize="14dp" />
+                android:text="Pemeriksa2"
+                android:textSize="18sp"/>
 
         </LinearLayout>
+
+
 
 
 

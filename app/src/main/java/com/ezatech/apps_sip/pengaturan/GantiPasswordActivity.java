@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.ezatech.apps_sip.R;
 import com.ezatech.apps_sip.api.BaseApi;
+import com.ezatech.apps_sip.api.RetrofitClient;
 import com.ezatech.apps_sip.api.UtilsApi;
 import com.ezatech.apps_sip.logRes.LoginActivity;
 
@@ -48,7 +49,7 @@ public class GantiPasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ganti_password);
 
-        baseApi = UtilsApi.getAPIService();
+//        baseApi = UtilsApi.getAPIService();
         mActionToolbar = (Toolbar) findViewById(R.id.tabs_changepasssr);
         setSupportActionBar(mActionToolbar);
         getSupportActionBar().setTitle("Change Password");
@@ -99,7 +100,8 @@ public class GantiPasswordActivity extends AppCompatActivity {
         final String new_password = etNewpasssr.getText().toString();
         final String new_password_confirmation = etConfrimpassr.getText().toString();
 
-        baseApi.ubahPassword(etPasswordsr.getText().toString(),
+        baseApi = RetrofitClient.getInstanceRetrofit();
+        baseApi.ubahPassword(token,etPasswordsr.getText().toString(),
                 etNewpasssr.getText().toString(),
                 etConfrimpassr.getText().toString())
                 .enqueue(new Callback<ResponseBody>() {
@@ -111,7 +113,7 @@ public class GantiPasswordActivity extends AppCompatActivity {
                             SharedPreferences sp = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
 
                             SharedPreferences.Editor editor = sp.edit();
-                            editor.putBoolean(session_status, true);
+                            editor.putBoolean(LoginActivity.session_status, false);
                             editor.putString("acces_token", token);
                             editor.putString("current_password", current_password);
                             editor.putString("new_password", new_password);

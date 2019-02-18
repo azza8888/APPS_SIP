@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -39,11 +40,11 @@ public class AdapterLLaporan extends RecyclerView.Adapter<AdapterLLaporan.Adapte
     @Override
     public void onBindViewHolder(AdapterViewHolder holder, int position) {
         ListLaporan laporan = list.get(position);
-        holder.tvNamalist.setText(laporan.getNama());
-        holder.tvAlamatlist.setText(laporan.getAlamat());
-        holder.tvWaktulist.setText(laporan.getWaktu());
-        holder.btn_nopel.setText(laporan.getNopel());
-        holder.btn_nopel.setOnClickListener(new View.OnClickListener() {
+        holder.tvNosurat.setText(laporan.getNo_surat());
+        holder.tvIdlist.setText(laporan.getId());
+        holder.etNamap1.setText(laporan.getNama_pemeriksa1());
+        holder.etNamap2.setText(laporan.getNama_pemeriksa2());
+        holder.tvNosurat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((ListLaporanActivity) context).functionToRun();
@@ -61,18 +62,18 @@ public class AdapterLLaporan extends RecyclerView.Adapter<AdapterLLaporan.Adapte
 
 
     public class AdapterViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvNamalist, tvAlamatlist, tvWaktulist;
-        private Button btn_nopel;
+        private TextView tvNosurat,tvIdlist;
+        private EditText etNamap1, etNamap2;
 //        private ImageView ivList;
 
         public AdapterViewHolder(View itemView) {
             super(itemView);
 
 //            ivList = (ImageView) itemView.findViewById(R.id.iv_list);
-            tvNamalist = (TextView) itemView.findViewById(R.id.tv_namalist);
-            btn_nopel = (Button) itemView.findViewById(R.id.btn_nopel);
-            tvAlamatlist = (TextView) itemView.findViewById(R.id.tv_alamatlist);
-            tvWaktulist = (TextView) itemView.findViewById(R.id.tv_waktulist);
+            tvIdlist = (TextView) itemView.findViewById(R.id.tv_idlist);
+            tvNosurat = (TextView) itemView.findViewById(R.id.tv_nosurat);
+            etNamap1 = (EditText) itemView.findViewById(R.id.et_namap1);
+            etNamap2 = (EditText) itemView.findViewById(R.id.et_namap2);
         }
     }
 }

@@ -17,6 +17,11 @@
 
     </android.support.v7.widget.Toolbar>
 
+    <EditText
+        android:id="@+id/et_ed"
+        android:layout_width="0sp"
+        android:layout_height="0dp" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -46,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:layout_margin="2dp"
-                android:text="No Pendaftaran  "
+                android:text="No Pendaftaran  :"
                 android:textColor="#000000"
                 android:textSize="18dp" />
 
@@ -57,9 +62,9 @@
                 app:cardElevation="4dp">
 
             <EditText
+                android:id="@+id/et_nopendaftaran"
                 android:layout_width="match_parent"
                 android:layout_height="45sp"
-                android:gravity="center"
                 android:layout_marginLeft="4sp"
                 android:layout_marginRight="3sp"
                 android:hint="JKI-00119-22741"
@@ -81,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:layout_margin="2dp"
-                android:text="Nama                    :"
+                android:text="No Surat Tugas       :"
                 android:textColor="#000000"
                 android:textSize="18dp" />
 
@@ -92,11 +97,12 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_nosurat"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
-                    android:hint="EzaTech"
+                    android:hint="no_surat_tugas"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
@@ -115,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:layout_margin="2dp"
-                android:text="Alamat                  :"
+                android:text="No Pemeriksa          :"
                 android:textColor="#000000"
                 android:textSize="18dp" />
 
@@ -126,11 +132,12 @@
             app:cardElevation="4dp">
 
             <EditText
+                android:id="@+id/et_nopemeriksa"
                 android:layout_width="match_parent"
                 android:layout_height="45sp"
                 android:layout_marginLeft="4sp"
                 android:layout_marginRight="3sp"
-                android:hint="Jalan Gemah Raya"
+                android:hint="no_pemeriksa"
                 android:textSize="18sp"
                 android:background="@android:color/transparent"
                 android:inputType="textPersonName|textMultiLine"

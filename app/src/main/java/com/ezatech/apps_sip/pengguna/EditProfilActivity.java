@@ -26,6 +26,8 @@ import com.ezatech.apps_sip.api.UtilsApi;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -37,7 +39,7 @@ import static com.ezatech.apps_sip.logRes.LoginActivity.session_status;
 public class EditProfilActivity extends AppCompatActivity {
 
     private Toolbar tabsEdtprofile;
-    BaseApi baseApi;
+    private BaseApi api;
     private EditText edtToken;
     private EditText edtId;
     private EditText edtNama;
@@ -71,6 +73,21 @@ public class EditProfilActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
+        if (ContextCompat.checkSelfPermission(EditProfilActivity.this,
+                Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            //
+            if (ActivityCompat.shouldShowRequestPermissionRationale(EditProfilActivity.this,
+                    Manifest.permission.READ_EXTERNAL_STORAGE)) {
+
+            } else {
+
+                ActivityCompat.requestPermissions(EditProfilActivity.this,
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                        MY_PERMISSIONS_REQUEST_FINE_LOCATION);
+
+            }
+        }
 
 
 
@@ -84,40 +101,72 @@ public class EditProfilActivity extends AppCompatActivity {
         String username = (sharedpreferences.getString("username",""));
         edtUsername.setText(username);
         token = (sharedpreferences.getString("acces_token", ""));
+        edtToken.setText(token);
 
 
-        baseApi = UtilsApi.getAPIService();
+//        api = UtilsApi.getAPIService();
 
         btnEdtsimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UbahData();
+//                UbahData();
+                ubahData();
             }
         });
     }
 
+    private void ubahData() {
+        BaseApi baseApi = RetrofitClient.getInstanceRetrofit();
+        baseApi.editProfile(token,edtNama.getText().toString().trim(), edtUsername.getText().toString().trim(), edtNip.getText().toString().trim())
+                .enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        if (response.isSuccessful()){
+                            try {
+                                JSONObject jsonObject = new JSONObject(response.body().string());
+                                String msg = jsonObject.optString("msg");
+                                Toast.makeText(EditProfilActivity.this, "" + msg, Toast.LENGTH_SHORT).show();
+
+                                Toast.makeText(EditProfilActivity.this, "Edit Profil Berhasil", Toast.LENGTH_SHORT).show();
+
+                                Intent intent = new Intent(EditProfilActivity.this, ProfilActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        Toast.makeText(EditProfilActivity.this, "" + t.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
     private void UbahData() {
 
-        BaseApi api = RetrofitClient.getInstanceRetrofit();
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Mohon tunggu...");
         progressDialog.show();
-            final String nama = edtNama.getText().toString();
+        final String token = edtToken.getText().toString();
+        final String nama = edtNama.getText().toString();
         final String username = edtUsername.getText().toString();
         final String nip = edtNip.getText().toString();
 
-        api.EditProfile(token,
+        api.editProfile(token,
                 edtNama.getText().toString(),
                 edtUsername.getText().toString(),
                 edtNip.getText().toString())
                 .enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                        String token = response.headers().get("acces_token");
+//                        String token = response.headers().get("acces_token");
                         if (response.isSuccessful()){
                             progressDialog.dismiss();
-
-                            try {
 
                                 SharedPreferences sp = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sp.edit();
@@ -129,13 +178,11 @@ public class EditProfilActivity extends AppCompatActivity {
 
                                 Toast.makeText(EditProfilActivity.this, "Edit Profil Berhasil", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(EditProfilActivity.this, ProfilActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(intent);
 
                                 Log.d("HAHAHAH", "HAHAHAHHA: "+token);
 
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
 
                         }
                     }
