@@ -113,7 +113,7 @@ public class PengaturanActivity extends AppCompatActivity {
     private void keluar() {
         baseApi = RetrofitClient.getInstanceRetrofit();
         final String token = tv_tokenext.getText().toString();
-        baseApi.LogOut(token).enqueue(new Callback<ResponseBody>() {
+        baseApi.logOut(token).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 SharedPreferences sharedPreferences = PengaturanActivity.this.getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);

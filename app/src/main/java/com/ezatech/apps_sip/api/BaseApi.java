@@ -22,7 +22,7 @@ public interface BaseApi {
 
 //    @Headers({"Authorization : Bearer token"})
     @GET("logout")
-    Call<ResponseBody> LogOut(@Header("Authorization") String token);
+    Call<ResponseBody> logOut(@Header("Authorization") String token);
 
     //    @Headers({"Accept : application/json"})
     @GET("profile/app")

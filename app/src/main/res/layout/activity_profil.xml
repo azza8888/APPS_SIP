@@ -60,15 +60,7 @@
                     android:layout_gravity="center"
                     app:civ_border_width="2dp"
                     app:civ_circle_background_color="@color/Black" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Klik Gambar Untuk Edit Profil"
-                    android:textSize="14sp"
-                    android:gravity="center"
-                    android:textColorHint="@color/white"
-                    android:padding="8dp"
-                    android:textColor="@color/Black"/>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"

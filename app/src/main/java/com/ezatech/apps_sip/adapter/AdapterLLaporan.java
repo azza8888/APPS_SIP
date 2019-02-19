@@ -1,21 +1,17 @@
 package com.ezatech.apps_sip.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ezatech.apps_sip.R;
 import com.ezatech.apps_sip.data.ListLaporan;
-import com.ezatech.apps_sip.notifLaporan.DetailLapActivity;
 import com.ezatech.apps_sip.notifLaporan.ListLaporanActivity;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -44,12 +40,24 @@ public class AdapterLLaporan extends RecyclerView.Adapter<AdapterLLaporan.Adapte
         holder.tvIdlist.setText(laporan.getId());
         holder.etNamap1.setText(laporan.getNama_pemeriksa1());
         holder.etNamap2.setText(laporan.getNama_pemeriksa2());
-        holder.tvNosurat.setOnClickListener(new View.OnClickListener() {
+        holder.btnPeriksa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((ListLaporanActivity) context).intentPeriksa();
+            }
+        });
+        holder.btnCetak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((ListLaporanActivity) context).functionToRun();
             }
         });
+//        holder.tvNosurat.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
 //        Picasso.with(context).load(R.drawable.ic_info_black_24dp)
 //                .into(holder.ivList);
 
@@ -61,9 +69,11 @@ public class AdapterLLaporan extends RecyclerView.Adapter<AdapterLLaporan.Adapte
     }
 
 
+
     public class AdapterViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvNosurat,tvIdlist;
+        private TextView tvNosurat, tvIdlist;
         private EditText etNamap1, etNamap2;
+        private Button btnPeriksa, btnCetak;
 //        private ImageView ivList;
 
         public AdapterViewHolder(View itemView) {
@@ -71,9 +81,12 @@ public class AdapterLLaporan extends RecyclerView.Adapter<AdapterLLaporan.Adapte
 
 //            ivList = (ImageView) itemView.findViewById(R.id.iv_list);
             tvIdlist = (TextView) itemView.findViewById(R.id.tv_idlist);
+            tvIdlist.setVisibility(View.INVISIBLE);
             tvNosurat = (TextView) itemView.findViewById(R.id.tv_nosurat);
             etNamap1 = (EditText) itemView.findViewById(R.id.et_namap1);
             etNamap2 = (EditText) itemView.findViewById(R.id.et_namap2);
+            btnPeriksa = (Button) itemView.findViewById(R.id.btn_periksa);
+            btnCetak = (Button) itemView.findViewById(R.id.btn_cetak);
         }
     }
 }

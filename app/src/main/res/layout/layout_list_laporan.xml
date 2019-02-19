@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools"
     android:orientation="vertical">
@@ -36,7 +36,6 @@
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            card_view:cardBackgroundColor="#39aae9"
             card_view:cardCornerRadius="8dp"
             card_view:cardElevation="8dp"
             android:layout_margin="4dp">
@@ -54,7 +53,6 @@
                 android:gravity="center"
                 android:textStyle="bold"
                 android:textSize="17dp"
-                android:background="@drawable/ripple_effect"
                 android:text="NOMOR SURAT"/>
 
         </android.support.v7.widget.CardView>
@@ -77,9 +75,11 @@
                 android:id="@+id/et_namap1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:text="Pemeriksa1"
-                android:textSize="18sp"/>
+                android:enabled="false"
+                android:background="@android:color/transparent"
+                android:inputType="textPersonName|textMultiLine"
+                android:textSize="20sp"/>
 
         </LinearLayout>
 
@@ -99,11 +99,79 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Pemeriksa2"
-                android:textSize="18sp"/>
+                android:enabled="false"
+                android:background="@android:color/transparent"
+                android:inputType="textPersonName|textMultiLine"
+                android:textSize="20sp"/>
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp">
+            <EditText
+                android:id="@+id/et_status"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="status"
+                android:textColor="#fc040c"
+                android:textSize="25sp"
+                android:background="@android:color/transparent"
+                android:inputType="textPersonName|textMultiLine"/>
 
+        </LinearLayout>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    card_view:cardCornerRadius="8dp"
+                    card_view:cardElevation="8dp"
+                    android:layout_margin="4dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <Button
+                            android:id="@+id/btn_periksa"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ripple_effect"
+                            android:text="periksa"/>
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    card_view:cardCornerRadius="8dp"
+                    card_view:cardElevation="8dp"
+                    android:layout_margin="4dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <Button
+                            android:id="@+id/btn_cetak"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ripple_effect"
+                            android:text="cetak surat "/>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
 
 
 

@@ -169,14 +169,6 @@ public class ProfilActivity extends AppCompatActivity {
 //            }
 //        });
 
-        cvProfilsr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ProfilActivity.this, EditProfilActivity.class);
-
-                startActivity(intent);
-            }
-        });
 
     }
 
@@ -195,11 +187,6 @@ public class ProfilActivity extends AppCompatActivity {
                                 etUsername.setEnabled(false);
                                 etNamap.setEnabled(false);
 
-//                                Toast.makeText(ProfilActivity.this, "Edit Profil Berhasil", Toast.LENGTH_SHORT).show();
-//
-//                                Intent intent = new Intent(ProfilActivity.this, ProfilActivity.class);
-//                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//                                startActivity(intent);
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             } catch (IOException e) {
@@ -270,76 +257,7 @@ public class ProfilActivity extends AppCompatActivity {
     }
 
 
-//    private void tampilData() {
-//        BaseApi baseApi1 = RetrofitClient.getInstanceRetrofit();
-//        progressDialog = new ProgressDialog(this);
-//        progressDialog.setMessage("Mohon tunggu...");
-//        progressDialog.show();
-////        final String token = access_token;
-////        Log.d(TAG, "TampilData: " + token);
-//        baseApi1.profile(access_token)
-//                .enqueue(new Callback<ResponseBody>() {
-//                    @Override
-//                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-//                        progressDialog.dismiss();
-//                        try {
-//                            JSONObject object = new JSONObject(response.body().string());
-//                            String id = object.getString("id");
-//                            String nip = object.getString("nip");
-//                            String nama = object.getString("nama");
-//                            String email = object.getString("email");
-//                            String jabatan = object.getString("jabatan");
-//                            String departemen = object.getString("departemen");
-//                            String wewenang = object.getString("wewenang");
-//                            String id_kwilayah = object.optString("id_kwilayah");
-//                            String id_karea = object.optString("id_karea");
-//                            String id_subarea = object.optString("id_subarea");
-//                            String status = object.optString("status");
-//                            String email_verified_at = object.optString("email_verified_at");
-//                            String created_at = object.optString("created_at");
-//                            String updated_at = object.optString("updated_at");
-//                            String username = object.getString("username");
-//
-//                            Toast.makeText(ProfilActivity.this, "" + nama, Toast.LENGTH_SHORT).show();
-//                            Toast.makeText(ProfilActivity.this, "" + nama, Toast.LENGTH_SHORT).show();
-//                            Toast.makeText(ProfilActivity.this, "" + nama, Toast.LENGTH_SHORT).show();
-//                            Toast.makeText(ProfilActivity.this, "" + nama, Toast.LENGTH_SHORT).show();
-//                            Toast.makeText(ProfilActivity.this, "" + nama, Toast.LENGTH_SHORT).show();
-//                            Toast.makeText(ProfilActivity.this, "" + nama, Toast.LENGTH_SHORT).show();
-//                            Toast.makeText(ProfilActivity.this, "" + nama, Toast.LENGTH_SHORT).show();
-//                            Toast.makeText(ProfilActivity.this, "" + nama, Toast.LENGTH_SHORT).show();
-//                            Toast.makeText(ProfilActivity.this, "" + nama, Toast.LENGTH_SHORT).show();
-//                            Toast.makeText(ProfilActivity.this, "" + nama, Toast.LENGTH_SHORT).show();
-//
-//                            etIdprs.setText(id);
-//                            etNip.setText(nip);
-//                            etNamap.setText(nama);
-//                            etUsername.setText(username);
-//                            etEmailp.setText(email);
-//                            etDepartemen.setText(departemen);
-//                            etJabatan.setText(jabatan);
-//                            etWewenang.setText(wewenang);
-//
-//
-//                            Intent intent = new Intent(String.valueOf(ProfilActivity.this));
-//                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//
-//                        } catch (JSONException e) {
-//                            e.printStackTrace();
-//                        } catch (IOException e) {
-//                            e.printStackTrace();
-//                        }
-//
-//                    }
-//
-//
-//                    @Override
-//                    public void onFailure(Call<ResponseBody> call, Throwable t) {
-//                        progressDialog.dismiss();
-//                    }
-//                });
-//
-//    }
+
 
     //button back toolbar
     @Override

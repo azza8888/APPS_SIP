@@ -23,6 +23,7 @@ import com.ezatech.apps_sip.data.FeedbackData;
 import com.ezatech.apps_sip.data.ListLaporan;
 import com.ezatech.apps_sip.logRes.LoginActivity;
 import com.ezatech.apps_sip.riwayatNotif.RiwayatActivity;
+import com.ezatech.apps_sip.uploadLaporan.FormActivity;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -49,8 +50,9 @@ public class ListLaporanActivity extends AppCompatActivity {
     private SharedPreferences sharedpreferences;
     private String token;
     private String id;
-    private int i=0;
-
+    private String nama1;
+    private String nama2;
+    private String no_surat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +70,7 @@ public class ListLaporanActivity extends AppCompatActivity {
         sharedpreferences = getSharedPreferences(my_shared_preferences, MODE_PRIVATE);
         token = sharedpreferences.getString("acces_token","");
         id = sharedpreferences.getString("id",null);
+
 
         recyclerView = findViewById(R.id.rv_listlaporan);
         recyclerView.setHasFixedSize(true);
@@ -89,35 +92,37 @@ public class ListLaporanActivity extends AppCompatActivity {
                 if (response.isSuccessful()){
                     try {
                         JSONArray jsonArray = new JSONArray(response.body().string());
-                        JSONObject jsonObject = jsonArray.getJSONObject(i);
-                        final String id = jsonObject.getString("id");
-                        String no_surat = jsonObject.getString("no_surat");
-                        String id_pemeriksa1= jsonObject.getString("id_pemeriksa1");
-                        String id_pemeriksa2= jsonObject.getString("id_pemeriksa2");
 
+                        for (int i= 0; i < jsonArray.length(); i++) {
+                            JSONObject jsonObject = jsonArray.optJSONObject(i);
+                            String id = jsonObject.optString("id");
+                            String no_surat = jsonObject.optString("no_surat");
 
-                        JSONObject object1 = jsonObject.optJSONObject("pemeriksa1");
-                        String nama1= object1.getString("nama");
+                            JSONObject object1 = jsonObject.optJSONObject("pemeriksa1");
+                            String nama1 = object1.getString("nama");
 
-                        JSONObject object2 = jsonObject.optJSONObject("pemeriksa2");
-                        String nama2 = object2.getString("nama");
+                            JSONObject object2 = jsonObject.optJSONObject("pemeriksa2");
+                            String nama2 = object2.getString("nama");
 
-                        SharedPreferences sharedPreferences = ListLaporanActivity.this.getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+                            SharedPreferences sharedPreferences = ListLaporanActivity.this.getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putBoolean(session_status, true);
+                            editor.putString("id", id);
+                            editor.putString("nama", nama1);
+                            editor.putString("nama", nama2);
+                            editor.commit();
 
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putBoolean(session_status, true);
-                        editor.putString("id", id);
-                        editor.commit();
+                            ListLaporan laporan = new ListLaporan();
+                            laporan.setId(id);
+                            laporan.setNo_surat(no_surat);
+                            laporan.setNama_pemeriksa1(nama1);
+                            laporan.setNama_pemeriksa2(nama2);
+                            listlaporan.add(laporan);
+                            AdapterLLaporan adapterLLaporan = new AdapterLLaporan(ListLaporanActivity.this, listlaporan);
+                            recyclerView.setAdapter(adapterLLaporan);
 
-                        ListLaporan laporan = new ListLaporan();
-                        laporan.setId(id);
-                        laporan.setNo_surat(no_surat);
-                        laporan.setNama_pemeriksa1(nama1);
-                        laporan.setNama_pemeriksa2(nama2);
+                        }
 
-                        listlaporan.add(laporan);
-                        AdapterLLaporan adapterLLaporan = new AdapterLLaporan(ListLaporanActivity.this, listlaporan);
-                        recyclerView.setAdapter(adapterLLaporan);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     } catch (IOException e) {
@@ -150,6 +155,10 @@ public class ListLaporanActivity extends AppCompatActivity {
         Uri uriUrl = Uri.parse("https://slo.sertifikasiinstalasiprima.co.id/pdf/surat-tugas/print/"+id);
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
         startActivity(launchBrowser);
+    }
+
+    public void intentPeriksa(){
+        startActivity(new Intent(ListLaporanActivity.this, FormActivity.class));
     }
 
 }
