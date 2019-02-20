@@ -86,6 +86,251 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:layout_margin="2dp"
+                android:text="Nama Pendaftaran  :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_namapen"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint="JKI-00119-22741"
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"/>
+
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Alamat Pendaftaran  :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_almtpen"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint="JKI-00119-22741"
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"/>
+
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Jenis Tarif  :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_tarif"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint="JKI-00119-22741"
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"/>
+
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Daya  :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_daya"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint="JKI-00119-22741"
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"/>
+
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Nama BTL  :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_btl"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint="JKI-00119-22741"
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"/>
+
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Pemeriksa 1  :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_nmpemeriksa1"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint="JKI-00119-22741"
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"/>
+
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Pemeriksa 2  :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_nmpemeriksa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint="JKI-00119-22741"
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"/>
+
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
                 android:text="No Surat Tugas       :"
                 android:textColor="#000000"
                 android:textSize="18dp" />
@@ -148,39 +393,6 @@
         </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:layout_margin="2dp"
-                android:text="Tarif/Daya            :"
-                android:textColor="#000000"
-                android:textSize="18dp" />
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                app:cardElevation="4dp">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="R1/450"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
-
-            </android.support.v7.widget.CardView>
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -191,7 +403,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:layout_margin="2dp"
-                android:text="BTL                        :"
+                android:text="No LHPP                   :"
                 android:textColor="#000000"
                 android:textSize="18dp" />
 
@@ -202,211 +414,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="PT. RAJAWALI MAS SINDORO"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
-
-            </android.support.v7.widget.CardView>
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:layout_margin="2dp"
-                android:text="Nama Instalasi     :"
-                android:textColor="#000000"
-                android:textSize="18dp" />
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                app:cardElevation="4dp">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="Telp"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
-
-            </android.support.v7.widget.CardView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:layout_margin="2dp"
-                android:text="Telp Instalir           :"
-                android:textColor="#000000"
-                android:textSize="18dp" />
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                app:cardElevation="4dp">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="Telp"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
-
-            </android.support.v7.widget.CardView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:layout_margin="2dp"
-                android:text="No Surat Tugas  :"
-                android:textColor="#000000"
-                android:textSize="18dp" />
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                app:cardElevation="4dp">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="223231/0119/107"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
-
-            </android.support.v7.widget.CardView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:layout_margin="2dp"
-                android:text="Pemeriksa 1  :"
-                android:textColor="#000000"
-                android:textSize="18dp" />
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                app:cardElevation="4dp">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="Spinner1"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
-
-            </android.support.v7.widget.CardView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:layout_margin="2dp"
-                android:text="Pemeriksa 2  :"
-                android:textColor="#000000"
-                android:textSize="18dp" />
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                app:cardElevation="4dp">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="Spinner2"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
-
-            </android.support.v7.widget.CardView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:layout_margin="2dp"
-                android:text="No LHPP  :"
-                android:textColor="#000000"
-                android:textSize="18dp" />
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                app:cardElevation="4dp">
-
-                <EditText
+                    android:id="@+id/et_nolhpp"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -430,7 +438,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:layout_margin="2dp"
-                android:text="Tanggal LHPP  :"
+                android:text="Tanggal LHPP          :"
                 android:textColor="#000000"
                 android:textSize="18dp" />
 
@@ -441,11 +449,81 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_tgllhpp"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="2019-01-10"
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textColor="@color/Black"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Gambar instalasi  :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_gambarins"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint="Ada"
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textColor="@color/Black"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Diagram_garis_tunggal  :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_diagramgt"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint="Ada"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
@@ -475,6 +553,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_peutama"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -509,6 +588,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_pecabang"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -543,6 +623,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_peakhir"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -577,6 +658,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_pekotakkontak"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -611,6 +693,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_jenispengut"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -645,6 +728,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_jenispengcab"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -679,6 +763,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_jenispengakhir"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -713,6 +798,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_penghantarbj"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -747,6 +833,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_penghantarbp"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -781,6 +868,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_penghantarbs"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -828,6 +916,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_saklarutm"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -862,6 +951,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_saklarcb1"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -896,6 +986,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_saklarcb2"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -910,39 +1001,40 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:layout_margin="2dp"
-                android:text="Proteksi Sirkit Akhir (PHBK utama) :"
-                android:textColor="#000000"
-                android:textSize="18dp" />
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical">-->
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:paddingLeft="5dp"-->
+                <!--android:layout_margin="2dp"-->
+                <!--android:text="Proteksi Sirkit Akhir (PHBK utama) :"-->
+                <!--android:textColor="#000000"-->
+                <!--android:textSize="18dp" />-->
 
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                app:cardElevation="4dp">
+            <!--<android.support.v7.widget.CardView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="2dp"-->
+                <!--app:cardElevation="4dp">-->
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="MCB 2 A"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                <!--<EditText-->
+                    <!--android:id="@+id/et_phbkcb1"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="MCB 2 A"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
 
-            </android.support.v7.widget.CardView>
+            <!--</android.support.v7.widget.CardView>-->
 
-        </LinearLayout>
+        <!--</LinearLayout>-->
 
         <LinearLayout
         android:layout_width="match_parent"
@@ -964,6 +1056,7 @@
             app:cardElevation="4dp">
 
             <EditText
+                android:id="@+id/et_phbkcb1"
                 android:layout_width="match_parent"
                 android:layout_height="45sp"
                 android:layout_marginLeft="4sp"
@@ -998,6 +1091,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_phbkcb2"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -1032,6 +1126,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_penghantarutm"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -1066,6 +1161,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_penghantarcbang"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -1100,6 +1196,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_penghantarakhir"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -1134,6 +1231,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_penghantar3fs"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -1179,6 +1277,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_fittinglmp"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -1213,6 +1312,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_ppkotakk"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -1247,6 +1347,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_ppsakelar"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -1260,6 +1361,7 @@
             </android.support.v7.widget.CardView>
 
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -1281,6 +1383,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_tinggikk"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -1315,11 +1418,640 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_tinggiphbk"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:hint="180"
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textColor="@color/Black"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="jenis kotak kontak :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_jeniskk"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint="tinggi_kotak_kontak"
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textColor="@color/Black"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Tanda Komponen SNI :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_tandakmp"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint="tinggi_kotak_kontak"
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textColor="@color/Black"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Pengujian Pembebanan :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_pengujipbbn"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint="tinggi_kotak_kontak"
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textColor="@color/Black"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Jumlah PHB utama :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_jumlahphbutm"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint="tinggi_kotak_kontak"
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textColor="@color/Black"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Jumlah PHB 1 phasa :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_jumlahphb1fs"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint="tinggi_kotak_kontak"
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textColor="@color/Black"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Jumlah PHB 3 phasa :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_jumlahphb3fs"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint="tinggi_kotak_kontak"
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textColor="@color/Black"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Jumlah PHB Cabang :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_jumlahphbcb"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint=""
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textColor="@color/Black"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Jumlah Saluran Cabang :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_jmlsalurancb"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint=""
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textColor="@color/Black"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Jumlah Saluran Akhir :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_jmlsaluranakhir"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint=""
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textColor="@color/Black"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Jumlah Titik Lampu :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_jmltitiklmp"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint=""
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textColor="@color/Black"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Jumlah Sakelar :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_jmlsakelar"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint=""
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textColor="@color/Black"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="KKB :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_kkb"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint=""
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textColor="@color/Black"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="KKK :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_kkk"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint=""
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textColor="@color/Black"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Tahanan Isolasi Penghantar(MΩ) :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_thnislp"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint=""
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textColor="@color/Black"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Resiste Pembumian(Ω):"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_resistanpmb"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint=""
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textColor="@color/Black"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Jumlah Motor Listrik (Unit):"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_jmlmlu"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint=""
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textColor="@color/Black"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Jumlah Motor Listrik (Kw):"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_jmlmlk"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint=""
+                    android:textSize="18sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textColor="@color/Black"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Catatan :"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="4dp">
+
+                <EditText
+                    android:id="@+id/et_catatan"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:layout_marginLeft="4sp"
+                    android:layout_marginRight="3sp"
+                    android:hint=""
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
@@ -1360,6 +2092,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_location"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -1394,6 +2127,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_lat"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -1428,6 +2162,7 @@
                 app:cardElevation="4dp">
 
                 <EditText
+                    android:id="@+id/et_lng"
                     android:layout_width="match_parent"
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
@@ -1449,12 +2184,12 @@
             android:paddingTop="10dp"
             android:layout_margin="2dp">
             <Button
-                android:id="@+id/btn_fotod"
+                android:id="@+id/btn_foto1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:layout_margin="2dp"
-                android:text="Upload Foto Tampak Depan"
+                android:text="Upload Foto 1"
                 android:textColor="#000000"
                 android:textSize="18dp" />
 
@@ -1507,12 +2242,12 @@
             android:paddingTop="10dp"
             android:layout_margin="2dp">
             <Button
-                android:id="@+id/btn_fotokn"
+                android:id="@+id/btn_foto2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:layout_margin="2dp"
-                android:text="Upload Foto Dari Samping Kanan"
+                android:text="Upload Foto 2"
                 android:textColor="#000000"
                 android:textSize="18dp" />
 
@@ -1557,47 +2292,58 @@
             android:orientation="vertical"
             android:paddingTop="10dp"
             android:layout_margin="2dp">
-            <TextView
-                android:layout_width="wrap_content"
+
+            <Button
+                android:id="@+id/btn_foto3"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:layout_margin="2dp"
-                android:text="Foto Tampak Samping Kiri"
+                android:text="Upload Foto 3"
                 android:textColor="#000000"
                 android:textSize="18dp" />
 
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                app:cardElevation="5dp">
-                <ImageView
-                    android:id="@+id/iv_fotokiri"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/logosiiip"/>
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:paddingLeft="5dp"-->
+                <!--android:layout_margin="2dp"-->
+                <!--android:text="Foto Tampak Samping Kiri"-->
+                <!--android:textColor="#000000"-->
+                <!--android:textSize="18dp" />-->
 
-            </android.support.v7.widget.CardView>
+            <!--<android.support.v7.widget.CardView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="15dp"-->
+                <!--app:cardElevation="5dp">-->
+                <!--<ImageView-->
+                    <!--android:id="@+id/iv_fotokiri"-->
+                    <!--android:layout_width="200dp"-->
+                    <!--android:layout_height="200dp"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:background="@drawable/logosiiip"/>-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <Button
-                    android:id="@+id/btn_gallery3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Buka Gallery"
-                    android:layout_weight="1"/>
+            <!--</android.support.v7.widget.CardView>-->
 
-                <Button
-                    android:id="@+id/btn_upload3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Camera"
-                    android:layout_weight="1"/>
-            </LinearLayout>
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal">-->
+                <!--<Button-->
+                    <!--android:id="@+id/btn_gallery3"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Buka Gallery"-->
+                    <!--android:layout_weight="1"/>-->
+
+                <!--<Button-->
+                    <!--android:id="@+id/btn_upload3"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Camera"-->
+                    <!--android:layout_weight="1"/>-->
+            <!--</LinearLayout>-->
 
         </LinearLayout>
 
@@ -1607,47 +2353,119 @@
             android:orientation="vertical"
             android:paddingTop="10dp"
             android:layout_margin="2dp">
-            <TextView
-                android:layout_width="wrap_content"
+
+            <Button
+                android:id="@+id/btn_foto4"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:layout_margin="2dp"
-                android:text="Foto Tampak Belakang"
+                android:text="Upload Foto 4"
                 android:textColor="#000000"
                 android:textSize="18dp" />
 
-            <android.support.v7.widget.CardView
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:paddingLeft="5dp"-->
+                <!--android:layout_margin="2dp"-->
+                <!--android:text="Foto Tampak Belakang"-->
+                <!--android:textColor="#000000"-->
+                <!--android:textSize="18dp" />-->
+
+            <!--<android.support.v7.widget.CardView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="15dp"-->
+                <!--app:cardElevation="5dp">-->
+                <!--<ImageView-->
+                    <!--android:id="@+id/iv_fotobelakang"-->
+                    <!--android:layout_width="200dp"-->
+                    <!--android:layout_height="200dp"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:background="@drawable/logosiiip"/>-->
+
+            <!--</android.support.v7.widget.CardView>-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal">-->
+                <!--<Button-->
+                    <!--android:id="@+id/btn_gallery4"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Buka Gallery"-->
+                    <!--android:layout_weight="1"/>-->
+
+                <!--<Button-->
+                    <!--android:id="@+id/btn_upload4"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Camera"-->
+                    <!--android:layout_weight="1"/>-->
+            <!--</LinearLayout>-->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:layout_margin="2dp">
+
+            <Button
+                android:id="@+id/btn_foto5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                app:cardElevation="5dp">
-                <ImageView
-                    android:id="@+id/iv_fotobelakang"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/logosiiip"/>
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:text="Upload Foto 5"
+                android:textColor="#000000"
+                android:textSize="18dp" />
 
-            </android.support.v7.widget.CardView>
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:paddingLeft="5dp"-->
+            <!--android:layout_margin="2dp"-->
+            <!--android:text="Foto Tampak Belakang"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textSize="18dp" />-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <Button
-                    android:id="@+id/btn_gallery4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Buka Gallery"
-                    android:layout_weight="1"/>
+            <!--<android.support.v7.widget.CardView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="15dp"-->
+            <!--app:cardElevation="5dp">-->
+            <!--<ImageView-->
+            <!--android:id="@+id/iv_fotobelakang"-->
+            <!--android:layout_width="200dp"-->
+            <!--android:layout_height="200dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:background="@drawable/logosiiip"/>-->
 
-                <Button
-                    android:id="@+id/btn_upload4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Camera"
-                    android:layout_weight="1"/>
-            </LinearLayout>
+            <!--</android.support.v7.widget.CardView>-->
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+            <!--<Button-->
+            <!--android:id="@+id/btn_gallery4"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Buka Gallery"-->
+            <!--android:layout_weight="1"/>-->
+
+            <!--<Button-->
+            <!--android:id="@+id/btn_upload4"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Camera"-->
+            <!--android:layout_weight="1"/>-->
+            <!--</LinearLayout>-->
 
         </LinearLayout>
 

@@ -67,6 +67,8 @@ public class ListLaporanActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
+
+
         sharedpreferences = getSharedPreferences(my_shared_preferences, MODE_PRIVATE);
         token = sharedpreferences.getString("acces_token","");
         id = sharedpreferences.getString("id",null);
@@ -158,7 +160,10 @@ public class ListLaporanActivity extends AppCompatActivity {
     }
 
     public void intentPeriksa(){
-        startActivity(new Intent(ListLaporanActivity.this, FormActivity.class));
+        Intent intent = new Intent(ListLaporanActivity.this, DetailLapActivity.class);
+        intent.putExtra("id", id.trim());
+        startActivity(intent);
+//        startActivity(new Intent(ListLaporanActivity.this, FormActivity.class));
     }
 
 }

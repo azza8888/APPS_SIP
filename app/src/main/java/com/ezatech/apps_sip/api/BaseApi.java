@@ -9,6 +9,7 @@ import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface BaseApi {
@@ -54,6 +55,13 @@ public interface BaseApi {
                                     @Field("new_password")String new_password,
                                     @Field("new_password_confirmation")String new_password_confirmation);
 
+    @GET("pemeriksaan/add/{id}")
+    Call<ResponseBody> pemeriksaGetId(@Header("Authorization")String acces_token,
+                                      @Path("id")String id);
+
+    @GET("suratku/detail/{id}")
+    Call<ResponseBody> detailPendaftar(@Header("Autorization")String acces_token,
+                                       @Path("id")String id);
 
 
     @GET("load-daya")

@@ -19,6 +19,11 @@ import com.ezatech.apps_sip.api.RetrofitClient;
 import com.ezatech.apps_sip.api.UtilsApi;
 import com.ezatech.apps_sip.logRes.LoginActivity;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -72,11 +77,6 @@ public class GantiPasswordActivity extends AppCompatActivity {
         new_password = sharedpreferences.getString("new_password", null);
         new_password_confirmation = sharedpreferences.getString("new_password_confirmation", null);
 
-        sharedpreferences = getSharedPreferences(my_shared_preferences, MODE_PRIVATE);
-        String current_password = (sharedpreferences.getString("current_password", ""));
-        String new_password = (sharedpreferences.getString("new_password", ""));
-        String new_password_confirmation = (sharedpreferences.getString("new_password_confirmation", ""));
-
 
         String id = (sharedpreferences.getString("id", ""));
         etIdcpsr.setText(id);
@@ -101,26 +101,36 @@ public class GantiPasswordActivity extends AppCompatActivity {
         final String new_password_confirmation = etConfrimpassr.getText().toString();
 
         baseApi = RetrofitClient.getInstanceRetrofit();
-        baseApi.ubahPassword(token,etPasswordsr.getText().toString(),
+        baseApi.ubahPassword(token,
+                etPasswordsr.getText().toString().trim(),
                 etNewpasssr.getText().toString(),
                 etConfrimpassr.getText().toString())
                 .enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                         if (response.isSuccessful()){
-                            progressDialog.dismiss();
+                            try {
+                                progressDialog.dismiss();
+                                JSONObject object = new JSONObject(response.body().string());
+                                String msg = object.optString("msg");
+                                Toast.makeText(GantiPasswordActivity.this, ""+msg, Toast.LENGTH_SHORT).show();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
 
                             SharedPreferences sp = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
 
                             SharedPreferences.Editor editor = sp.edit();
-                            editor.putBoolean(LoginActivity.session_status, false);
+                            editor.putBoolean(LoginActivity.session_status, true);
                             editor.putString("acces_token", token);
                             editor.putString("current_password", current_password);
                             editor.putString("new_password", new_password);
                             editor.putString("new_password_confirmation", new_password_confirmation);
                             editor.commit();
 
-                            Toast.makeText(GantiPasswordActivity.this, "Ganti Password Berhasil", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(GantiPasswordActivity.this, LoginActivity.class);
                             startActivity(intent);
                         }
