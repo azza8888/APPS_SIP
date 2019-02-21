@@ -2,11 +2,13 @@ package com.ezatech.apps_sip.uploadLaporan;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +17,21 @@ import android.widget.ImageView;
 
 import com.ezatech.apps_sip.MainActivity;
 import com.ezatech.apps_sip.R;
+import com.ezatech.apps_sip.api.BaseApi;
+import com.ezatech.apps_sip.api.RetrofitClient;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static com.ezatech.apps_sip.logRes.LoginActivity.my_shared_preferences;
 
 public class FormActivity extends AppCompatActivity {
 
@@ -102,12 +119,26 @@ public class FormActivity extends AppCompatActivity {
     private EditText etBtl;
     private EditText etNmpemeriksa1;
     private EditText etNmpemeriksa2;
+    private String no_pend;
+    private SharedPreferences sharedpreferences;
+    private String token;
+    private String id_penerbit;
+    private int i=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
 
+        Bundle bundle = getIntent().getExtras();
+        no_pend     = bundle.getString("no_pendaftaran");
+
+        sharedpreferences = getSharedPreferences(my_shared_preferences, MODE_PRIVATE);
+        token = sharedpreferences.getString("acces_token","");
+        id_penerbit = sharedpreferences.getString("id","");
+//        no_pend = sharedpreferences.getString("no_pendaftaran","");
+
+        initView();
         mActionToolbar = (Toolbar) findViewById(R.id.tabs_upload);
         setSupportActionBar(mActionToolbar);
         getSupportActionBar().setTitle("Unggah Data Pemeriksa");
@@ -133,6 +164,146 @@ public class FormActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
+        btnBatal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(FormActivity.this);
+                builder.setTitle("Aplikasi SIP");
+                builder.setMessage("Jika anda ingin Membatalkan Penyimpanan takan (YA) !!!")
+                        .setIcon(android.R.drawable.ic_lock_power_off)
+                        .setCancelable(false)
+                        .setPositiveButton("YA", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                                    Intent intent = new Intent(FormActivity.this, MainActivity.class);
+                                    startActivity(intent);
+                                }
+
+                            }
+                        }).setNegativeButton("TIDAK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
+        });
+
+        getDataPendaftaran();
+        postDataPemeriksa();
+
+    }
+
+    private void postDataPemeriksa() {
+        BaseApi baseApi = RetrofitClient.getInstanceRetrofit();
+        baseApi.unggahPemeriksa(token,
+                etNolhpp.getText().toString(),
+                etTgllhpp.getText().toString(),
+                etGambarins.getText().toString(),
+                etDiagramgt.getText().toString(),
+                etPeutama.getText().toString(),
+                etPecabang.getText().toString(),
+                etPeakhir.getText().toString(),
+                etPekotakkontak.getText().toString(),
+                etJenispengut.getText().toString(),
+                etJenispengcab.getText().toString(),
+                etPenghantarbj.getText().toString(),
+                etPenghantarbp.getText().toString(),
+                etPenghantarbs.getText().toString(),
+                etSaklarutm.getText().toString(),
+                etSaklarcb1.getText().toString(),etSaklarcb2.getText().toString(),
+                etPhbkcb1.getText().toString(), etPhbkcb2.getText().toString(),
+                etPenghantarutm.getText().toString(), etPenghantarcbang.getText().toString(),
+                etPenghantarakhir.getText().toString(), etPenghantar3fs.getText().toString(),
+                etFittinglmp.getText().toString(), etPpkotakk.getText().toString(),
+                etPpsakelar.getText().toString(), etTinggikk.getText().toString(),
+                etTinggiphbk.getText().toString(), etJeniskk.getText().toString(),
+                etTandakmp.getText().toString(), etPengujipbbn.getText().toString(),
+                etJumlahphbutm.getText().toString(), etJumlahphb1fs.getText().toString(),
+                etJumlahphb3fs.getText().toString(), etJumlahphbcb.getText().toString(),
+                etJmlsalurancb.getText().toString(), etJmlsaluranakhir.getText().toString(),
+                etJmltitiklmp.getText().toString(), etJmlsakelar.getText().toString(),
+                etKkb.getText().toString(), etKkk.getText().toString(),
+                etThnislp.getText().toString(), etResistanpmb.getText().toString(),
+                etJmlmlu.getText().toString(), etJmlmlk.getText().toString(),
+                etCatatan.getText().toString(), etLocation.getText().toString(),
+                etLat.getText().toString(), etLng.getText().toString()
+                ).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()){
+                    try {
+                        JSONObject object = new JSONObject(response.body().string());
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void getDataPendaftaran() {
+        BaseApi api = RetrofitClient.getInstanceRetrofit();
+        api.pemeriksaGetNopend(token,no_pend)
+                .enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        try {
+                            JSONArray array = new JSONArray(response.body().string());
+                            JSONObject object = array.optJSONObject(i);
+                            String no_pendaftaran = object.getString("no_pendaftaran");
+                            String nama_pendaftaran = object.getString("nama");
+                            String alamat_pendaftaran = object.getString("alamat");
+                            String tarif_pendaftaran = object.getString("jenis_tarif");
+                            String daya_pendaftaran = object.getString("daya");
+                            String nama_btl = object.getString("nama_btl");
+                            String no_suratt = object.getString("no_surat");
+                            String namap1 = object.getString("pemeriksa1");
+                            String namap2 = object.getString("pemeriksa2");
+
+                            etNopendaftaran.setText(no_pendaftaran);
+                            etNamapen.setText(nama_pendaftaran);
+                            etAlmtpen.setText(alamat_pendaftaran);
+                            etTarif.setText(tarif_pendaftaran);
+                            etDaya.setText(daya_pendaftaran);
+                            etBtl.setText(nama_btl);
+                            etNosurat.setText(no_suratt);
+                            etNmpemeriksa1.setText(namap1);
+                            etNmpemeriksa2.setText(namap2);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                    }
+                });
+    }
+
+
+    //button back toolbar
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home)
+            finish();
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void initView() {
         etNamapen = (EditText) findViewById(R.id.et_namapen);
         etAlmtpen = (EditText) findViewById(R.id.et_almtpen);
         etTarif = (EditText) findViewById(R.id.et_tarif);
@@ -199,161 +370,7 @@ public class FormActivity extends AppCompatActivity {
         btnFoto4 = (Button) findViewById(R.id.btn_foto4);
         btnFoto5 = (Button) findViewById(R.id.btn_foto5);
 
-        ivFotodepan = (ImageView) findViewById(R.id.iv_fotodepan);
-        btnGallery = (Button) findViewById(R.id.btn_gallery);
-        btnUpload1 = (Button) findViewById(R.id.btn_upload1);
-        ivFotokanan = (ImageView) findViewById(R.id.iv_fotokanan);
-        btnGallery2 = (Button) findViewById(R.id.btn_gallery2);
-        btnUpload2 = (Button) findViewById(R.id.btn_upload2);
-        ivFotokiri = (ImageView) findViewById(R.id.iv_fotokiri);
-        btnGallery3 = (Button) findViewById(R.id.btn_gallery3);
-        btnUpload3 = (Button) findViewById(R.id.btn_upload3);
-        ivFotobelakang = (ImageView) findViewById(R.id.iv_fotobelakang);
-        btnGallery4 = (Button) findViewById(R.id.btn_gallery4);
-        btnUpload4 = (Button) findViewById(R.id.btn_upload4);
         btnSimpanupload = (Button) findViewById(R.id.btn_simpanupload);
         btnBatal = (Button) findViewById(R.id.btn_batal);
-
-//        btnGallery.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent();
-//                intent.setType("image/*");
-//                intent.setAction(Intent.ACTION_PICK);
-//                startActivityForResult(Intent.createChooser(intent, "Buka Galeri"), REQUEST_GALLERY);
-//            }
-//        });
-//
-//        btnUpload1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-//                startActivityForResult(Intent.createChooser(cameraIntent,"Ambil Foto"), CAMERA_REQUEST);
-//            }
-//        });
-//
-//        btnGallery2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent();
-//                intent.setType("image/*");
-//                intent.setAction(Intent.ACTION_PICK);
-//                startActivityForResult(Intent.createChooser(intent, "Buka Galeri"), REQUEST_GALLERY);
-//            }
-//        });
-//        btnUpload2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-//                startActivityForResult(cameraIntent, CAMERA_REQUEST);
-//            }
-//        });
-//
-//        btnGallery3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent();
-//                intent.setType("image/*");
-//                intent.setAction(Intent.ACTION_PICK);
-//                startActivityForResult(Intent.createChooser(intent, "Buka Galeri"), REQUEST_GALLERY);
-//            }
-//        });
-//
-//        btnUpload3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-//                startActivityForResult(cameraIntent, CAMERA_REQUEST);
-//            }
-//        });
-//
-//        btnGallery4.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent();
-//                intent.setType("image/*");
-//                intent.setAction(Intent.ACTION_PICK);
-//                startActivityForResult(Intent.createChooser(intent, "Buka Galeri"), REQUEST_GALLERY);
-//            }
-//        });
-//
-//        btnUpload4.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-//                startActivityForResult(cameraIntent, CAMERA_REQUEST);
-//            }
-//        });
-
-        btnBatal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(FormActivity.this);
-                builder.setTitle("Aplikasi SIP");
-                builder.setMessage("Jika anda ingin Membatalkan Penyimpanan takan (YA) !!!")
-                        .setIcon(android.R.drawable.ic_lock_power_off)
-                        .setCancelable(false)
-                        .setPositiveButton("YA", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                                    Intent intent = new Intent(FormActivity.this, MainActivity.class);
-                                    startActivity(intent);
-                                }
-
-                            }
-                        }).setNegativeButton("TIDAK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                AlertDialog alert = builder.create();
-                alert.show();
-            }
-        });
-        initView();
-    }
-
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if (resultCode == RESULT_OK) {
-//            if (requestCode == REQUEST_GALLERY) {
-//                Uri dataimage = data.getData();
-//                String[] imageprojection = {MediaStore.Images.Media.DATA};
-//                Cursor cursor = getContentResolver().query(dataimage, imageprojection, null, null, null);
-//                if (requestCode == CAMERA_REQUEST) {
-//                    Uri dataimage1 = data.getData();
-//                    String[] imageprojection1 = {MediaStore.Images.Media.DATA};
-//                    Cursor cursor1 = getContentResolver().query(dataimage1, imageprojection1, null, null, null);
-//                }
-//
-//                if (cursor != null) {
-//                    cursor.moveToFirst();
-//                    int indexImage = cursor.getColumnIndex(imageprojection[0]);
-//                    part_image = cursor.getString(indexImage);
-//
-//                    if (part_image != null) {
-//                        File image = new File(part_image);
-//                        ivFotodepan.setImageBitmap(BitmapFactory.decodeFile(image.getAbsolutePath()));
-//                    }
-//                }
-//            }
-//        }
-//    }
-
-
-    //button back toolbar
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home)
-            finish();
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void initView() {
-
-
     }
 }

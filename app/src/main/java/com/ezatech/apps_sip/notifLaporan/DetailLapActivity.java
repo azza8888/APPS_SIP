@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.ezatech.apps_sip.R;
@@ -63,10 +64,12 @@ public class DetailLapActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         id     = bundle.getString("id");
+//        no_pend = bundle.getString("no_pendaftaran");
 
         sharedpreferences = getSharedPreferences(my_shared_preferences, MODE_PRIVATE);
         token = sharedpreferences.getString("acces_token","");
         id_penerbit = sharedpreferences.getString("id","");
+        no_pend = sharedpreferences.getString("no_pendaftaran","");
 
         recyclerView = findViewById(R.id.rv_listdetailpel);
         recyclerView.setHasFixedSize(true);
@@ -93,16 +96,17 @@ public class DetailLapActivity extends AppCompatActivity {
 
                             JSONObject object = jsonObject.optJSONObject("pelanggan");
                             String no_pend = object.getString("no_pendaftaran");
+
                             String nama_pend = object.getString("nama");
                             String alamat_pend = object.getString("alamat");
 
-                            JSONObject object1 = object.optJSONObject("tarif");
+                            JSONObject object1 = jsonObject.optJSONObject("tarif");
                             String tarif_pend = object1.getString("jenis_tarif");
 
-                            JSONObject object2 = object1.optJSONObject("daya");
+                            JSONObject object2 = jsonObject.optJSONObject("daya");
                             String daya_pend = object2.getString("daya");
 
-                            JSONObject object3 = object2.optJSONObject("penyedia");
+                            JSONObject object3 = jsonObject.optJSONObject("penyedia");
                             String btl_pend = object3.getString("nama_penyedia");
 
                             Pelanggan pelanggan = new Pelanggan();
@@ -142,7 +146,10 @@ public class DetailLapActivity extends AppCompatActivity {
     }
 
 
-    public void goToPerksa() {
-        startActivity(new Intent(DetailLapActivity.this, FormActivity.class));
-    }
+//    public void goToPerksa() {
+//        Intent intent = new Intent(DetailLapActivity.this, FormActivity.class);
+////        intent.putExtra("no_pendaftaran", no_pend.trim());
+////        Log.d("", "goToPerksa1111111: "+no_pend);
+//        startActivity(intent);
+//    }
 }
