@@ -1,5 +1,8 @@
 package com.ezatech.apps_sip.api;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.IOException;
 
 import okhttp3.Interceptor;
@@ -48,10 +51,14 @@ public class RetrofitClient {
 //                return chain.proceed(newRequest);
 //            }
 //        }).build();
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL_API)
                 .client(client)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
         return retrofit;
     }

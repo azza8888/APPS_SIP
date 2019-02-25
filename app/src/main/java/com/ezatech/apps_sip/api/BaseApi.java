@@ -1,5 +1,9 @@
 package com.ezatech.apps_sip.api;
 
+import com.ezatech.apps_sip.data.FormResultModel;
+
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -9,6 +13,7 @@ import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -63,9 +68,68 @@ public interface BaseApi {
     Call<ResponseBody> detailPendaftar(@Header("Authorization")String acces_token,
                                        @Path("id")String id);
 
+    @Multipart
+    @POST("pemeriksa")
+    Call<FormResultModel> unggahPemeriksa(
+            @Header("Authorization") String acces_token,
+            @Part("no_lhpp")RequestBody no_lhpp,
+            @Part("tgl_lhpp")RequestBody tgl_lhpp,
+            @Part("gambar_instalasi")RequestBody gambar_instalasi,
+            @Part("diagram_garis_tunggal")RequestBody digramgt,
+            @Part("pe_utama")RequestBody pe_utama,
+            @Part("pe_cabang")RequestBody pe_cabang,
+            @Part("pe_akhir")RequestBody pe_akhir,
+            @Part("pe_kotak_kontak")RequestBody pe_kotakk,
+            @Part("jenis_peng_utama")RequestBody jenispu,
+            @Part("jenis_peng_cabang")RequestBody jenispc,
+            @Part("penghantar_bumi_jenis")RequestBody penghantarbj,
+            @Part("penghantar_bumi_penampang")RequestBody penghantarbp,
+            @Part("penghantar_bumi_sistem")RequestBody penghantarbs,
+            @Part("saklar_utama")RequestBody saklar_utama,
+            @Part("saklar_cabang1")RequestBody saklar_cb1,
+            @Part("saklar_cabang2")RequestBody saklar_cb2,
+            @Part("phbk_cabang1")RequestBody phbk_cb1,
+            @Part("phbk_cabang2")RequestBody phbk_cb2,
+            @Part("penghantar_utama")RequestBody penghantar_utama,
+            @Part("penghantar_cabang")RequestBody penghantar_cb,
+            @Part("penghantar_akhir")RequestBody penghantar_ar,
+            @Part("penghantar_3fasa")RequestBody penghantar_3f,
+            @Part("fitting_lampu")RequestBody fitting_lamp,
+            @Part("kotak_kontak")RequestBody kotak_kontak,
+            @Part("sakelar")RequestBody sakelar,
+            @Part("tinggi_kotak_kontak")RequestBody tinggikk,
+            @Part("tinggi_phbk")RequestBody tinggi_phbk,
+            @Part("jenis_kotak_kontak")RequestBody jeniskk,
+            @Part("tanda_komponen")RequestBody tanda_komponen,
+            @Part("pengujian_pembebanan")RequestBody pengujian_pembebanan,
+            @Part("jml_phb_utama")RequestBody jml_pu,
+            @Part("jml_phb_1fasa")RequestBody jml_p1f,
+            @Part("jml_phb_3fasa")RequestBody jml_p3f,
+            @Part("jml_phb_cabang")RequestBody jml_pcb,
+            @Part("jml_saluran_cabang")RequestBody jml_cb,
+            @Part("jml_saluran_akhir")RequestBody jml_sa,
+            @Part("jml_titik_lampu")RequestBody jml_tl,
+            @Part("jml_sakelar")RequestBody jml_sakelar,
+            @Part("kkb")RequestBody kkb,
+            @Part("kkk")RequestBody kkk,
+            @Part("tahanan_isolasi_penghantar")RequestBody tahanan_ip,
+            @Part("resisten_pembumian")RequestBody resisten_pmb,
+            @Part("jml_motor_listrik_unit")RequestBody jml_mlu,
+            @Part("jml_motor_listrik_kwh")RequestBody jml_mlk,
+            @Part("catatan")RequestBody catatan,
+            @Part("location")RequestBody location,
+            @Part("lat")RequestBody lat,
+            @Part("lng")RequestBody lng,
+            @Part MultipartBody.Part file,
+            @Part MultipartBody.Part file2,
+            @Part MultipartBody.Part file3,
+            @Part MultipartBody.Part file4,
+            @Part MultipartBody.Part file5
+    );
+
     @FormUrlEncoded
     @POST("pemeriksa")
-    Call<ResponseBody> unggahPemeriksa(
+    Call<ResponseBody> uploadPemeriksa(
             @Header("Authorization")String acces_token,
             @Field("no_lhpp")String no_lhpp,
             @Field("tgl_lhpp")String tgl_lhpp,
@@ -114,8 +178,9 @@ public interface BaseApi {
             @Field("catatan")String catatan,
             @Field("location")String location,
             @Field("lat")String lat,
-            @Field("lng")String lng
-    );
+            @Field("lng")String lng,
+            @Field("foto1") String foto1);
+
 
     @GET("load-daya")
     Call<ResponseBody> load_daya(@Header("Authorization")String token);

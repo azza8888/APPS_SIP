@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#9cb1ab"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -16,114 +17,32 @@
 
     </android.support.v7.widget.Toolbar>
 
+    <com.daimajia.slider.library.SliderLayout
+        android:id="@+id/slider"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:background="#9cb1ab" />
 
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <RelativeLayout
+<!--<ScrollView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content">-->
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:background="#dad2d2">
-        <LinearLayout
-            android:orientation="vertical"
-            android:id="@+id/rel"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="260dp">
 
-            <TableLayout
-                android:id="@+id/tableLayout"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:gravity="center">
-
-                <TableRow>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="* "
-                        android:textColor="#045d8e" />
-
-                    <TextView
-                        android:textSize="16sp"
-                        android:layout_width="250dp"
-                        android:layout_height="match_parent"
-                        android:text="Tekan Gambar Dibawah jika Anda  "
-                        android:textColor="#045d8e" />
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:textColor="#E4E9EF" />
-
-                    <TextView
-                        android:textSize="16sp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="ingin melakukan pengecekan "
-                        android:textColor="#045d8e" />
-
-                </TableRow>
-
-            </TableLayout>
-
-
-            <!--<com.spark.submitbutton.SubmitButton-->
-                <!--android:id="@+id/btn_lapor"-->
-                <!--android:layout_marginTop="50dp"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:text="Tap Disini"-->
-                <!--android:textColor="@color/gray"-->
-                <!--android:textSize="12sp"-->
-                <!--app:sub_btn_background="@color/white"-->
-                <!--app:sub_btn_duration="1000"-->
-                <!--app:sub_btn_line_color="@color/colorPrimary"-->
-                <!--app:sub_btn_ripple_color="@color/colorPrimaryDark"-->
-                <!--app:sub_btn_tick_color="@color/white" />-->
-
-            <Button
-                android:id="@+id/btn_lapor"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="25dp"
-                android:background="@drawable/ripple_effect"
-                android:text="Periksa"
-                android:textSize="18sp"/>
-
-            <TextView
-                android:visibility="invisible"
-                android:id="@+id/feedback2"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/btn_lapor"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:text="Konfirmasi Keadaan Anda"
-                android:textColor="@color/colorPrimary" />
-
-        </LinearLayout>
 
 
         <LinearLayout
-            android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/rel"
-            android:layout_weight="8"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:layout_weight="2"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -296,11 +215,19 @@
 
 
             </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textColor="#0d39d6"
+                android:textStyle="italic"
+                android:text="Semangat Bekerja SIP,SIP, SIPPPPP"/>
 
         </LinearLayout>
 
-    </RelativeLayout>
-</ScrollView>
+    </LinearLayout>
+<!--</ScrollView>-->
 
 
 

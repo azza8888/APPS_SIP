@@ -67,7 +67,7 @@ public class AdapterDetailPel extends RecyclerView.Adapter<AdapterDetailPel.Adap
 
     public class AdapterHolder extends RecyclerView.ViewHolder {
         private TextView tvIdpenerbit;
-        private TextView tvNopendaf;
+        private Button tvNopendaf;
         private EditText etNamapel;
         private EditText etAlamatpel;
         private EditText etTarifpel;
@@ -79,7 +79,7 @@ public class AdapterDetailPel extends RecyclerView.Adapter<AdapterDetailPel.Adap
 
             tvIdpenerbit = (TextView) itemView.findViewById(R.id.tv_idpenerbit);
             tvIdpenerbit.setVisibility(View.INVISIBLE);
-            tvNopendaf = (TextView) itemView.findViewById(R.id.tv_nopendaf);
+            tvNopendaf = (Button) itemView.findViewById(R.id.tv_nopendaf);
             tvNopendaf.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

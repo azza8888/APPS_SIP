@@ -13,19 +13,25 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.slider.library.Animations.DescriptionAnimation;
+import com.daimajia.slider.library.SliderLayout;
+import com.daimajia.slider.library.SliderTypes.BaseSliderView;
+import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.ezatech.apps_sip.notifLaporan.ListLaporanActivity;
 import com.ezatech.apps_sip.pengaturan.PengaturanActivity;
 import com.ezatech.apps_sip.pengguna.ProfilActivity;
 import com.ezatech.apps_sip.riwayatNotif.RiwayatActivity;
 import com.ezatech.apps_sip.uploadLaporan.FormActivity;
 
+import java.util.HashMap;
+
 import static com.ezatech.apps_sip.logRes.LoginActivity.my_shared_preferences;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnLapor;
-    private TextView feedback2;
+
     private LinearLayout riwayatNotifikasi;
+    private SliderLayout sliderLayout;
     private LinearLayout konfirmasiPelapor;
     private LinearLayout pengguna;
     private LinearLayout pengaturan;
@@ -41,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         mActionToolbar = (Toolbar) findViewById(R.id.tabs_MainActivity);
         setSupportActionBar(mActionToolbar);
-        getSupportActionBar().setTitle("Menu");
+        getSupportActionBar().setTitle("Aplikasi SIP");
 
 //        if (getSupportActionBar() != null) {
 //            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
@@ -64,12 +70,36 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "TTTTTT: "+access_token);
 
 
-        btnLapor = (Button) findViewById(R.id.btn_lapor);
-        feedback2 = (TextView) findViewById(R.id.feedback2);
+//        btnLapor = (Button) findViewById(R.id.btn_lapor);
+//        feedback2 = (TextView) findViewById(R.id.feedback2);
         riwayatNotifikasi = (LinearLayout) findViewById(R.id.riwayat_notifikasi);
         konfirmasiPelapor = (LinearLayout) findViewById(R.id.konfirmasi_pelapor);
         pengguna = (LinearLayout) findViewById(R.id.pengguna);
         pengaturan = (LinearLayout) findViewById(R.id.pengaturan);
+        sliderLayout = (SliderLayout) findViewById(R.id.slider);
+
+        HashMap<String,Integer> file_maps = new HashMap<String, Integer>();
+        file_maps.put("Aplikasi SIP",R.drawable.logosiiip);
+        file_maps.put("Icon Badai",R.drawable.storm1);
+        file_maps.put("Icon Petir",R.drawable.thunder);
+        for(String name : file_maps.keySet()){
+            TextSliderView textSliderView = new TextSliderView(this);
+            // initialize a SliderLayout
+            textSliderView
+                    .description(name)
+                    .image(file_maps.get(name))
+                    .setScaleType(BaseSliderView.ScaleType.Fit);
+            //add your extra information
+            textSliderView.bundle(new Bundle());
+            textSliderView.getBundle()
+                    .putString("extra",name);
+            sliderLayout.addSlider(textSliderView);
+        }
+        sliderLayout.setPresetTransformer(SliderLayout.Transformer.Accordion);
+        sliderLayout.setPresetIndicator(SliderLayout.PresetIndicators.Left_Top);
+        sliderLayout.setCustomAnimation(new DescriptionAnimation());
+
+        sliderLayout.setDuration(4000);
 
         pengguna.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,14 +136,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnLapor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final Intent intent = new Intent(MainActivity.this, FormActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-            }
-        });
+//        btnLapor.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                final Intent intent = new Intent(MainActivity.this, FormActivity.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                startActivity(intent);
+//            }
+//        });
     }
 
 

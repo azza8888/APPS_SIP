@@ -46,14 +46,20 @@
                 <!--android:layout_height="wrap_content"-->
                 <!--android:backgroundTint="#39aae9"-->
                 <!--android:text="Nomer Laporan"/>-->
-                <TextView
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_nopendaf"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45dp"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="NOMOR PENDAFTARAN"-->
+                    <!--android:textSize="17dp"-->
+                    <!--android:textStyle="bold" />-->
+                <Button
                     android:id="@+id/tv_nopendaf"
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:gravity="center"
+                    android:layout_height="wrap_content"
                     android:text="NOMOR PENDAFTARAN"
-                    android:textSize="17dp"
-                    android:textStyle="bold" />
+                    android:background="@drawable/ripple_effect"/>
 
             </android.support.v7.widget.CardView>
 
