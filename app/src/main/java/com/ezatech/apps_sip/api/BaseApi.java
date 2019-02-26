@@ -72,6 +72,9 @@ public interface BaseApi {
     @POST("pemeriksa")
     Call<FormResultModel> unggahPemeriksa(
             @Header("Authorization") String acces_token,
+            @Part("no_pendaftaran")RequestBody no_pendaftaran,
+            @Part("no_surat_tugas")RequestBody no_surat_tgs,
+            @Part("no_pemeriksaan")RequestBody no_pemeriksaan,
             @Part("no_lhpp")RequestBody no_lhpp,
             @Part("tgl_lhpp")RequestBody tgl_lhpp,
             @Part("gambar_instalasi")RequestBody gambar_instalasi,
@@ -82,12 +85,14 @@ public interface BaseApi {
             @Part("pe_kotak_kontak")RequestBody pe_kotakk,
             @Part("jenis_peng_utama")RequestBody jenispu,
             @Part("jenis_peng_cabang")RequestBody jenispc,
+            @Part("jenis_peng_akhir")RequestBody jenispakhir,
             @Part("penghantar_bumi_jenis")RequestBody penghantarbj,
             @Part("penghantar_bumi_penampang")RequestBody penghantarbp,
             @Part("penghantar_bumi_sistem")RequestBody penghantarbs,
             @Part("saklar_utama")RequestBody saklar_utama,
             @Part("saklar_cabang1")RequestBody saklar_cb1,
             @Part("saklar_cabang2")RequestBody saklar_cb2,
+            @Part("phbk_utama")RequestBody phbk_utama,
             @Part("phbk_cabang1")RequestBody phbk_cb1,
             @Part("phbk_cabang2")RequestBody phbk_cb2,
             @Part("penghantar_utama")RequestBody penghantar_utama,
@@ -126,6 +131,9 @@ public interface BaseApi {
             @Part MultipartBody.Part file4,
             @Part MultipartBody.Part file5
     );
+
+    @GET("generate-lhpp")
+    Call<ResponseBody> getNoLhpp(@Header("Authorization")String acces_token);
 
     @FormUrlEncoded
     @POST("pemeriksa")

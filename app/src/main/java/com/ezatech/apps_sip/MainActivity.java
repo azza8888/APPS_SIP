@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
         HashMap<String,Integer> file_maps = new HashMap<String, Integer>();
         file_maps.put("Aplikasi SIP",R.drawable.logosiiip);
-        file_maps.put("Icon Badai",R.drawable.storm1);
+        file_maps.put("Sip,SIP,Sip",R.drawable.screen);
         file_maps.put("Icon Petir",R.drawable.thunder);
         for(String name : file_maps.keySet()){
             TextSliderView textSliderView = new TextSliderView(this);

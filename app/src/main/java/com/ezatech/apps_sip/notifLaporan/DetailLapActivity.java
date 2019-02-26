@@ -68,7 +68,7 @@ public class DetailLapActivity extends AppCompatActivity {
 
         sharedpreferences = getSharedPreferences(my_shared_preferences, MODE_PRIVATE);
         token = sharedpreferences.getString("acces_token","");
-        id_penerbit = sharedpreferences.getString("id","");
+        id = sharedpreferences.getString("id","");
         no_pend = sharedpreferences.getString("no_pendaftaran","");
 
         recyclerView = findViewById(R.id.rv_listdetailpel);

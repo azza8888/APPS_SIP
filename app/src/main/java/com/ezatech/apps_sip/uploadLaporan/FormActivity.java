@@ -56,6 +56,10 @@ public class FormActivity extends AppCompatActivity {
     private Button btnBatal;
     private int REQUEST_GALLERY = 9544;
     private int CAMERA_REQUEST = 7777;
+    private int CAMERA_REQUEST1 = 6666;
+    private int CAMERA_REQUEST2 = 8888;
+    private int CAMERA_REQUEST3 = 9955;
+    private int CAMERA_REQUEST4 = 9954;
     private int MY_PERMISSIONS_REQUEST_FINE_LOCATION = 1;
     private String part_image;
     private String part_image1;
@@ -83,6 +87,7 @@ public class FormActivity extends AppCompatActivity {
     private EditText etSaklarutm;
     private EditText etSaklarcb1;
     private EditText etSaklarcb2;
+    private EditText etPhbkUtama;
     private EditText etPhbkcb1;
     private EditText etPhbkcb2;
     private EditText etPenghantarutm;
@@ -134,14 +139,6 @@ public class FormActivity extends AppCompatActivity {
     private ImageView ivFoto3;
     private ImageView ivFoto4;
     private ImageView ivFoto5;
-//    private ImageView ivFoto2;
-//    private Button btnCamera2;
-//    private ImageView ivFoto3;
-//    private Button btnCamera3;
-//    private ImageView ivFoto4;
-//    private Button btnCamera4;
-//    private ImageView ivFoto5;
-//    private Button btnCamera5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -182,7 +179,7 @@ public class FormActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        btnCamera1.setOnClickListener(new View.OnClickListener() {
+        ivFoto1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 postCamera1();
@@ -193,6 +190,24 @@ public class FormActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 postCamera2();
+            }
+        });
+        ivFoto3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                postCamera3();
+            }
+        });
+        ivFoto4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                postCamera4();
+            }
+        });
+        ivFoto5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                postCamera5();
             }
         });
 
@@ -228,10 +243,10 @@ public class FormActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-//                postDataPemeriksa();
                 kirimData();
             }
         });
+        getNoLhpp();
         getDataPendaftaran();
 
     }
@@ -244,7 +259,19 @@ public class FormActivity extends AppCompatActivity {
 
     private void postCamera2() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(intent, 7778);
+        startActivityForResult(intent, CAMERA_REQUEST1);
+    }
+    private void postCamera3() {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, CAMERA_REQUEST2);
+    }
+    private void postCamera4() {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, CAMERA_REQUEST3);
+    }
+    private void postCamera5() {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, CAMERA_REQUEST4);
     }
 
 
@@ -262,12 +289,15 @@ public class FormActivity extends AppCompatActivity {
                     int indexImage = cursor.getColumnIndex(imageprojection[0]);
                     part_image = cursor.getString(indexImage);
 
-                    Picasso.with(this).load(new File(part_image)).into(ivFoto1);
+                    Picasso.with(this).load(new File(part_image))
+                            .fit()
+                            .centerCrop()
+                            .into(ivFoto1);
                     foto1 = new File(part_image);
                 }
 
             }
-            if (requestCode == 7778) {
+            if (requestCode == CAMERA_REQUEST1) {
                 Uri dataimage = data.getData();
                 String[] imageprojection = {MediaStore.Images.Media.DATA};
                 Cursor cursor = getContentResolver().query(dataimage, imageprojection, null, null, null);
@@ -277,12 +307,15 @@ public class FormActivity extends AppCompatActivity {
                     int indexImage = cursor.getColumnIndex(imageprojection[0]);
                     part_image1 = cursor.getString(indexImage);
 
-                    Picasso.with(this).load(new File(part_image1)).into(ivFoto2);
+                    Picasso.with(this).load(new File(part_image1))
+                            .fit()
+                            .centerCrop()
+                            .into(ivFoto2);
                     foto2 = new File(part_image1);
                 }
 
             }
-            if (requestCode == 7779) {
+            if (requestCode == CAMERA_REQUEST2) {
                 Uri dataimage = data.getData();
                 String[] imageprojection = {MediaStore.Images.Media.DATA};
                 Cursor cursor = getContentResolver().query(dataimage, imageprojection, null, null, null);
@@ -292,13 +325,16 @@ public class FormActivity extends AppCompatActivity {
                     int indexImage = cursor.getColumnIndex(imageprojection[0]);
                     part_image2 = cursor.getString(indexImage);
 
-                    Picasso.with(this).load(new File(part_image2)).into(ivFoto3);
+                    Picasso.with(this).load(new File(part_image2))
+                            .fit()
+                            .centerCrop()
+                            .into(ivFoto3);
                     foto3 = new File(part_image2);
                 }
 
             }
 
-            if (requestCode == 7780) {
+            if (requestCode == CAMERA_REQUEST3) {
                 Uri dataimage = data.getData();
                 String[] imageprojection = {MediaStore.Images.Media.DATA};
                 Cursor cursor = getContentResolver().query(dataimage, imageprojection, null, null, null);
@@ -308,13 +344,16 @@ public class FormActivity extends AppCompatActivity {
                     int indexImage = cursor.getColumnIndex(imageprojection[0]);
                     part_image3 = cursor.getString(indexImage);
 
-                    Picasso.with(this).load(new File(part_image3)).into(ivFoto4);
+                    Picasso.with(this).load(new File(part_image3))
+                            .fit()
+                            .centerCrop()
+                            .into(ivFoto4);
                     foto4 = new File(part_image3);
                 }
 
             }
 
-            if (requestCode == 7781) {
+            if (requestCode == CAMERA_REQUEST4) {
                 Uri dataimage = data.getData();
                 String[] imageprojection = {MediaStore.Images.Media.DATA};
                 Cursor cursor = getContentResolver().query(dataimage, imageprojection, null, null, null);
@@ -324,7 +363,10 @@ public class FormActivity extends AppCompatActivity {
                     int indexImage = cursor.getColumnIndex(imageprojection[0]);
                     part_image4 = cursor.getString(indexImage);
 
-                    Picasso.with(this).load(new File(part_image4)).into(ivFoto5);
+                    Picasso.with(this).load(new File(part_image4))
+                            .fit()
+                            .centerCrop()
+                            .into(ivFoto5);
                     foto5 = new File(part_image4);
                 }
 
@@ -344,15 +386,22 @@ public class FormActivity extends AppCompatActivity {
 
         RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/from-data"), foto1);
         MultipartBody.Part body = MultipartBody.Part.createFormData("foto1", foto1.getName(), requestFile);
+
         RequestBody requestFile2 = RequestBody.create(MediaType.parse("multipart/from-data"), foto2);
         MultipartBody.Part body2 = MultipartBody.Part.createFormData("foto2", foto2.getName(), requestFile2);
+
         RequestBody requestFile3 = RequestBody.create(MediaType.parse("multipart/from-data"), foto3);
         MultipartBody.Part body3 = MultipartBody.Part.createFormData("foto3", foto3.getName(), requestFile3);
+
         RequestBody requestFile4 = RequestBody.create(MediaType.parse("multipart/from-data"), foto4);
         MultipartBody.Part body4 = MultipartBody.Part.createFormData("foto4", foto4.getName(), requestFile4);
+
         RequestBody requestFile5 = RequestBody.create(MediaType.parse("multipart/from-data"), foto5);
         MultipartBody.Part body5 = MultipartBody.Part.createFormData("foto5", foto5.getName(), requestFile5);
 
+        RequestBody noPendaftaran = RequestBody.create(MediaType.parse("text/plain"), etNopendaftaran.getText().toString().trim());
+        RequestBody noSuratTgs = RequestBody.create(MediaType.parse("text/plain"), etNosurat.getText().toString().trim());
+        RequestBody noPemeriksaan = RequestBody.create(MediaType.parse("text/plain"), etNopemeriksa.getText().toString().trim());
         RequestBody noLhpp = RequestBody.create(MediaType.parse("text/plain"), etNolhpp.getText().toString().trim());
         RequestBody tglLhpp = RequestBody.create(MediaType.parse("text/plain"), etTgllhpp.getText().toString().trim());
         RequestBody gambarIns = RequestBody.create(MediaType.parse("text/plain"), etGambarins.getText().toString().trim());
@@ -363,12 +412,14 @@ public class FormActivity extends AppCompatActivity {
         RequestBody peKotakKontak = RequestBody.create(MediaType.parse("text/plain"), etPekotakkontak.getText().toString().trim());
         RequestBody jenisPengut = RequestBody.create(MediaType.parse("text/plain"), etJenispengut.getText().toString().trim());
         RequestBody jenisPengeCab = RequestBody.create(MediaType.parse("text/plain"), etJenispengcab.getText().toString().trim());
+        RequestBody jenisPengAkhir = RequestBody.create(MediaType.parse("text/plain"), etJenispengakhir.getText().toString().trim());
         RequestBody penghantarbj = RequestBody.create(MediaType.parse("text/plain"), etPenghantarbj.getText().toString().trim());
         RequestBody penghantarbp = RequestBody.create(MediaType.parse("text/plain"), etPenghantarbp.getText().toString().trim());
         RequestBody penghantarbs = RequestBody.create(MediaType.parse("text/plain"), etPenghantarbs.getText().toString().trim());
         RequestBody saklarUtm = RequestBody.create(MediaType.parse("text/plain"), etSaklarutm.getText().toString().trim());
         RequestBody saklarCb1 = RequestBody.create(MediaType.parse("text/plain"), etSaklarcb1.getText().toString().trim());
         RequestBody saklarCb2 = RequestBody.create(MediaType.parse("text/plain"), etSaklarcb2.getText().toString().trim());
+        RequestBody phbkUtama = RequestBody.create(MediaType.parse("text/plain"), etPhbkUtama.getText().toString().trim());
         RequestBody phbkCb1 = RequestBody.create(MediaType.parse("text/plain"), etPhbkcb1.getText().toString().trim());
         RequestBody phbkCb2 = RequestBody.create(MediaType.parse("text/plain"), etPhbkcb2.getText().toString().trim());
         RequestBody penghantarUtm = RequestBody.create(MediaType.parse("text/plain"), etPenghantarutm.getText().toString().trim());
@@ -403,33 +454,25 @@ public class FormActivity extends AppCompatActivity {
         RequestBody lng = RequestBody.create(MediaType.parse("text/plain"), etLng.getText().toString().trim());
 
         BaseApi api = RetrofitClient.getInstanceRetrofit();
-        api.unggahPemeriksa(token,
+        api.unggahPemeriksa(token, noPendaftaran,noSuratTgs,noPemeriksaan,
                 noLhpp, tglLhpp, gambarIns, diagramT, peUtama, peCabang, peAkhir,
-                peKotakKontak, jenisPengut, jenisPengeCab, penghantarbj, penghantarbp,
-                penghantarbs, saklarUtm, saklarCb1, saklarCb2, phbkCb1, phbkCb2, penghantarUtm,
+                peKotakKontak, jenisPengut, jenisPengeCab, jenisPengAkhir,
+                penghantarbj, penghantarbp,
+                penghantarbs, saklarUtm, saklarCb1, saklarCb2,phbkUtama, phbkCb1, phbkCb2, penghantarUtm,
                 penghantarCb, penghantarAkhir, penghantar3fs, fittingLamp, ppKotakk, ppSakelar,
                 tinggiKk, tinggiPhbk, jenisKk, tandaKmp, pengujiPbbn, jumlahPhbUtm, jumlahPhb1fs,
                 jumlahPhb3fs, jumlahPhbCb, jumlahSalurancb, jumlahSaluranAkhir, jmlTitiklmp, jmlSakelar,
                 kkb, kkk, tahananIsolasiP, resistanPmb, jmlmlu, jmlmlk, catatan,
-                location, lng, lat, body,body2,body3,body4,body5)
+                location, lat, lng, body,body2,body3,body4,body5
+        )
                 .enqueue(new Callback<FormResultModel>() {
                     @Override
                     public void onResponse(Call<FormResultModel> call, Response<FormResultModel> response) {
                         if (response.isSuccessful()) {
                             p.dismiss();
+                            Intent intent = new Intent(FormActivity.this, MainActivity.class);
                             Toast.makeText(FormActivity.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
-//                            try {
-//                                JSONObject jsonObject = new JSONObject(response.body().string());
-//                                String msg = jsonObject.optString("msg");
-//                                Toast.makeText(FormActivity.this, ""+msg, Toast.LENGTH_SHORT).show();
-//                            } catch (JSONException e) {
-//                                e.printStackTrace();
-//                                Log.d("FORMACTIVITY", "onResponse: "+e.getMessage());
-//
-//                            } catch (IOException e) {
-//                                e.printStackTrace();
-//                                Log.d("FORMACTIVITY", "onResponse: "+e.getMessage());
-//                            }
+                            startActivity(intent);
                         }
                     }
 
@@ -509,6 +552,10 @@ public class FormActivity extends AppCompatActivity {
         }
         if (etSaklarcb2== null) {
             Toast.makeText(this, "Sakelar (sakelar cabang2) Kosong", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (etPhbkUtama==null){
+            Toast.makeText(this, "Proteksi Sirkit Akhir (PHBK Utama) Kosong", Toast.LENGTH_SHORT).show();
             return false;
         }
         if (etPhbkcb1== null) {
@@ -662,6 +709,30 @@ public class FormActivity extends AppCompatActivity {
         return true;
     }
 
+    private void getNoLhpp() {
+        BaseApi api = RetrofitClient.getInstanceRetrofit();
+        api.getNoLhpp(token).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                    JSONObject object = new JSONObject(response.body().string());
+                    String noLhpp = object.optString("noLhpp");
+                    etNolhpp.setText(noLhpp);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
+
+    }
+
 
 
     private void getDataPendaftaran() {
@@ -744,6 +815,7 @@ public class FormActivity extends AppCompatActivity {
         etSaklarutm = (EditText) findViewById(R.id.et_saklarutm);
         etSaklarcb1 = (EditText) findViewById(R.id.et_saklarcb1);
         etSaklarcb2 = (EditText) findViewById(R.id.et_saklarcb2);
+        etPhbkUtama = (EditText) findViewById(R.id.et_phbkUtama);
         etPhbkcb1 = (EditText) findViewById(R.id.et_phbkcb1);
         etPhbkcb2 = (EditText) findViewById(R.id.et_phbkcb2);
         etPenghantarutm = (EditText) findViewById(R.id.et_penghantarutm);
@@ -781,7 +853,6 @@ public class FormActivity extends AppCompatActivity {
         btnBatal = (Button) findViewById(R.id.btn_batal);
         ivFoto1 = (ImageView) findViewById(R.id.iv_foto1);
         ivFoto2 = (ImageView) findViewById(R.id.iv_foto2);
-        btnCamera1 = (Button) findViewById(R.id.btn_camera1);
         ivFoto3 = (ImageView) findViewById(R.id.iv_foto3);
         ivFoto4 = (ImageView) findViewById(R.id.iv_foto4);
         ivFoto5 = (ImageView) findViewById(R.id.iv_foto5);
