@@ -23,7 +23,8 @@ public interface BaseApi {
     @POST("login")
     Call<ResponseBody> login(
             @Field("username")String username,
-            @Field("password")String password);
+            @Field("password")String password,
+            @Field("token")String token);
 
 
 //    @Headers({"Authorization : Bearer token"})
@@ -72,9 +73,9 @@ public interface BaseApi {
     @POST("pemeriksa")
     Call<FormResultModel> unggahPemeriksa(
             @Header("Authorization") String acces_token,
+            @Part("id_pelanggan")RequestBody id_pelanggan,
             @Part("no_pendaftaran")RequestBody no_pendaftaran,
             @Part("no_surat_tugas")RequestBody no_surat_tgs,
-            @Part("no_pemeriksaan")RequestBody no_pemeriksaan,
             @Part("no_lhpp")RequestBody no_lhpp,
             @Part("tgl_lhpp")RequestBody tgl_lhpp,
             @Part("gambar_instalasi")RequestBody gambar_instalasi,
@@ -92,6 +93,7 @@ public interface BaseApi {
             @Part("saklar_utama")RequestBody saklar_utama,
             @Part("saklar_cabang1")RequestBody saklar_cb1,
             @Part("saklar_cabang2")RequestBody saklar_cb2,
+
             @Part("phbk_utama")RequestBody phbk_utama,
             @Part("phbk_cabang1")RequestBody phbk_cb1,
             @Part("phbk_cabang2")RequestBody phbk_cb2,
@@ -107,6 +109,7 @@ public interface BaseApi {
             @Part("jenis_kotak_kontak")RequestBody jeniskk,
             @Part("tanda_komponen")RequestBody tanda_komponen,
             @Part("pengujian_pembebanan")RequestBody pengujian_pembebanan,
+
             @Part("jml_phb_utama")RequestBody jml_pu,
             @Part("jml_phb_1fasa")RequestBody jml_p1f,
             @Part("jml_phb_3fasa")RequestBody jml_p3f,
@@ -190,6 +193,14 @@ public interface BaseApi {
             @Field("foto1") String foto1);
 
 
-    @GET("load-daya")
-    Call<ResponseBody> load_daya(@Header("Authorization")String token);
+    @FormUrlEncoded
+    @POST("password/create")
+    Call<ResponseBody> resetPass(@Field("email")String email);
+
+    @FormUrlEncoded
+    @POST("password/reset")
+    Call<ResponseBody> postPassword(@Field("email")String email,
+                                    @Field("password")String password,
+                                    @Field("password_confirmation")String password_confirmation,
+                                    @Field("token")String token);
 }

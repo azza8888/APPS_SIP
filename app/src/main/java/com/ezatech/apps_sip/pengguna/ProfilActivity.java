@@ -137,37 +137,6 @@ public class ProfilActivity extends AppCompatActivity {
             }
         });
 
-//        etTokenpsr.setText(access_token);
-////
-//        Log.d(TAG, "APABBBB: " + access_token);
-
-
-//        TampilData();
-//        btnEdit.setVisibility(View.VISIBLE);
-//        btnEdit.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                btnSimpanpsr.setVisibility(View.VISIBLE);
-//                btnEdit.setVisibility(View.INVISIBLE);
-//                etNip.setEnabled(true);
-//                etUsername.setEnabled(true);
-//                etNamap.setEnabled(true);
-//
-//            }
-//        });
-//        btnSimpanpsr.setVisibility(View.INVISIBLE);
-//        btnSimpanpsr.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                btnEdit.setVisibility(View.VISIBLE);
-//                btnSimpanpsr.setVisibility(View.INVISIBLE);
-//                etNip.setEnabled(false);
-//                etUsername.setEnabled(false);
-//                etNamap.setEnabled(false);
-//                btnEdit.setEnabled(true);
-////                UbahData();
-//            }
-//        });
 
 
     }

@@ -3,10 +3,12 @@ package com.ezatech.apps_sip.firebase;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
@@ -48,6 +50,7 @@ public class MyNotificationManager {
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(mCtx);
         Notification notification;
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        Uri sound = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE+"://"+ mCtx.getPackageName()+"/"+R.raw.ringtons);
         notification = mBuilder.setSmallIcon(R.drawable.ic_info_black_24dp).setTicker(title).setWhen(0)
                 .setAutoCancel(true)
                 .setContentIntent(resultPendingIntent)
@@ -82,6 +85,7 @@ public class MyNotificationManager {
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(mCtx);
         Notification notification;
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        Uri sound = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE+"://"+ mCtx.getPackageName()+"/"+R.raw.ringtons);
         notification = mBuilder.setSmallIcon(R.drawable.ic_info_black_24dp).setTicker(title).setWhen(0)
                 .setAutoCancel(true)
                 .setContentIntent(resultPendingIntent)
@@ -89,7 +93,7 @@ public class MyNotificationManager {
                 .setSmallIcon(R.drawable.ic_info_black_24dp)
                 .setLargeIcon(BitmapFactory.decodeResource(mCtx.getResources(), R.drawable.ic_info_black_24dp))
                 .setContentText(message)
-                .setSubText("Klick untuk melihat detail laporan")
+                .setSubText("Click here")
                 .setSound(defaultSoundUri)
                 .build();
 

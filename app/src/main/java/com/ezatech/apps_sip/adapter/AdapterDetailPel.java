@@ -102,7 +102,6 @@ public class AdapterDetailPel extends RecyclerView.Adapter<AdapterDetailPel.Adap
             etTarifpel = (EditText) itemView.findViewById(R.id.et_tarifpel);
             etDayapel = (EditText) itemView.findViewById(R.id.et_dayapel);
             etBtlpel = (EditText) itemView.findViewById(R.id.et_btlpel);
-//            btnPeriksapel = (Button) itemView.findViewById(R.id.btn_periksapel);
         }
     }
 }

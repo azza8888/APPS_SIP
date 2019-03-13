@@ -45,7 +45,7 @@ public class DetailLapActivity extends AppCompatActivity {
     private String tarif_pend;
     private String daya_pend;
     private String btl_pend;
-    private String id;
+    private String id_surat;
     private SharedPreferences sharedpreferences;
     private String token;
 
@@ -63,12 +63,11 @@ public class DetailLapActivity extends AppCompatActivity {
         }
 
         Bundle bundle = getIntent().getExtras();
-        id     = bundle.getString("id");
-//        no_pend = bundle.getString("no_pendaftaran");
+        id_surat     = bundle.getString("id");
+        Log.d("", "3333333333: "+id_surat);
 
         sharedpreferences = getSharedPreferences(my_shared_preferences, MODE_PRIVATE);
         token = sharedpreferences.getString("acces_token","");
-        id = sharedpreferences.getString("id","");
         no_pend = sharedpreferences.getString("no_pendaftaran","");
 
         recyclerView = findViewById(R.id.rv_listdetailpel);
@@ -84,33 +83,32 @@ public class DetailLapActivity extends AppCompatActivity {
 
     private void getDetail() {
         BaseApi api = RetrofitClient.getInstanceRetrofit();
-        api.detailPendaftar(token,id).enqueue(new Callback<ResponseBody>() {
+        api.detailPendaftar(token,id_surat).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()){
                     try {
-                        JSONArray jsonArray = new JSONArray(response.body().string());
-                        for (int i = 0 ; i<jsonArray.length(); i++){
-                            JSONObject jsonObject = jsonArray.optJSONObject(i);
-                            String id_penerbit = jsonObject.getString("id");
+                        JSONObject jsonObject1 = new JSONObject(response.body().string());
+                        JSONArray jsonObject3 = jsonObject1.optJSONArray("pelanggan");
 
-                            JSONObject object = jsonObject.optJSONObject("pelanggan");
+//                            JSONArray jsonArray = new JSONArray(response.body().string());
+                        for (int i = 0 ; i<jsonObject3.length(); i++){
+                            JSONObject object = jsonObject3.getJSONObject(i);
+                            String id_surat = object.getString("id");
+                            String pemeriksa1 = object.getString("pemeriksa1");
+                            String pemeriksa2 = object.getString("pemeriksa2");
                             String no_pend = object.getString("no_pendaftaran");
-
                             String nama_pend = object.getString("nama");
                             String alamat_pend = object.getString("alamat");
+                            String tarif_pend = object.getString("jenis_tarif");
+                            String daya_pend = object.getString("daya");
+                            String btl_pend = object.getString("nama_penyedia");
+                            String nama_btl = object.getString("nama_btl");
 
-                            JSONObject object1 = jsonObject.optJSONObject("tarif");
-                            String tarif_pend = object1.getString("jenis_tarif");
 
-                            JSONObject object2 = jsonObject.optJSONObject("daya");
-                            String daya_pend = object2.getString("daya");
-
-                            JSONObject object3 = jsonObject.optJSONObject("penyedia");
-                            String btl_pend = object3.getString("nama_penyedia");
 
                             Pelanggan pelanggan = new Pelanggan();
-                            pelanggan.setId_penerbit(id_penerbit);
+                            pelanggan.setId_penerbit(id_surat);
                             pelanggan.setNo_pendaftaran(no_pend);
                             pelanggan.setNama(nama_pend);
                             pelanggan.setAlamat(alamat_pend);

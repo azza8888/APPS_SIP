@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,8 +32,8 @@ import static com.ezatech.apps_sip.logRes.LoginActivity.my_shared_preferences;
 public class PengaturanActivity extends AppCompatActivity {
 
     private Toolbar mActionToolbar;
-    private TextView tvTentang;
-    private TextView tvInfo, tvGantipass;
+    private CardView tvTentang;
+    private CardView tvInfo, tvGantipass;
     private TextView tvKeluar;
     private String token;
     private EditText tv_tokenext;
@@ -53,10 +54,10 @@ public class PengaturanActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        tvTentang = (TextView) findViewById(R.id.tv_tentang);
+        tvTentang = (CardView) findViewById(R.id.tv_tentang);
         tv_tokenext =(EditText) findViewById(R.id.et_tokenext);
-        tvInfo = (TextView) findViewById(R.id.tv_info);
-        tvGantipass = (TextView) findViewById(R.id.tv_gantipass);
+        tvInfo = (CardView) findViewById(R.id.tv_info);
+        tvGantipass = (CardView) findViewById(R.id.tv_gantipass);
         tvKeluar = (TextView) findViewById(R.id.tv_keluar);
 //        baseApi = UtilsApi.getAPIService();
 

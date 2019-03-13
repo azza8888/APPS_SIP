@@ -17,7 +17,7 @@ import com.ezatech.apps_sip.MainActivity;
 import com.ezatech.apps_sip.R;
 import com.ezatech.apps_sip.api.BaseApi;
 import com.ezatech.apps_sip.api.RetrofitClient;
-import com.ezatech.apps_sip.api.UtilsApi;
+import com.ezatech.apps_sip.firebase.SharedPrefManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -59,8 +59,9 @@ public class LoginActivity extends AppCompatActivity {
     private String created_at;
     private String update_at;
     private String access_token;
-//    private String token_type;
+    //    private String token_type;
     private String expires_at;
+    private TextView tvTokenFirebase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,29 +80,29 @@ public class LoginActivity extends AppCompatActivity {
         sharedpreferences = getSharedPreferences(my_shared_preferences, MODE_PRIVATE);
         session = sharedpreferences.getBoolean(session_status, false);
         String id = sharedpreferences.getString("id", null);
-        nip = sharedpreferences.getString("nip",null);
+        nip = sharedpreferences.getString("nip", null);
         nama = sharedpreferences.getString("nama", null);
-        email = sharedpreferences.getString("email",null);
+        email = sharedpreferences.getString("email", null);
         jabatan = sharedpreferences.getString("jabatan", null);
-        departemen = sharedpreferences.getString("departemen",null);
+        departemen = sharedpreferences.getString("departemen", null);
         wewenang = sharedpreferences.getString("wewenang", null);
-        id_Kwilayah = sharedpreferences.getString("id_Kwilayah",null);
+        id_Kwilayah = sharedpreferences.getString("id_Kwilayah", null);
         id_Karea = sharedpreferences.getString("id_Karea", null);
-        id_Subarea = sharedpreferences.getString("id_Subarea",null);
+        id_Subarea = sharedpreferences.getString("id_Subarea", null);
         status = sharedpreferences.getString("status", null);
-        email_verified_at = sharedpreferences.getString("email_verified_at",null);
+        email_verified_at = sharedpreferences.getString("email_verified_at", null);
         created_at = sharedpreferences.getString("created_at", null);
-        update_at = sharedpreferences.getString("update_at",null);
+        update_at = sharedpreferences.getString("update_at", null);
         username = sharedpreferences.getString("username", null);
 
-        access_token = sharedpreferences.getString("acces_token",null);
+        access_token = sharedpreferences.getString("acces_token", null);
 //        token_type = sharedpreferences.getString("token_type",null);
-        expires_at = sharedpreferences.getString("expires_at",null);
+        expires_at = sharedpreferences.getString("expires_at", null);
 
 
-        if (session){
+        if (session) {
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            intent.putExtra(access_token,"acces_token");
+            intent.putExtra(access_token, "acces_token");
 //            intent.putExtra(password, "password");
             finish();
             startActivity(intent);
@@ -112,7 +113,19 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
 //                Intent intent = new Intent(getApplication(), MainActivity.class);
 //                startActivity(intent);
-                loading = ProgressDialog.show(mContext, null, "Harap Tunggu...", true,true);
+                //getting token from shared preferences
+                String tokenFirebase = SharedPrefManager.getInstance(LoginActivity.this).getDeviceToken();
+
+                //if token is not null
+                if (tokenFirebase != null) {
+                    //displaying the token
+                    tvTokenFirebase.setText(tokenFirebase);
+                } else {
+                    //if token is null that means something wrong
+                    tvTokenFirebase.setText("Token not generated");
+                }
+
+                loading = ProgressDialog.show(mContext, null, "Harap Tunggu...", true, true);
                 requestLogin();
             }
         });
@@ -124,71 +137,67 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        initView();
+
+
     }
 
     private void requestLogin() {
         BaseApi api = RetrofitClient.getInstanceRetrofit();
         api.login(
 //                tvtoken.getText().toString().
-                etEmaill.getText().toString(), etPassword.getText().toString())
+                etEmaill.getText().toString(), etPassword.getText().toString(),
+                tvTokenFirebase.getText().toString().trim())
                 .enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                        if (response.isSuccessful()){
+                        if (response.isSuccessful()) {
                             loading.dismiss();
                             try {
                                 JSONObject JsonResult = new JSONObject(response.body().string());
 
-//                                    String  success = JsonResult.getString("message");
-//                                    Toast.makeText(mContext, success, Toast.LENGTH_SHORT).show();
-                                    String id = JsonResult.getJSONObject("user").getString("id");
-                                    String nip = JsonResult.getJSONObject("user").getString("nip");
-                                    String nama = JsonResult.getJSONObject("user").getString("nama");
-                                    String email = JsonResult.getJSONObject("user").getString("email");
-                                    String jabatan = JsonResult.getJSONObject("user").getString("jabatan");
-                                    String departemen = JsonResult.getJSONObject("user").getString("departemen");
-                                    String wewenang = JsonResult.getJSONObject("user").getString("wewenang");
-                                    String id_kwilayah = JsonResult.getJSONObject("user").getString("id_kwilayah");
-                                    String id_karea = JsonResult.getJSONObject("user").getString("id_karea");
-                                    String id_subarea = JsonResult.getJSONObject("user").getString("id_subarea");
-                                    String status = JsonResult.getJSONObject("user").getString("status");
-                                    String email_verified_at = JsonResult.getJSONObject("user").getString("email_verified_at");
-                                    String created_at = JsonResult.getJSONObject("user").getString("created_at");
-                                    String updated_at = JsonResult.getJSONObject("user").getString("updated_at");
-                                    String username = JsonResult.getJSONObject("user").getString("username");
-                                    String access_token =JsonResult.getString("acces_token");
-                                    Log.d(TAG, "AAAAAAAAAA: "+access_token);
-//                                    String token_type = JsonResult.getString("token_type");
-                                    String expires_at = JsonResult.getString("expires_at");
+                                String id = JsonResult.getJSONObject("user").getString("id");
+                                String nip = JsonResult.getJSONObject("user").getString("nip");
+                                String nama = JsonResult.getJSONObject("user").getString("nama");
+                                String email = JsonResult.getJSONObject("user").getString("email");
+                                String jabatan = JsonResult.getJSONObject("user").getString("jabatan");
+                                String departemen = JsonResult.getJSONObject("user").getString("departemen");
+                                String wewenang = JsonResult.getJSONObject("user").getString("wewenang");
+                                String id_kwilayah = JsonResult.getJSONObject("user").getString("id_kwilayah");
+                                String id_karea = JsonResult.getJSONObject("user").getString("id_karea");
+                                String id_subarea = JsonResult.getJSONObject("user").getString("id_subarea");
+                                String status = JsonResult.getJSONObject("user").getString("status");
+                                String email_verified_at = JsonResult.getJSONObject("user").getString("email_verified_at");
+                                String created_at = JsonResult.getJSONObject("user").getString("created_at");
+                                String updated_at = JsonResult.getJSONObject("user").getString("updated_at");
+                                String username = JsonResult.getJSONObject("user").getString("username");
+                                String access_token = JsonResult.getString("acces_token");
+                                Log.d(TAG, "AAAAAAAAAA: " + access_token);
+                                String expires_at = JsonResult.getString("expires_at");
 
-                                    SharedPreferences sharedPreferences = LoginActivity.this.getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+                                SharedPreferences sharedPreferences = LoginActivity.this.getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
 
-                                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                                    editor.putBoolean(session_status, true);
-                                    editor.putString("id", id);
-                                    editor.putString("nip", nip);
-                                    editor.putString("nama", nama);
-                                    editor.putString("email", email);
-                                    editor.putString("jabatan", jabatan);
-                                    editor.putString("departemen", departemen);
-                                    editor.putString("wewenang", wewenang);
-//                                    editor.putString("id_Kwilayah", id_kwilayah);
-//                                    editor.putString("id_Karea", id_karea);
-//                                    editor.putString("id_Subarea", id_subarea);
-                                    editor.putString("status", status);
-                                    editor.putString("email_verified_at", email_verified_at);
-                                    editor.putString("created_at",created_at);
-//                                    editor.putString("updated_at", updated_at);
-                                    editor.putString("username", username);
-                                    editor.putString("acces_token", access_token);
-                                    editor.commit();
-                                    loading.dismiss();
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putBoolean(session_status, true);
+                                editor.putString("id", id);
+                                editor.putString("nip", nip);
+                                editor.putString("nama", nama);
+                                editor.putString("email", email);
+                                editor.putString("jabatan", jabatan);
+                                editor.putString("departemen", departemen);
+                                editor.putString("wewenang", wewenang);
+                                editor.putString("status", status);
+                                editor.putString("email_verified_at", email_verified_at);
+                                editor.putString("created_at", created_at);
+                                editor.putString("username", username);
+                                editor.putString("acces_token", access_token);
+                                editor.commit();
+                                loading.dismiss();
 
-                                    Intent intent = new Intent(mContext, MainActivity.class);
-//                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                    finish();
-                                    startActivity(intent);
-
+                                Intent intent = new Intent(mContext, MainActivity.class);
+                                intent.putExtra("acces_token",access_token);
+                                finish();
+                                startActivity(intent);
 
 
                                 Toast.makeText(mContext, "Berhasil Login", Toast.LENGTH_SHORT).show();
@@ -199,7 +208,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(mContext, "Password atau Email Salah", Toast.LENGTH_SHORT).show();
                                 e.printStackTrace();
                             }
-                        }else {
+                        } else {
                             loading.dismiss();
                             Toast.makeText(mContext, "Password atau Email Salah", Toast.LENGTH_SHORT).show();
                         }
@@ -213,4 +222,7 @@ public class LoginActivity extends AppCompatActivity {
                 });
     }
 
+    private void initView() {
+        tvTokenFirebase = (TextView) findViewById(R.id.tv_tokenFirebase);
+    }
 }

@@ -1,7 +1,9 @@
 package com.ezatech.apps_sip.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 
 import com.ezatech.apps_sip.R;
 import com.ezatech.apps_sip.data.ListLaporan;
+import com.ezatech.apps_sip.notifLaporan.DetailLapActivity;
 import com.ezatech.apps_sip.notifLaporan.ListLaporanActivity;
 
 import java.util.ArrayList;
@@ -20,6 +23,7 @@ public class AdapterLLaporan extends RecyclerView.Adapter<AdapterLLaporan.Adapte
 
     private ArrayList<ListLaporan> list;
     private Context context;
+    private int post1;
 
     public AdapterLLaporan(Context context, ArrayList<ListLaporan> list) {
         this.list = list;
@@ -38,14 +42,16 @@ public class AdapterLLaporan extends RecyclerView.Adapter<AdapterLLaporan.Adapte
         ListLaporan laporan = list.get(position);
         holder.tvNosurat.setText(laporan.getNo_surat());
         holder.tvIdlist.setText(laporan.getId());
+
+
         holder.etNamap1.setText(laporan.getNama_pemeriksa1());
         holder.etNamap2.setText(laporan.getNama_pemeriksa2());
-        holder.btnPeriksa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((ListLaporanActivity) context).intentPeriksa();
-            }
-        });
+//        holder.btnPeriksa.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                ((ListLaporanActivity) context).intentPeriksa();
+//            }
+//        });
         holder.btnCetak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,6 +92,16 @@ public class AdapterLLaporan extends RecyclerView.Adapter<AdapterLLaporan.Adapte
             etNamap1 = (EditText) itemView.findViewById(R.id.et_namap1);
             etNamap2 = (EditText) itemView.findViewById(R.id.et_namap2);
             btnPeriksa = (Button) itemView.findViewById(R.id.btn_periksa);
+            btnPeriksa.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    post1 = getAdapterPosition();
+                    Intent intent = new Intent(context, DetailLapActivity.class);
+                    intent.putExtra("id", tvIdlist.getText().toString().trim());
+                    context.startActivity(intent);
+
+                }
+            });
             btnCetak = (Button) itemView.findViewById(R.id.btn_cetak);
         }
     }

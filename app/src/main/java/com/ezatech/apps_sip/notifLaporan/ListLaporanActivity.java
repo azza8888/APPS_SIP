@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.ezatech.apps_sip.R;
@@ -49,7 +50,7 @@ public class ListLaporanActivity extends AppCompatActivity {
     private Context context;
     private SharedPreferences sharedpreferences;
     private String token;
-    private String id;
+    private String id_surat;
     private String nama1;
     private String nama2;
     private String no_surat;
@@ -69,9 +70,10 @@ public class ListLaporanActivity extends AppCompatActivity {
 
 
 
+
         sharedpreferences = getSharedPreferences(my_shared_preferences, MODE_PRIVATE);
         token = sharedpreferences.getString("acces_token","");
-        id = sharedpreferences.getString("id",null);
+        id_surat = sharedpreferences.getString("id","");
 
 
         recyclerView = findViewById(R.id.rv_listlaporan);
@@ -97,7 +99,7 @@ public class ListLaporanActivity extends AppCompatActivity {
 
                         for (int i= 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.optJSONObject(i);
-                            String id = jsonObject.optString("id");
+                            String id_surat = jsonObject.optString("id");
                             String no_surat = jsonObject.optString("no_surat");
 
                             JSONObject object1 = jsonObject.optJSONObject("pemeriksa1");
@@ -109,13 +111,13 @@ public class ListLaporanActivity extends AppCompatActivity {
                             SharedPreferences sharedPreferences = ListLaporanActivity.this.getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putBoolean(session_status, true);
-                            editor.putString("id", id);
+                            editor.putString("id", id_surat);
                             editor.putString("nama", nama1);
                             editor.putString("nama", nama2);
                             editor.commit();
 
                             ListLaporan laporan = new ListLaporan();
-                            laporan.setId(id);
+                            laporan.setId(id_surat);
                             laporan.setNo_surat(no_surat);
                             laporan.setNama_pemeriksa1(nama1);
                             laporan.setNama_pemeriksa2(nama2);
@@ -154,16 +156,16 @@ public class ListLaporanActivity extends AppCompatActivity {
 //        Intent intent = new Intent(ListLaporanActivity.this, DetailLapActivity.class);
 //        startActivity(intent);
 
-        Uri uriUrl = Uri.parse("https://slo.sertifikasiinstalasiprima.co.id/pdf/surat-tugas/print/"+id);
+        Uri uriUrl = Uri.parse("https://slo.sertifikasiinstalasiprima.co.id/pdf/surat-tugas/print/"+id_surat);
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
         startActivity(launchBrowser);
     }
 
-    public void intentPeriksa(){
-        Intent intent = new Intent(ListLaporanActivity.this, DetailLapActivity.class);
-        intent.putExtra("id", id.trim());
-        startActivity(intent);
-//        startActivity(new Intent(ListLaporanActivity.this, FormActivity.class));
-    }
+//    public void intentPeriksa(){
+//        Intent intent = new Intent(ListLaporanActivity.this, DetailLapActivity.class);
+//        intent.putExtra("id", id.trim());
+//        startActivity(intent);
+////        startActivity(new Intent(ListLaporanActivity.this, FormActivity.class));
+//    }
 
 }

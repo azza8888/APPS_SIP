@@ -21,6 +21,11 @@
         android:id="@+id/et_ed"
         android:layout_width="0sp"
         android:layout_height="0dp" />
+    <EditText
+        android:id="@+id/et_idPelanggan"
+        android:layout_width="0sp"
+        android:layout_height="0dp"
+        android:visibility="invisible"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -34,13 +39,6 @@
         android:padding="5dp">
 
 
-        <!--<ImageView-->
-            <!--android:id="@+id/iv_list"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="250dp"-->
-            <!--android:padding="4dp"-->
-            <!--android:layout_margin="2dp"-->
-            <!--android:layout_marginRight="2dp"/>-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,6 +68,7 @@
                 android:enabled="false"
                 android:hint="JKI-00119-22741"
                 android:textSize="18sp"
+                android:textColor="@color/Black"
                 android:background="@android:color/transparent"
                 android:inputType="textPersonName|textMultiLine"/>
 
@@ -106,6 +105,7 @@
                     android:enabled="false"
                     android:hint="nama"
                     android:textSize="18sp"
+                    android:textColor="@color/Black"
                     android:inputType="textPersonName|textMultiLine"/>
 
             </android.support.v7.widget.CardView>
@@ -135,12 +135,13 @@
                 <EditText
                     android:id="@+id/et_almtpen"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
                     android:enabled="false"
                     android:hint="alamat"
                     android:textSize="18sp"
+                    android:textColor="@color/Black"
                     android:inputType="textPersonName|textMultiLine"/>
 
             </android.support.v7.widget.CardView>
@@ -175,6 +176,7 @@
                     android:layout_marginRight="3sp"
                     android:enabled="false"
                     android:hint="Jenis"
+                    android:textColor="@color/Black"
                     android:textSize="18sp"
                     android:inputType="textPersonName|textMultiLine"/>
 
@@ -210,6 +212,7 @@
                     android:layout_marginRight="3sp"
                     android:enabled="false"
                     android:hint="0-4500"
+                    android:textColor="@color/Black"
                     android:textSize="18sp"
                     android:inputType="textPersonName|textMultiLine"/>
 
@@ -245,6 +248,7 @@
                     android:layout_marginRight="3sp"
                     android:enabled="false"
                     android:hint="nama"
+                    android:textColor="@color/Black"
                     android:textSize="18sp"
                     android:inputType="textPersonName|textMultiLine"/>
 
@@ -280,6 +284,7 @@
                     android:layout_marginRight="3sp"
                     android:enabled="false"
                     android:hint="nama_pemeriksa"
+                    android:textColor="@color/Black"
                     android:textSize="18sp"
                     android:inputType="textPersonName|textMultiLine"/>
 
@@ -316,6 +321,7 @@
                     android:enabled="false"
                     android:hint="nama_pemeriksa2"
                     android:textSize="18sp"
+                    android:textColor="@color/Black"
                     android:inputType="textPersonName|textMultiLine"/>
 
             </android.support.v7.widget.CardView>
@@ -358,39 +364,39 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:layout_margin="2dp"
-                android:text="No Pemeriksa          :"
-                android:textColor="#000000"
-                android:textSize="18dp" />
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical">-->
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:paddingLeft="5dp"-->
+                <!--android:layout_margin="2dp"-->
+                <!--android:text="No Pemeriksa          :"-->
+                <!--android:textColor="#000000"-->
+                <!--android:textSize="18dp" />-->
 
-             <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            app:cardElevation="4dp">
+             <!--<android.support.v7.widget.CardView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="2dp"-->
+            <!--app:cardElevation="4dp">-->
 
-            <EditText
-                android:id="@+id/et_nopemeriksa"
-                android:layout_width="match_parent"
-                android:layout_height="45sp"
-                android:layout_marginLeft="4sp"
-                android:layout_marginRight="3sp"
-                android:hint="no_pemeriksa"
-                android:textSize="18sp"
-                android:inputType="textPersonName|textMultiLine"
-                android:textColor="@color/Black"/>
+            <!--<EditText-->
+                <!--android:id="@+id/et_nopemeriksa"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="45sp"-->
+                <!--android:layout_marginLeft="4sp"-->
+                <!--android:layout_marginRight="3sp"-->
+                <!--android:hint="no_pemeriksa"-->
+                <!--android:textSize="18sp"-->
+                <!--android:inputType="textPersonName|textMultiLine"-->
+                <!--android:textColor="@color/Black"/>-->
 
-        </android.support.v7.widget.CardView>
+        <!--</android.support.v7.widget.CardView>-->
 
-        </LinearLayout>
+        <!--</LinearLayout>-->
 
 
 
@@ -443,25 +449,38 @@
                 android:textColor="#000000"
                 android:textSize="18dp" />
 
-            <android.support.v7.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                app:cardElevation="4dp">
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btnOpenDatePicker"
+                    android:layout_width="60sp"
+                    android:layout_height="60sp"
+                    android:background="@drawable/ic_event_available_black_24dp"/>
+                <android.support.v7.widget.CardView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_tgllhpp"
-                    android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="2019-01-10"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    <EditText
+                        android:id="@+id/et_tgllhpp"
+                        android:layout_width="match_parent"
+                        android:layout_height="45sp"
+                        android:gravity="center"
+                        android:layout_marginLeft="4sp"
+                        android:layout_marginRight="3sp"
+                        android:hint="2019-01-10"
+                        android:enabled="false"
+                        android:textSize="18sp"
+                        android:inputType="textPersonName|textMultiLine"
+                        android:textColor="@color/Black"/>
 
-            </android.support.v7.widget.CardView>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
@@ -484,17 +503,23 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_gambarins"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_gambarins"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint=""-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+                <Spinner
+                    android:id="@+id/sp_gambarins"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="Ada"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -508,7 +533,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:layout_margin="2dp"
-                android:text="Diagram_garis_tunggal  :"
+                android:text="Diagram Garis Tunggal  :"
                 android:textColor="#000000"
                 android:textSize="18dp" />
 
@@ -518,17 +543,23 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_diagramgt"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_diagramgt"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint=""-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+                <Spinner
+                    android:id="@+id/sp_diagramgt"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="Ada"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -553,17 +584,24 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_peutama"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_peutama"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint=""-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+
+                <Spinner
+                    android:id="@+id/sp_peutama"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="Ada"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -588,17 +626,24 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_pecabang"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_pecabang"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint=""-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+
+                <Spinner
+                    android:id="@+id/sp_pecabang"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="Ada"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -623,17 +668,23 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_peakhir"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_peakhir"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint=""-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+                <Spinner
+                    android:id="@+id/sp_peakhir"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="Ada"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -658,17 +709,23 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_pekotakkontak"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_pekotakkontak"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint=""-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+                <Spinner
+                    android:id="@+id/sp_pekotakkontak"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="Ada"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -693,17 +750,23 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_jenispengut"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_jenispengut"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="NYM"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+                <Spinner
+                    android:id="@+id/sp_jenispengut"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="NYM"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -728,17 +791,24 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_jenispengcab"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_jenispengcab"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="0"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+
+                <Spinner
+                    android:id="@+id/sp_jenispengcab"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="0"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -763,17 +833,25 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_jenispengakhir"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_jenispengakhir"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="NYA"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+
+                <Spinner
+                    android:id="@+id/sp_jenispengakhir"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="NYA"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
+
 
             </android.support.v7.widget.CardView>
 
@@ -868,17 +946,24 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_penghantarbs"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_penghantarbs"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="TTN-C-S"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+
+                <Spinner
+                    android:id="@+id/sp_penghantarbs"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="TTN-C-S"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -916,17 +1001,24 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_saklarutm"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_saklarutm"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="MCB 10 A"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+
+                <Spinner
+                    android:id="@+id/sp_saklarutm"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="MCB 10 A"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -951,17 +1043,24 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_saklarcb1"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_saklarcb1"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="0"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+
+                <Spinner
+                    android:id="@+id/sp_saklarcb1"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="0"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -986,17 +1085,24 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_saklarcb2"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_saklarcb2"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="0"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+
+                <Spinner
+                    android:id="@+id/sp_saklarcb2"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="0"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -1056,17 +1162,24 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_phbkUtama"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_phbkUtama"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="0"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+
+                <Spinner
+                    android:id="@+id/sp_phbkUtama"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="0"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -1090,17 +1203,24 @@
             android:layout_margin="2dp"
             app:cardElevation="4dp">
 
-            <EditText
-                android:id="@+id/et_phbkcb1"
+            <!--<EditText-->
+                <!--android:id="@+id/et_phbkcb1"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="45sp"-->
+                <!--android:layout_marginLeft="4sp"-->
+                <!--android:layout_marginRight="3sp"-->
+                <!--android:hint="0"-->
+                <!--android:textSize="18sp"-->
+                <!--android:background="@android:color/transparent"-->
+                <!--android:inputType="textPersonName|textMultiLine"-->
+                <!--android:textColor="@color/Black"/>-->
+
+            <Spinner
+                android:id="@+id/sp_phbkcb1"
                 android:layout_width="match_parent"
-                android:layout_height="45sp"
-                android:layout_marginLeft="4sp"
-                android:layout_marginRight="3sp"
-                android:hint="0"
-                android:textSize="18sp"
-                android:background="@android:color/transparent"
-                android:inputType="textPersonName|textMultiLine"
-                android:textColor="@color/Black"/>
+                android:layout_height="45sp">
+
+            </Spinner>
 
         </android.support.v7.widget.CardView>
 
@@ -1125,17 +1245,24 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_phbkcb2"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_phbkcb2"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="0"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+
+                <Spinner
+                    android:id="@+id/sp_phbkcb2"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="0"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -1160,17 +1287,24 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_penghantarutm"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_penghantarutm"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="3x4 mm2"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+
+                <Spinner
+                    android:id="@+id/sp_penghantarutm"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="3x4 mm2"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -1195,17 +1329,24 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_penghantarcbang"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_penghantarcbang"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="0"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+
+                <Spinner
+                    android:id="@+id/sp_penghantarcbang"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="0"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -1230,17 +1371,24 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_penghantarakhir"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_penghantarakhir"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="3x1.5 mm2"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+
+                <Spinner
+                    android:id="@+id/sp_penghantarakhir"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="3x1.5 mm2"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -1265,17 +1413,24 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_penghantar3fs"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_penghantar3fs"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="0"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+
+                <Spinner
+                    android:id="@+id/sp_penghantar3fs"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="0"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -1311,17 +1466,24 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_fittinglmp"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_fittinglmp"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="sesuai"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+
+                <Spinner
+                    android:id="@+id/sp_fittinglmp"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="sesuai"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -1346,17 +1508,24 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_ppkotakk"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_ppkotakk"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="sesuai"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+
+                <Spinner
+                    android:id="@+id/sp_ppkotakk"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="sesuai"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -1381,17 +1550,24 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_ppsakelar"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_ppsakelar"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="sesuai"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+
+                <Spinner
+                    android:id="@+id/sp_ppsakelar"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="sesuai"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -1486,17 +1662,24 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_jeniskk"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_jeniskk"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="tinggi_kotak_kontak"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+
+                <Spinner
+                    android:id="@+id/sp_jeniskk"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="tinggi_kotak_kontak"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -1521,17 +1704,24 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_tandakmp"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_tandakmp"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="tinggi_kotak_kontak"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+
+                <Spinner
+                    android:id="@+id/sp_tandakmp"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="tinggi_kotak_kontak"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -1556,17 +1746,24 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_pengujipbbn"
+                <!--<EditText-->
+                    <!--android:id="@+id/et_pengujipbbn"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="tinggi_kotak_kontak"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
+
+                <Spinner
+                    android:id="@+id/sp_pengujipbbn"
                     android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="tinggi_kotak_kontak"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                    android:layout_height="45sp">
+
+                </Spinner>
 
             </android.support.v7.widget.CardView>
 
@@ -2132,6 +2329,7 @@
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
+                    android:enabled="false"
                     android:hint="Enter A Locatioan"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
@@ -2211,6 +2409,11 @@
             </android.support.v7.widget.CardView>
 
         </LinearLayout>
+        <Button
+            android:id="@+id/btn_lokasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dapatkan lokasi"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -2233,6 +2436,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal">
+
                 <android.support.v7.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -2243,7 +2447,8 @@
                         android:id="@+id/iv_foto1"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:background="@drawable/ic_add_black_24dp" />
+                        android:src="@drawable/ic_add_a_photo_black_24dp"
+                        />
 
                 </android.support.v7.widget.CardView>
                 <android.support.v7.widget.CardView
@@ -2256,7 +2461,7 @@
                         android:id="@+id/iv_foto2"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:background="@drawable/ic_add_black_24dp" />
+                        android:src="@drawable/ic_add_a_photo_black_24dp" />
 
                 </android.support.v7.widget.CardView>
 
@@ -2277,7 +2482,7 @@
                         android:id="@+id/iv_foto3"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:background="@drawable/ic_add_black_24dp" />
+                        android:src="@drawable/ic_add_a_photo_black_24dp" />
 
                 </android.support.v7.widget.CardView>
                 <android.support.v7.widget.CardView
@@ -2290,7 +2495,7 @@
                         android:id="@+id/iv_foto4"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:background="@drawable/ic_add_black_24dp" />
+                        android:src="@drawable/ic_add_a_photo_black_24dp" />
 
                 </android.support.v7.widget.CardView>
 
@@ -2304,7 +2509,7 @@
                         android:id="@+id/iv_foto5"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:background="@drawable/ic_add_black_24dp" />
+                        android:src="@drawable/ic_add_a_photo_black_24dp" />
 
                 </android.support.v7.widget.CardView>
             </LinearLayout>

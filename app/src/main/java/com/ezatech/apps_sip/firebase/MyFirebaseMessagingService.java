@@ -1,18 +1,26 @@
 package com.ezatech.apps_sip.firebase;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.util.Log;
 
 import com.ezatech.apps_sip.notifLaporan.DetailLapActivity;
+import com.ezatech.apps_sip.notifLaporan.ListLaporanActivity;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import static com.ezatech.apps_sip.logRes.LoginActivity.my_shared_preferences;
+
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private static final String TAG = "MyFirebaseMsgService";
+    private SharedPreferences sharedpreferences;
+    private String access_token;
+
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -32,44 +40,33 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     //firebase cloud messaging
     private void sendPushNotification(JSONObject json) {
         //optionally we can display the json into log
+        //
+        sharedpreferences = getSharedPreferences(my_shared_preferences, MODE_PRIVATE);
+        access_token = sharedpreferences.getString("acces_token", "");
+        //
         Log.e(TAG, "Notification JSON " + json.toString());
         try {
             //getting the json data
-            JSONObject data = json.getJSONObject("data");
+            JSONObject data = json.getJSONObject("");
 
             //parsing json data
-            String title = data.getString("title");
+            String no_surat = data.getString("title");
             String finalmessage = data.getString("message");
-            String telp = data.getString("telp");
-//            String jam = data.getString("jam");
-            String lat = data.getString("lat");
-            String lng = data.getString("lng");
-            String imageUrl = data.getString("image");
 //            log.d("cekparsing", title+finalmessage+telp+lat+lng);
 
             //creating MyNotificationManager object
             MyNotificationManager mNotificationManager = new MyNotificationManager(getApplicationContext());
 
             //creating an intent for the notification
-            Intent intent = new Intent(getApplicationContext(), DetailLapActivity.class);
-            intent.putExtra("title",title);
+            Intent intent = new Intent(getApplicationContext(), ListLaporanActivity.class);
+            intent.putExtra("title",no_surat);
             intent.putExtra("message",finalmessage);
-            intent.putExtra("telp",telp);
-            intent.putExtra("lat",lat);
-            intent.putExtra("lng",lng);
-            Log.d("cekputextra", title+finalmessage+telp+lat+lng);
+            //
+            intent.putExtra("acces_token", access_token);
+            startActivity(intent);
+            Log.d(TAG, "AAAAAAAAAAAAAAAAAA: "+no_surat);
 
 
-
-            //if there is no image
-            if(imageUrl.equals("null")){
-                //displaying small notification
-                mNotificationManager.showSmallNotification(title, finalmessage, telp, lat, lng, intent);
-            }else{
-                //if there is an image
-                //displaying a big notification
-                mNotificationManager.showBigNotification(title, finalmessage, imageUrl, intent);
-            }
         } catch (JSONException e) {
             Log.e(TAG, "Json Exception: " + e.getMessage());
         } catch (Exception e) {

@@ -5,56 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
+    android:padding="40dp"
+    android:background="@drawable/login"
     tools:context=".logRes.LoginActivity">
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        app:cardBackgroundColor="#065e8f"
-        app:cardElevation="2dp"
-        app:cardCornerRadius="2dp"
-        android:layout_margin="2dp">
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:padding="19dp"
-            android:background="@android:color/transparent"
-            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Aplikasi SIP"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="5sp"
-                android:textSize="33sp"
-                android:layout_gravity="center"
-                android:textStyle="bold"
-                android:padding="8dp"
-                android:textColor="@color/white"/>
 
-            <View
-                android:layout_width="240dp"
-                android:layout_gravity="center"
-                android:layout_height="4dp"
-                android:background="@color/white"
-                android:layout_marginBottom="30dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="Silahkan Login dengan akun yang terdaftar"
-                android:textColor="@color/white" />
 
 
 
             <LinearLayout
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="60dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -70,21 +34,24 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <EditText
                         android:id="@+id/et_emaill"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Email"
-                        android:textSize="20sp"
-                        android:shadowColor="@color/white"
-                        android:textColorHint="@color/white"
+                        android:layout_height="match_parent"
+                        android:hint="Username"
                         android:inputType="textEmailAddress"
-                        android:textColor="@color/white"/>
+                        android:shadowColor="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHighlight="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textCursorDrawable="@color/white"
+                        android:textSize="20sp"/>
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -101,17 +68,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:passwordToggleEnabled="true">
+
                     <EditText
                         android:id="@+id/et_password"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:hint="Password"
-                        android:shadowColor="@color/white"
-                        android:textColorHint="@color/white"
-                        android:textSize="20sp"
-                        android:password="true"
                         android:inputType="textPassword"
-                        android:textColor="@color/white"/>
+                        android:password="true"
+                        android:shadowColor="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHighlight="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textCursorDrawable="@color/white"
+                        android:textSize="20sp" />
                 </android.support.design.widget.TextInputLayout>
 
 
@@ -129,50 +99,45 @@
 
             <TextView
                 android:id="@+id/tv_remeberme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:text="Remember me ?"
                 android:visibility="invisible"
-                android:layout_marginTop="7dp"
                 android:layout_gravity="right"/>
             <TextView
                 android:id="@+id/tv_token"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:visibility="invisible"
                 android:textStyle="bold"
                 android:text="Token ?"
-                android:layout_marginTop="7dp"
                 android:layout_gravity="right"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="400dp"
-            android:padding="19dp"
-            android:gravity="center"
-            android:orientation="vertical">
 
             <Button
                 android:id="@+id/btn_login"
                 android:layout_width="300dp"
                 android:layout_height="40dp"
+                android:layout_marginTop="50dp"
                 android:layout_gravity="center"
                 android:background="@drawable/ripple_effect"
                 android:text="LOGIN"
-                android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
 
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="invisible"
+                android:id="@+id/tv_tokenFirebase"/>
+
+
+
 
 </LinearLayout>

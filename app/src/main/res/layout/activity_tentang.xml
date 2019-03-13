@@ -28,7 +28,7 @@
 
 
     <android.support.v7.widget.CardView
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="3dp"
         android:layout_marginRight="3dp"
         android:layout_marginBottom="6dp"
@@ -47,34 +47,79 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
                     android:gravity="start"
                     android:lineSpacingExtra="4sp"
-                    android:text="Aplikasi ini tentang Sebuah instansi yang dibawahi oleh nama PLN"
+                    android:text="PT. Sertifikasi Instalasi Prima yang disingkat dengan nama PT.SIP adalah sebuah perusahaan yang bergerak antara lain dan terutama dalam bidang Sertifikasi Laik Operasi Instalasi Pemanfaatan Tenaga Listrik Tegangan Rendah. Kami hadir di tengah-tengah masyarakat Indonesia dari Sabang sampai Merauke untuk menerbitkan SLO Instalasi Pemanfaatan Tenaga Listrik Tegangan Rendah (IPTL - TR) dan memastikan bahwa mutu istalasi tersebut adalah sedemikian, sehingga terwujud Kondisi Keselamatan Ketenagalistrikan (K2)."
                     android:textAlignment="viewStart"
                     android:textColor="#000"
                     android:textSize="16sp" />
 
                 <TextView
-                    android:layout_marginTop="10sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000"
-                    android:text="Tujuan"/>
-
-                <ImageView
+                    android:layout_marginTop="15sp"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/logosiiip" />
+                    android:layout_height="wrap_content"
+                    android:textColor="#0B75A5"
+                    android:textSize="28dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="VISI"/>
 
                 <TextView
-                    android:layout_marginTop="10sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10sp"
-                    android:textColor="#000"
+                    android:layout_margin="8dp"
+                    android:gravity="start"
                     android:lineSpacingExtra="4sp"
-                    android:text="Membantu atau mempermudah pekerjaan PLN"/>
+                    android:text="MENJADI MARKET LEADER LIT-TR MULAI TAHUN 2022 DAN SETERUSNYA, DENGAN BERTUMPU PADA INTEGRITAS,INOVASI DAN KREATIFITAS"
+                    android:textAlignment="viewStart"
+                    android:textColor="#000"
+                    android:textSize="16sp" />
+
+
+                <TextView
+                    android:layout_marginTop="15sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#0B75A5"
+                    android:textSize="28dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="MISI"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:gravity="start"
+                    android:lineSpacingExtra="4sp"
+                    android:text="1.	MEMUPUK KEUNTUNGAN YANG WAJAR
+2.	MELAKSANAKAN PELATIHAN DAN PEMBELAJARAN YANG BERKELANJUTAN
+3.	MENGHARGAI INOVASI DAN KREATIFI "
+                    android:textAlignment="viewStart"
+                    android:textColor="#000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_marginTop="15sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#0B75A5"
+                    android:textSize="28dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="MOTTO"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:gravity="start"
+                    android:lineSpacingExtra="4sp"
+                    android:text="HADIR UNTUK MEMBERI MANFAAT"
+                    android:textAlignment="viewStart"
+                    android:textColor="#000"
+                    android:textSize="16sp" />
 
             </LinearLayout>
         </ScrollView>

@@ -4,9 +4,13 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="true" />
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -15,10 +19,11 @@
         android:hardwareAccelerated="false"
         android:icon="@mipmap/logsip"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/logsip"
         android:largeHeap="true"
+        android:roundIcon="@mipmap/logsip"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".logRes.CreatePassActivity"></activity>
         <activity android:name=".slide.SlideScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,21 +48,17 @@
         <activity android:name=".uploadLaporan.UploadFotoBelakang" />
         <activity android:name=".uploadLaporan.UploadFotoKiri" />
         <activity android:name=".uploadLaporan.UploadFotoKanan" />
-        <activity android:name=".pengguna.EditProfilActivity"></activity>
-
-        <!-- Firebase Notifications -->
+        <activity android:name=".pengguna.EditProfilActivity" /> <!-- Firebase Notifications -->
         <service android:name=".firebase.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
         <service android:name=".firebase.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-        <!-- ./Firebase Notifications -->
     </application>
 
 </manifest>

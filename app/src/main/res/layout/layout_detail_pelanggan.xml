@@ -26,40 +26,19 @@
             android:padding="5dp">
 
 
-            <!--<ImageView-->
-            <!--android:id="@+id/iv_list"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="250dp"-->
-            <!--android:padding="4dp"-->
-            <!--android:layout_margin="2dp"-->
-            <!--android:layout_marginRight="2dp"/>-->
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp">
-                <!--<Button-->
-                <!--android:id="@+id/btn_nopel"-->
-                <!--android:background="@drawable/ripple_effect"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:backgroundTint="#39aae9"-->
-                <!--android:text="Nomer Laporan"/>-->
-                <!--<TextView-->
-                    <!--android:id="@+id/tv_nopendaf"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="45dp"-->
-                    <!--android:gravity="center"-->
-                    <!--android:text="NOMOR PENDAFTARAN"-->
-                    <!--android:textSize="17dp"-->
-                    <!--android:textStyle="bold" />-->
+
                 <Button
                     android:id="@+id/tv_nopendaf"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="NOMOR PENDAFTARAN"
-                    android:background="@drawable/ripple_effect"/>
+                    android:textColor="@color/colorPrimary"
+                    android:text="NOMOR PENDAFTARAN"/>
 
             </android.support.v7.widget.CardView>
 
@@ -75,8 +54,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
-                    android:text="Nama Pelanggan      :"
-                    android:textSize="18dp" />
+                    android:textStyle="bold|italic"
+                    android:text="Nama Pelanggan      "
+                    android:textSize="20dp" />
 
                 <EditText
                     android:id="@+id/et_namapel"
@@ -100,8 +80,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
-                    android:text="Alamat Pelanggan    :"
-                    android:textSize="18sp" />
+                    android:textStyle="bold|italic"
+                    android:text="Alamat Pelanggan    "
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/et_alamatpel"
@@ -125,8 +106,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
-                    android:text="Tarif                            :"
-                    android:textSize="18sp" />
+                    android:textStyle="bold|italic"
+                    android:text="Tarif                            "
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/et_tarifpel"
@@ -150,8 +132,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
-                    android:text="Daya                           :"
-                    android:textSize="18sp" />
+                    android:textStyle="bold|italic"
+                    android:text="Daya                           "
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/et_dayapel"
@@ -175,8 +158,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
-                    android:text="BTL                             :"
-                    android:textSize="18sp" />
+                    android:textStyle="bold|italic"
+                    android:text="Nama Penyedia                             "
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/et_btlpel"

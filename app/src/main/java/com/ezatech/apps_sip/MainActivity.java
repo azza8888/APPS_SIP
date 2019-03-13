@@ -31,11 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     private LinearLayout riwayatNotifikasi;
-    private SliderLayout sliderLayout;
     private LinearLayout konfirmasiPelapor;
     private LinearLayout pengguna;
     private LinearLayout pengaturan;
-    private Toolbar mActionToolbar;
     boolean doubleBackToExitPressedOnce = false;
     private SharedPreferences sharedpreferences;
     private String TAG;
@@ -45,14 +43,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mActionToolbar = (Toolbar) findViewById(R.id.tabs_MainActivity);
-        setSupportActionBar(mActionToolbar);
-        getSupportActionBar().setTitle("Aplikasi SIP");
 
-//        if (getSupportActionBar() != null) {
-//            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-//            getSupportActionBar().setDisplayShowHomeEnabled(false);
-//        }
 
         sharedpreferences = getSharedPreferences(my_shared_preferences, MODE_PRIVATE);
         String id =(sharedpreferences.getString("id",""));
@@ -67,39 +58,10 @@ public class MainActivity extends AppCompatActivity {
         String wewenang = (sharedpreferences.getString("wewenang",""));
         String access_token = (sharedpreferences.getString("acces_token",""));
 
-        Log.d(TAG, "TTTTTT: "+access_token);
-
-
-//        btnLapor = (Button) findViewById(R.id.btn_lapor);
-//        feedback2 = (TextView) findViewById(R.id.feedback2);
         riwayatNotifikasi = (LinearLayout) findViewById(R.id.riwayat_notifikasi);
         konfirmasiPelapor = (LinearLayout) findViewById(R.id.konfirmasi_pelapor);
         pengguna = (LinearLayout) findViewById(R.id.pengguna);
         pengaturan = (LinearLayout) findViewById(R.id.pengaturan);
-        sliderLayout = (SliderLayout) findViewById(R.id.slider);
-
-        HashMap<String,Integer> file_maps = new HashMap<String, Integer>();
-        file_maps.put("Aplikasi SIP",R.drawable.logosiiip);
-        file_maps.put("Sip,SIP,Sip",R.drawable.screen);
-        file_maps.put("Icon Petir",R.drawable.thunder);
-        for(String name : file_maps.keySet()){
-            TextSliderView textSliderView = new TextSliderView(this);
-            // initialize a SliderLayout
-            textSliderView
-                    .description(name)
-                    .image(file_maps.get(name))
-                    .setScaleType(BaseSliderView.ScaleType.Fit);
-            //add your extra information
-            textSliderView.bundle(new Bundle());
-            textSliderView.getBundle()
-                    .putString("extra",name);
-            sliderLayout.addSlider(textSliderView);
-        }
-        sliderLayout.setPresetTransformer(SliderLayout.Transformer.Accordion);
-        sliderLayout.setPresetIndicator(SliderLayout.PresetIndicators.Left_Top);
-        sliderLayout.setCustomAnimation(new DescriptionAnimation());
-
-        sliderLayout.setDuration(4000);
 
         pengguna.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,14 +98,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        btnLapor.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                final Intent intent = new Intent(MainActivity.this, FormActivity.class);
-//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//                startActivity(intent);
-//            }
-//        });
     }
 
 
