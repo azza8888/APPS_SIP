@@ -1,24 +1,22 @@
-package com.ezatech.apps_sip.notifLaporan;
+package com.ezatech.apps_sip.riwayatNotif;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.ezatech.apps_sip.R;
 import com.ezatech.apps_sip.adapter.AdapterDetailPel;
+import com.ezatech.apps_sip.adapter.AdapterDetailRw;
 import com.ezatech.apps_sip.api.BaseApi;
 import com.ezatech.apps_sip.api.RetrofitClient;
 import com.ezatech.apps_sip.data.Pelanggan;
+import com.ezatech.apps_sip.notifLaporan.DetailLapActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,36 +32,24 @@ import retrofit2.Response;
 
 import static com.ezatech.apps_sip.logRes.LoginActivity.my_shared_preferences;
 
-public class DetailLapActivity extends AppCompatActivity {
+public class DetailRwActivity extends AppCompatActivity {
 
-    private ArrayList<Pelanggan> pelanggans;
-    private RecyclerView recyclerView;
+
     private Toolbar mActionToolbar;
-    private Context context;
-    private String id_penerbit;
-    private String no_pend;
-    private String nama_pend;
-    private String alamat_pend;
-    private String tarif_pend;
-    private String daya_pend;
-    private String btl_pend;
     private String id_surat;
     private SharedPreferences sharedpreferences;
     private String token;
-    private String jumlah = "0";
-    private Button btnSimpanDetail;
-    private Button btnSelesaikan;
+    private RecyclerView recyclerView;
+    private ArrayList<Pelanggan> pelangganrw;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_lap);
+        setContentView(R.layout.activity_detail_rw);
 
-
-        btnSelesaikan = (Button) findViewById(R.id.btn_selesaikan);
-        mActionToolbar = (Toolbar) findViewById(R.id.tabs_detaill);
+        mActionToolbar = (Toolbar) findViewById(R.id.tabs_detailrw);
         setSupportActionBar(mActionToolbar);
-        getSupportActionBar().setTitle("Detail Pelanggan");
+        getSupportActionBar().setTitle("Detail Riwayat Pelanggan");
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -72,64 +58,28 @@ public class DetailLapActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         id_surat = bundle.getString("id");
 
-
         sharedpreferences = getSharedPreferences(my_shared_preferences, MODE_PRIVATE);
         token = sharedpreferences.getString("acces_token", "");
-        no_pend = sharedpreferences.getString("no_pendaftaran", "");
 
-        recyclerView = findViewById(R.id.rv_listdetailpel);
+        recyclerView = findViewById(R.id.rv_listdetailrw);
         recyclerView.setHasFixedSize(true);
         final LinearLayoutManager layoutManager;
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        pelanggans = new ArrayList<>();
+        pelangganrw = new ArrayList<>();
 
-        getDetail();
+        getDetailRw();
 
     }
 
-    private void getDetail() {
+    private void getDetailRw() {
         BaseApi api = RetrofitClient.getInstanceRetrofit();
-        api.detailPendaftar(token, id_surat).enqueue(new Callback<ResponseBody>() {
+        api.detailPendaftarSelesai(token, id_surat).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
                     try {
                         JSONObject jsonObject1 = new JSONObject(response.body().string());
-                        String jml = jsonObject1.getString("jml");
-                        if (jml == jumlah) {
-                            btnSelesaikan.setVisibility(View.VISIBLE);
-                            btnSelesaikan.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    BaseApi api = RetrofitClient.getInstanceRetrofit();
-                                    api.konformasiDone(token, id_surat).enqueue(new Callback<ResponseBody>() {
-                                        @Override
-                                        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                                            Log.d("", "IDEEEEEEE: "+id_surat);
-                                            try {
-                                                JSONObject object = new JSONObject(response.body().string());
-                                                String message = object.getString("message");
-                                                Intent intent = new Intent(DetailLapActivity.this, ListLaporanActivity.class);
-                                                startActivity(intent);
-                                                Toast.makeText(DetailLapActivity.this, "" + message, Toast.LENGTH_SHORT).show();
-
-                                            }
-
-                                            catch (JSONException e) {
-                                                e.printStackTrace();
-                                            } catch (IOException e) {
-                                                e.printStackTrace();
-                                            }
-                                        }
-
-                                        @Override
-                                        public void onFailure(Call<ResponseBody> call, Throwable t) {
-                                        }
-                                    });
-                                }
-                            });
-                        }
                         JSONArray jsonObject3 = jsonObject1.optJSONArray("pelanggan");
 
                         for (int i = 0; i < jsonObject3.length(); i++) {
@@ -154,9 +104,9 @@ public class DetailLapActivity extends AppCompatActivity {
                             pelanggan.setJenis_tarif(tarif_pend);
                             pelanggan.setDaya(daya_pend);
                             pelanggan.setNama_penyedia(btl_pend);
-                            pelanggans.add(pelanggan);
-                            AdapterDetailPel adapterDetailPel = new AdapterDetailPel(DetailLapActivity.this, pelanggans);
-                            recyclerView.setAdapter(adapterDetailPel);
+                            pelangganrw.add(pelanggan);
+                            AdapterDetailRw adapterDetailRw = new AdapterDetailRw(DetailRwActivity.this, pelangganrw);
+                            recyclerView.setAdapter(adapterDetailRw);
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -164,7 +114,6 @@ public class DetailLapActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-
             }
 
             @Override
@@ -181,5 +130,4 @@ public class DetailLapActivity extends AppCompatActivity {
             finish();
         return super.onOptionsItemSelected(item);
     }
-
 }

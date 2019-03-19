@@ -111,9 +111,6 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(getApplication(), MainActivity.class);
-//                startActivity(intent);
-                //getting token from shared preferences
                 String tokenFirebase = SharedPrefManager.getInstance(LoginActivity.this).getDeviceToken();
 
                 //if token is not null
@@ -143,9 +140,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void requestLogin() {
+        if (!validasilog()){
+            return;
+        }
         BaseApi api = RetrofitClient.getInstanceRetrofit();
         api.login(
-//                tvtoken.getText().toString().
                 etEmaill.getText().toString(), etPassword.getText().toString(),
                 tvTokenFirebase.getText().toString().trim())
                 .enqueue(new Callback<ResponseBody>() {
@@ -202,24 +201,38 @@ public class LoginActivity extends AppCompatActivity {
 
                                 Toast.makeText(mContext, "Berhasil Login", Toast.LENGTH_SHORT).show();
                             } catch (JSONException e) {
-                                Toast.makeText(mContext, "Password atau Email Salah", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(mContext, "Akun Anda Sedang Digunakan", Toast.LENGTH_SHORT).show();
                                 e.printStackTrace();
                             } catch (IOException e) {
-                                Toast.makeText(mContext, "Password atau Email Salah", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(mContext, "Akun Anda Sedang Digunakan", Toast.LENGTH_SHORT).show();
                                 e.printStackTrace();
                             }
                         } else {
                             loading.dismiss();
-                            Toast.makeText(mContext, "Password atau Email Salah", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mContext, "Akun Anda Sedang Digunakan", Toast.LENGTH_SHORT).show();
                         }
                     }
 
                     @Override
                     public void onFailure(Call<ResponseBody> call, Throwable t) {
                         loading.dismiss();
-                        Toast.makeText(mContext, "Password atau Email Salah", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, "Akun Anda Sedang Digunakan", Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    private boolean validasilog() {
+        if (etEmaill.getText().toString().isEmpty()) {
+            etEmaill.setError("Email tidak boleh kosong");
+            etEmaill.requestFocus();
+            return false;
+        }
+        if (etPassword.getText().toString().isEmpty()) {
+            etPassword.setError("Password tidak boleh kosong");
+            etPassword.requestFocus();
+            return false;
+        }
+        return true;
     }
 
     private void initView() {

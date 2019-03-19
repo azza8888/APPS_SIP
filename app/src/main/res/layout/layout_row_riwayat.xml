@@ -1,104 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:cardElevation="3dp"
-    app:cardCornerRadius="5dp"
-    android:layout_marginBottom="8dp">
+    android:layout_height="wrap_content"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
+    android:layout_marginBottom="4dp">
 
-    <RelativeLayout
+    <TextView
+        android:id="@+id/tv_idlistrw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"/>
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="5dp">
 
-        <TableLayout
-            android:id="@+id/table"
+
+        <!--<ImageView-->
+        <!--android:id="@+id/iv_list"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="250dp"-->
+        <!--android:padding="4dp"-->
+        <!--android:layout_margin="2dp"-->
+        <!--android:layout_marginRight="2dp"/>-->
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp">
-
-            <TableRow>
-                <TextView
-                    android:textStyle="bold"
-                    android:layout_height="match_parent"
-                    android:layout_width="wrap_content"
-                    android:id="@+id/view_nama"
-                    android:textColor="#000"/>
-
-            </TableRow>
-
-            <TableRow>
-                <TextView
-                    android:layout_height="match_parent"
-                    android:layout_width="wrap_content"
-                    android:text="Sudah Mendapatkan Laporan pada :"
-                    android:textColor="#000"/>
-
-            </TableRow>
-
-            <RelativeLayout
-                android:layout_marginTop="2dp"
+            card_view:cardCornerRadius="8dp"
+            card_view:cardElevation="8dp"
+            android:layout_margin="4dp">
+            <TextView
+                android:background="#73ADA6A6"
+                android:id="@+id/tv_nosuratrw"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:text="NOMOR SURAT"/>
 
-                <ImageView
-                    android:id="@+id/img6"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_jam_24dp"
-                    android:backgroundTint="@color/Black"/>
+        </android.support.v7.widget.CardView>
 
-                <TextView
-                    android:layout_toRightOf="@id/img6"
-                    android:layout_marginLeft="2dp"
-                    android:id="@+id/view_update_waktu_feedback"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000"/>
-                />
-                <TextView
-                    android:visibility="gone"
-                    android:id="@+id/view_waktu"
-                    android:layout_height="match_parent"
-                    android:layout_width="wrap_content"
-                    android:textColor="#000"/>
-            </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:layout_margin="2dp">
+
 
             <TextView
-                android:textSize="16dp"
-                android:textColor="#ff0000"
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Status Laporan"/>
-
-
-            <android.support.v7.widget.CardView
-                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:textStyle="bold|italic"
+                android:text="Nama Pemeriksa 1   "
+                android:textSize="18dp" />
 
-                <LinearLayout
-                    android:background="#73e2dada"
-                    style="@style/Widget.CardContent"
+
+        </LinearLayout>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:background="#73e2dada"
+                style="@style/Widget.CardContent"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <EditText
+                    android:id="@+id/et_namap1rw"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:text="Pemeriksa1"
+                    android:enabled="false"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textSize="20sp"/>
 
-                    <TextView
-                        android:id="@+id/view_konfirm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Tidak ada catatan dari pelapor" />
+            </LinearLayout>
 
-                </LinearLayout>
+        </android.support.v7.widget.CardView>
 
-            </android.support.v7.widget.CardView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="2dp"
+            android:layout_margin="2dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:textStyle="bold|italic"
+                android:text="Nama Pemeriksa 2    "
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:background="#73e2dada"
+                style="@style/Widget.CardContent"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <EditText
+                    android:id="@+id/et_namap2rw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pemeriksa2"
+                    android:enabled="false"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold|italic"
+                android:text="Status Pemeriksaan"
+                android:textSize="18sp" />
 
 
-        </TableLayout>
+        </LinearLayout>
 
-    </RelativeLayout>
+        <android.support.v7.widget.CardView
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:background="#73e2dada"
+                style="@style/Widget.CardContent"
+                android:layout_width="160dp"
+                android:layout_height="45dp">
+
+                <EditText
+                    android:id="@+id/et_statusrw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Status"
+                    android:gravity="center"
+                    android:textColor="#34DB17"
+                    android:enabled="false"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
 
 </android.support.v7.widget.CardView>

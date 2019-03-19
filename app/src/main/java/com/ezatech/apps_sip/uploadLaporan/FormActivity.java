@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
@@ -31,6 +32,7 @@ import com.ezatech.apps_sip.Utils.GpsTracker;
 import com.ezatech.apps_sip.api.BaseApi;
 import com.ezatech.apps_sip.api.RetrofitClient;
 import com.ezatech.apps_sip.data.FormResultModel;
+import com.ezatech.apps_sip.notifLaporan.ListLaporanActivity;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -51,6 +53,9 @@ import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import pl.aprilapps.easyphotopicker.DefaultCallback;
 import pl.aprilapps.easyphotopicker.EasyImage;
+import pub.devrel.easypermissions.AfterPermissionGranted;
+import pub.devrel.easypermissions.AppSettingsDialog;
+import pub.devrel.easypermissions.EasyPermissions;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -199,9 +204,9 @@ public class FormActivity extends AppCompatActivity {
 
         //untuk membuat list sp1
         List<String> item = new ArrayList<>();
-        item.add("");
-        item.add("ada");
-        item.add("tidak ada");
+//        item.add("");
+        item.add("Ada");
+        item.add("Tidak Ada");
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(FormActivity.this,
                 android.R.layout.simple_spinner_dropdown_item,
@@ -217,7 +222,7 @@ public class FormActivity extends AppCompatActivity {
 
         //untuk membuat list spPenghantar pembumian
         List<String> item1 = new ArrayList<>();
-        item1.add("");
+//        item1.add("");
         item1.add("TT");
         item1.add("TTN-C-S");
         item1.add("TN-C");
@@ -231,7 +236,7 @@ public class FormActivity extends AppCompatActivity {
         ////////////////////////////////////
         //untuk membuat list jenisPenghantar
         List<String> item2 = new ArrayList<>();
-        item2.add("");
+//        item2.add("");
         item2.add("NYM");
         item2.add("NYA");
         item2.add("NYY");
@@ -245,7 +250,7 @@ public class FormActivity extends AppCompatActivity {
         ///////////////////////////////////
         //untuk membuat list sakelar
         List<String> item3 = new ArrayList<>();
-        item3.add("");
+        item3.add("0");
         item3.add("MCB 10 A");
         item3.add("Sakelar 25 A");
         item3.add("NFB 50 A");
@@ -261,7 +266,7 @@ public class FormActivity extends AppCompatActivity {
         ///////////////////////////////////
         //untuk membuat list phbk
         List<String> item4 = new ArrayList<>();
-        item4.add("");
+//        item4.add("");
         item4.add("MCB 2 A");
         item4.add("MCB 4 A");
         item4.add("MCB 6 A");
@@ -281,7 +286,7 @@ public class FormActivity extends AppCompatActivity {
         ///////////////////////////////////
         //untuk membuat list penampang
         List<String> item5 = new ArrayList<>();
-        item5.add("");
+//        item5.add("0");
         item5.add("3x2.5mm2");
         item5.add("3x4 mm2");
         item5.add("3x6 mm2");
@@ -301,7 +306,7 @@ public class FormActivity extends AppCompatActivity {
         ///////////////////////////////////
         //untuk membuat list penguji
         List<String> item6 = new ArrayList<>();
-        item6.add("");
+//        item6.add("");
         item6.add("Sesuai");
         item6.add("Tidak Sesuai");
         item6.add("Tidak Ada");
@@ -315,7 +320,7 @@ public class FormActivity extends AppCompatActivity {
         ///////////////////////////////////
         //untuk membuat list perlengkapan
         List<String> item7 = new ArrayList<>();
-        item7.add("");
+//        item7.add("");
         item7.add("SNI");
         item7.add("Tidak SNI");
 
@@ -326,7 +331,7 @@ public class FormActivity extends AppCompatActivity {
         ///////////////////////////////////
         //untuk membuat list perlengkapan
         List<String> item8 = new ArrayList<>();
-        item8.add("");
+//        item8.add("");
         item8.add("Baik");
         item8.add("Tidak Baik");
 
@@ -337,7 +342,7 @@ public class FormActivity extends AppCompatActivity {
         ///////////////////////////////////
         //untuk membuat list kotakkontak
         List<String> item9 = new ArrayList<>();
-        item9.add("");
+//        item9.add("");
         item9.add("Biasa");
         item9.add("Putar");
         item9.add("Tutup");
@@ -356,7 +361,7 @@ public class FormActivity extends AppCompatActivity {
 
         mActionToolbar = (Toolbar) findViewById(R.id.tabs_upload);
         setSupportActionBar(mActionToolbar);
-        getSupportActionBar().setTitle("Form Pemeriksa");
+        getSupportActionBar().setTitle("Laporan Pemeriksaan");
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             if (ContextCompat.checkSelfPermission(FormActivity.this,
@@ -366,8 +371,7 @@ public class FormActivity extends AppCompatActivity {
                 ActivityCompat.requestPermissions(FormActivity.this,
                         new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},
                         MY_PERMISSIONS_REQUEST_FINE_LOCATION);
-
-            } else {
+                return;
 
             }
         }
@@ -506,34 +510,79 @@ public class FormActivity extends AppCompatActivity {
         }
     }
 
-
+//    @AfterPermissionGranted(7777)
     private void postCamera1() {
         permission(CAMERA_REQUEST);
-//        EasyImage.openCamera(FormActivity.this, CAMERA_REQUEST);
-//        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//        startActivityForResult(intent, CAMERA_REQUEST);
+//        String[] perms ={Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+//        if (EasyPermissions.hasPermissions(this, perms)){
+//            Toast.makeText(this, "Buka Kamera", Toast.LENGTH_SHORT).show();
+//        }else {
+//            EasyPermissions.requestPermissions(this, "Kamera Membutuhkan Permissions",
+//                    CAMERA_REQUEST, perms);
+//        }
     }
 
+//    @AfterPermissionGranted(6666)
     private void postCamera2() {
         permission(CAMERA_REQUEST1);
+//        String[] perms ={Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+//        if (EasyPermissions.hasPermissions(this, perms)){
+//            Toast.makeText(this, "Buka Kamera", Toast.LENGTH_SHORT).show();
+//        }else {
+//            EasyPermissions.requestPermissions(this, "Kamera Membutuhkan Permissions",
+//                    CAMERA_REQUEST1, perms);
+//        }
     }
 
+    @AfterPermissionGranted(8888)
     private void postCamera3() {
         permission(CAMERA_REQUEST2);
+//        String[] perms ={Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+//        if (EasyPermissions.hasPermissions(this, perms)){
+//            Toast.makeText(this, "Buka Kamera", Toast.LENGTH_SHORT).show();
+//        }else {
+//            EasyPermissions.requestPermissions(this, "Kamera Membutuhkan Permissions",
+//                    CAMERA_REQUEST2, perms);
+//        }
     }
 
+//    @AfterPermissionGranted(9955)
     private void postCamera4() {
         permission(CAMERA_REQUEST3);
+//        String[] perms ={Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+//        if (EasyPermissions.hasPermissions(this, perms)){
+//            Toast.makeText(this, "Buka Kamera", Toast.LENGTH_SHORT).show();
+//        }else {
+//            EasyPermissions.requestPermissions(this, "Kamera Membutuhkan Permissions",
+//                    CAMERA_REQUEST3, perms);
+//        }
     }
 
+//    @AfterPermissionGranted(9954)
     private void postCamera5() {
         permission(CAMERA_REQUEST4);
+//        String[] perms ={Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+//        if (EasyPermissions.hasPermissions(this, perms)){
+//            Toast.makeText(this, "Buka Kamera", Toast.LENGTH_SHORT).show();
+//        }else {
+//            EasyPermissions.requestPermissions(this, "Kamera Membutuhkan Permissions",
+//                    CAMERA_REQUEST4, perms);
+//        }
     }
 
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//
+//        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+//    }
 
     @Override
     protected void onActivityResult(final int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode == AppSettingsDialog.DEFAULT_SETTINGS_REQ_CODE){
+//
+//        }
         EasyImage.handleActivityResult(requestCode, resultCode, data, this, new DefaultCallback() {
             @Override
             public void onImagePicked(File imageFile, EasyImage.ImageSource source, int type) {
@@ -541,6 +590,8 @@ public class FormActivity extends AppCompatActivity {
                     foto1 = imageFile;
                     Picasso.with(FormActivity.this)
                             .load(foto1)
+                            .centerCrop()
+                            .resize(128,128)
                             .into(ivFoto1);
                     return;
 //                        }
@@ -550,6 +601,8 @@ public class FormActivity extends AppCompatActivity {
                     foto2 = imageFile;
                     Picasso.with(FormActivity.this)
                             .load(foto2)
+                            .centerCrop()
+                            .resize(128,128)
                             .into(ivFoto2);
                     return;
                 }
@@ -558,6 +611,8 @@ public class FormActivity extends AppCompatActivity {
                     foto3 = imageFile;
                     Picasso.with(FormActivity.this)
                             .load(foto3)
+                            .centerCrop()
+                            .resize(128,128)
                             .into(ivFoto3);
                     return;
                 }
@@ -565,6 +620,8 @@ public class FormActivity extends AppCompatActivity {
                     foto4 = imageFile;
                     Picasso.with(FormActivity.this)
                             .load(foto4)
+                            .centerCrop()
+                            .resize(128,128)
                             .into(ivFoto4);
                     return;
                 }
@@ -572,11 +629,14 @@ public class FormActivity extends AppCompatActivity {
                     foto5 = imageFile;
                     Picasso.with(FormActivity.this)
                             .load(foto5)
+                            .centerCrop()
+                            .resize(128,128)
                             .into(ivFoto5);
                     return;
-                } else {
-                    Toast.makeText(FormActivity.this, "Kosong 5", Toast.LENGTH_SHORT).show();
                 }
+//                else {
+//                    Toast.makeText(FormActivity.this, "Kosong 5", Toast.LENGTH_SHORT).show();
+//                }
 
             }
 
@@ -724,7 +784,8 @@ public class FormActivity extends AppCompatActivity {
                     public void onResponse(Call<FormResultModel> call, Response<FormResultModel> response) {
                         if (response.isSuccessful()) {
                             p.dismiss();
-                            Intent intent = new Intent(FormActivity.this, MainActivity.class);
+                            Intent intent = new Intent(FormActivity.this, ListLaporanActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             Toast.makeText(FormActivity.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
                             startActivity(intent);
                         }
@@ -1193,4 +1254,16 @@ public class FormActivity extends AppCompatActivity {
         spTandakmp = (Spinner) findViewById(R.id.sp_tandakmp);
         spPengujipbbn = (Spinner) findViewById(R.id.sp_pengujipbbn);
     }
+
+//    @Override
+//    public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
+//
+//    }
+//
+//    @Override
+//    public void onPermissionsDenied(int requestCode, @NonNull List<String> perms) {
+//        if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)){
+//            new AppSettingsDialog.Builder(this).build().show();
+//        }
+//    }
 }

@@ -17,10 +17,11 @@ public class ListLaporan {
     private String updated_at;
     private String nama_pemeriksa1;
     private String nama_pemeriksa2;
+    private String status;
 
 
     public ListLaporan(String id, String no_surat, String id_pemeriksa1, String id_pemeriksa2, String id_staff, String created_at, String updated_at
-    ,String nama_pemeriksa1, String nama_pemeriksa2) {
+    ,String nama_pemeriksa1, String nama_pemeriksa2,String status) {
         this.id = id;
         this.no_surat = no_surat;
         this.id_pemeriksa1 = id_pemeriksa1;
@@ -30,6 +31,7 @@ public class ListLaporan {
         this.updated_at = updated_at;
         this.nama_pemeriksa1= nama_pemeriksa1;
         this.nama_pemeriksa2= nama_pemeriksa2;
+        this.status= status;
     }
 
     public String getId() {
@@ -103,7 +105,13 @@ public class ListLaporan {
     public void setNama_pemeriksa2(String nama_pemeriksa2) {
         this.nama_pemeriksa2 = nama_pemeriksa2;
     }
+    public String getStatus() {
+        return status;
+    }
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
 
 

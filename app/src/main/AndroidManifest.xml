@@ -23,7 +23,8 @@
         android:roundIcon="@mipmap/logsip"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".logRes.CreatePassActivity"></activity>
+        <activity android:name=".riwayatNotif.DetailRwActivity"></activity>
+        <activity android:name=".logRes.CreatePassActivity" />
         <activity android:name=".slide.SlideScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,9 +46,6 @@
         <activity android:name=".logRes.LupaPasswordActivity" />
         <activity android:name=".pengaturan.GantiPasswordActivity" />
         <activity android:name=".uploadLaporan.UploadFotoDepan" />
-        <activity android:name=".uploadLaporan.UploadFotoBelakang" />
-        <activity android:name=".uploadLaporan.UploadFotoKiri" />
-        <activity android:name=".uploadLaporan.UploadFotoKanan" />
         <activity android:name=".pengguna.EditProfilActivity" /> <!-- Firebase Notifications -->
         <service android:name=".firebase.MyFirebaseMessagingService">
             <intent-filter>

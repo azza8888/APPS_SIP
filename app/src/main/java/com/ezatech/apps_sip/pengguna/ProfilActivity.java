@@ -97,22 +97,13 @@ public class ProfilActivity extends AppCompatActivity {
         sharedpreferences = getSharedPreferences(my_shared_preferences, MODE_PRIVATE);
         String id = (sharedpreferences.getString("id", ""));
         String nip = (sharedpreferences.getString("nip", ""));
-//        etNip.setText(nip);
         String nama = (sharedpreferences.getString("nama", ""));
-//        etNamap.setText(nama);
         String username = (sharedpreferences.getString("username", ""));
-//        etUsername.setText(username);
         String email = (sharedpreferences.getString("email", ""));
-//        etEmailp.setText(email);
         String departemen = (sharedpreferences.getString("departemen", ""));
-//        etDepartemen.setText(departemen);
         String jabatan = (sharedpreferences.getString("jabatan", ""));
-//        etJabatan.setText(jabatan);
         String wewenang = (sharedpreferences.getString("wewenang", ""));
-//        etWewenang.setText(wewenang);
         access_token = (sharedpreferences.getString("acces_token", ""));
-        Log.d(TAG, "accesToken: " + access_token);
-//        Toast.makeText(this, "" + access_token, Toast.LENGTH_SHORT).show();
         tampilData();
 
         btnSimpanpsr.setOnClickListener(new View.OnClickListener() {

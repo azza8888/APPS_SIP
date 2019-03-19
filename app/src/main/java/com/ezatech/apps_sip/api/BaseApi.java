@@ -40,6 +40,9 @@ public interface BaseApi {
     @GET("suratku")
     Call<ResponseBody> suratPerintah(@Header("Authorization")String token);
 
+    @GET("suratku/sudah-selesai")
+    Call<ResponseBody> suratPerintahSelesai(@Header("Authorization")String token);
+
     @Multipart
     @POST("profile/edit")
     Call<ResponseBody> token_edt(@Header("Authorization")String acces_token);
@@ -67,6 +70,10 @@ public interface BaseApi {
 
     @GET("suratku/detail/{id}")
     Call<ResponseBody> detailPendaftar(@Header("Authorization")String acces_token,
+                                       @Path("id")String id);
+
+    @GET("suratku/sudah-selesai/detail/{id}")
+    Call<ResponseBody> detailPendaftarSelesai(@Header("Authorization")String acces_token,
                                        @Path("id")String id);
 
     @Multipart
@@ -203,4 +210,8 @@ public interface BaseApi {
                                     @Field("password")String password,
                                     @Field("password_confirmation")String password_confirmation,
                                     @Field("token")String token);
+
+    @POST("suratku/selesaikan/{id_surat}")
+    Call<ResponseBody> konformasiDone( @Header("Authorization") String acces_token,
+                                       @Path("id_surat")String id_surat);
 }

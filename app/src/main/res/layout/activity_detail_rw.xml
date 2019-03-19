@@ -5,24 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".notifLaporan.DetailLapActivity">
+    tools:context=".riwayatNotif.DetailRwActivity">
 
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tabs_detaill"
+        android:id="@+id/tabs_detailrw"
         app:titleTextColor="@color/white"
         android:background="@color/colorPrimaryDark"
         android:theme="@style/Base.Theme.AppCompat">
-
-        <Button
-            android:visibility="invisible"
-            android:id="@+id/btn_selesaikan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="Selesai"
-            android:layout_gravity="right"/>
 
     </android.support.v7.widget.Toolbar>
 
@@ -37,7 +28,7 @@
 
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_listdetailpel"
+                android:id="@+id/rv_listdetailrw"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
