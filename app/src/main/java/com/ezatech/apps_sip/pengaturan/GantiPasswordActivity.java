@@ -92,14 +92,17 @@ public class GantiPasswordActivity extends AppCompatActivity {
     }
 
     private void UbahPassword() {
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Mohon Tunggu...");
-        progressDialog.show();
+//        progressDialog = new ProgressDialog(this);
+//        progressDialog.setMessage("Mohon Tunggu...");
+//        progressDialog.show();
         final String token = etTokencpsr.getText().toString();
         final String current_password = etPasswordsr.getText().toString();
         final String new_password = etNewpasssr.getText().toString();
         final String new_password_confirmation = etConfrimpassr.getText().toString();
 
+        if (!validasipas()){
+            return;
+        }
         baseApi = RetrofitClient.getInstanceRetrofit();
         baseApi.ubahPassword(token,
                 etPasswordsr.getText().toString().trim(),
@@ -110,10 +113,13 @@ public class GantiPasswordActivity extends AppCompatActivity {
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                         if (response.isSuccessful()){
                             try {
-                                progressDialog.dismiss();
+//                                progressDialog.dismiss();
                                 JSONObject object = new JSONObject(response.body().string());
                                 String msg = object.optString("msg");
                                 Toast.makeText(GantiPasswordActivity.this, ""+msg, Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(GantiPasswordActivity.this, LoginActivity.class);
+                                startActivity(intent);
+//                                progressDialog.dismiss();
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             } catch (IOException e) {
@@ -121,28 +127,46 @@ public class GantiPasswordActivity extends AppCompatActivity {
                             }
 
 
-                            SharedPreferences sp = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+//                            SharedPreferences sp = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+//
+//                            SharedPreferences.Editor editor = sp.edit();
+//                            editor.putBoolean(LoginActivity.session_status, true);
+//                            editor.putString("acces_token", token);
+//                            editor.putString("current_password", current_password);
+//                            editor.putString("new_password", new_password);
+//                            editor.putString("new_password_confirmation", new_password_confirmation);
+//                            editor.commit();
 
-                            SharedPreferences.Editor editor = sp.edit();
-                            editor.putBoolean(LoginActivity.session_status, true);
-                            editor.putString("acces_token", token);
-                            editor.putString("current_password", current_password);
-                            editor.putString("new_password", new_password);
-                            editor.putString("new_password_confirmation", new_password_confirmation);
-                            editor.commit();
-
-                            Intent intent = new Intent(GantiPasswordActivity.this, LoginActivity.class);
-                            startActivity(intent);
                         }
                     }
 
                     @Override
                     public void onFailure(Call<ResponseBody> call, Throwable t) {
                         progressDialog.dismiss();
+                        Toast.makeText(GantiPasswordActivity.this, "Ada yang belum di isi !!!", Toast.LENGTH_SHORT).show();
 
                     }
 
                 });
+    }
+
+    private boolean validasipas() {
+        if (etPasswordsr.getText().toString().isEmpty()) {
+            etPasswordsr.setError("Password tidak boleh kosong");
+            etPasswordsr.requestFocus();
+            return false;
+        }
+        if (etNewpasssr.getText().toString().isEmpty()) {
+            etNewpasssr.setError("Password Baru tidak boleh kosong");
+            etNewpasssr.requestFocus();
+            return false;
+        }
+        if (etConfrimpassr.getText().toString().isEmpty()) {
+            etConfrimpassr.setError("Confirmation Password tidak boleh kosong");
+            etConfrimpassr.requestFocus();
+            return false;
+        }
+        return true;
     }
 
     //button back toolbar

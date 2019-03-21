@@ -102,6 +102,7 @@ public class ListLaporanActivity extends AppCompatActivity
     @Override
     public void onRefresh() {
         listlaporan.clear();
+        getData();
 
     }
 
@@ -165,35 +166,6 @@ public class ListLaporanActivity extends AppCompatActivity
         });
     }
 
-//    public void functionToSelesai() {
-//
-////        swipeHome.setRefreshing(true);
-//        BaseApi api = RetrofitClient.getInstanceRetrofit();
-//        api.konformasiDone(token, id_surat).enqueue(new Callback<ResponseBody>() {
-//            @Override
-//            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-//                Log.d("", "IDEEEEEEE: "+id_surat);
-//                try {
-//                    JSONObject object = new JSONObject(response.body().string());
-//                    String message = object.getString("message");
-//                    Toast.makeText(ListLaporanActivity.this, "" + message, Toast.LENGTH_SHORT).show();
-//
-////                    swipeHome.setRefreshing(false);
-//                }
-//
-//                catch (JSONException e) {
-//                    e.printStackTrace();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<ResponseBody> call, Throwable t) {
-////                swipeHome.setRefreshing(false);
-//            }
-//        });
-//    }
 
     //button back toolbar
     @Override
@@ -207,6 +179,7 @@ public class ListLaporanActivity extends AppCompatActivity
 
         Uri uriUrl = Uri.parse("https://slo.sertifikasiinstalasiprima.co.id/pdf/surat-tugas/print/" + id_surat);
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
+        launchBrowser.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(launchBrowser);
     }
 

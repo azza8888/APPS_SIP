@@ -1,9 +1,14 @@
 package com.ezatech.apps_sip.notifLaporan;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -19,6 +24,7 @@ import com.ezatech.apps_sip.adapter.AdapterDetailPel;
 import com.ezatech.apps_sip.api.BaseApi;
 import com.ezatech.apps_sip.api.RetrofitClient;
 import com.ezatech.apps_sip.data.Pelanggan;
+import com.ezatech.apps_sip.uploadLaporan.FormActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,6 +34,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import okhttp3.ResponseBody;
+import pl.aprilapps.easyphotopicker.EasyImage;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -99,6 +106,19 @@ public class DetailLapActivity extends AppCompatActivity {
                         String jml = jsonObject1.getString("jml");
                         if (jml == jumlah) {
                             btnSelesaikan.setVisibility(View.VISIBLE);
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                                if (ContextCompat.checkSelfPermission(DetailLapActivity.this,
+                                        Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED &&
+                                        ContextCompat.checkSelfPermission(DetailLapActivity.this,
+                                                Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+
+
+                                } else {
+                                    Toast.makeText(DetailLapActivity.this, "Mengijinkan Permission", Toast.LENGTH_SHORT).show();
+                                    EasyImage.openCamera(DetailLapActivity.this, 0);
+
+                                }
+                            }
                             btnSelesaikan.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
@@ -106,11 +126,11 @@ public class DetailLapActivity extends AppCompatActivity {
                                     api.konformasiDone(token, id_surat).enqueue(new Callback<ResponseBody>() {
                                         @Override
                                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                                            Log.d("", "IDEEEEEEE: "+id_surat);
                                             try {
                                                 JSONObject object = new JSONObject(response.body().string());
                                                 String message = object.getString("message");
                                                 Intent intent = new Intent(DetailLapActivity.this, ListLaporanActivity.class);
+                                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                                 startActivity(intent);
                                                 Toast.makeText(DetailLapActivity.this, "" + message, Toast.LENGTH_SHORT).show();
 

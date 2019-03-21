@@ -111,8 +111,11 @@ public class ProfilActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (btnSimpanpsr.getText().toString().contains("EDIT")){
                     etNip.setEnabled(true);
+                    etNip.setError("Ubah NIP Anda ?");
                     etUsername.setEnabled(true);
+                    etUsername.setError("Ubah Username Anda?");
                     etNamap.setEnabled(true);
+                    etNamap.setError("Ubah Nama Anda?");
                     btnSimpanpsr.setText("SIMPAN");
                 } else if (!btnSimpanpsr.getText().toString().contains("EDIT")){
                     btnSimpanpsr.setText("EDIT");
@@ -122,7 +125,8 @@ public class ProfilActivity extends AppCompatActivity {
                     etNip.setEnabled(false);
                     etUsername.setEnabled(false);
                     etNamap.setEnabled(false);
-                    btnSimpanpsr.setText("SIMPAN");
+                     btnSimpanpsr.setText("SIMPAN");
+
                 }
 
             }

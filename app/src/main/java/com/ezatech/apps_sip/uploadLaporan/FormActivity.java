@@ -185,7 +185,7 @@ public class FormActivity extends AppCompatActivity {
     private Spinner spPpsakelar;
     private Spinner spJeniskk;
     private Spinner spTandakmp;
-    private Spinner spPengujipbbn;
+    private Spinner spPengujipbbn, spPenghantarbj;
     private int hari, bulan ,tahun;
 
     @Override
@@ -204,7 +204,7 @@ public class FormActivity extends AppCompatActivity {
 
         //untuk membuat list sp1
         List<String> item = new ArrayList<>();
-//        item.add("");
+        item.add("");
         item.add("Ada");
         item.add("Tidak Ada");
 
@@ -222,7 +222,7 @@ public class FormActivity extends AppCompatActivity {
 
         //untuk membuat list spPenghantar pembumian
         List<String> item1 = new ArrayList<>();
-//        item1.add("");
+        item1.add("Kosong");
         item1.add("TT");
         item1.add("TTN-C-S");
         item1.add("TN-C");
@@ -236,7 +236,7 @@ public class FormActivity extends AppCompatActivity {
         ////////////////////////////////////
         //untuk membuat list jenisPenghantar
         List<String> item2 = new ArrayList<>();
-//        item2.add("");
+        item2.add("Kosong");
         item2.add("NYM");
         item2.add("NYA");
         item2.add("NYY");
@@ -266,7 +266,7 @@ public class FormActivity extends AppCompatActivity {
         ///////////////////////////////////
         //untuk membuat list phbk
         List<String> item4 = new ArrayList<>();
-//        item4.add("");
+        item4.add("0");
         item4.add("MCB 2 A");
         item4.add("MCB 4 A");
         item4.add("MCB 6 A");
@@ -286,7 +286,7 @@ public class FormActivity extends AppCompatActivity {
         ///////////////////////////////////
         //untuk membuat list penampang
         List<String> item5 = new ArrayList<>();
-//        item5.add("0");
+        item5.add("0");
         item5.add("3x2.5mm2");
         item5.add("3x4 mm2");
         item5.add("3x6 mm2");
@@ -306,7 +306,7 @@ public class FormActivity extends AppCompatActivity {
         ///////////////////////////////////
         //untuk membuat list penguji
         List<String> item6 = new ArrayList<>();
-//        item6.add("");
+        item6.add("");
         item6.add("Sesuai");
         item6.add("Tidak Sesuai");
         item6.add("Tidak Ada");
@@ -320,7 +320,7 @@ public class FormActivity extends AppCompatActivity {
         ///////////////////////////////////
         //untuk membuat list perlengkapan
         List<String> item7 = new ArrayList<>();
-//        item7.add("");
+        item7.add("");
         item7.add("SNI");
         item7.add("Tidak SNI");
 
@@ -331,7 +331,7 @@ public class FormActivity extends AppCompatActivity {
         ///////////////////////////////////
         //untuk membuat list perlengkapan
         List<String> item8 = new ArrayList<>();
-//        item8.add("");
+        item8.add("");
         item8.add("Baik");
         item8.add("Tidak Baik");
 
@@ -342,7 +342,7 @@ public class FormActivity extends AppCompatActivity {
         ///////////////////////////////////
         //untuk membuat list kotakkontak
         List<String> item9 = new ArrayList<>();
-//        item9.add("");
+        item9.add("");
         item9.add("Biasa");
         item9.add("Putar");
         item9.add("Tutup");
@@ -354,6 +354,17 @@ public class FormActivity extends AppCompatActivity {
         adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spJeniskk.setAdapter(adapter9);
         ///////////////////////////////////
+        //BC,BCC
+        List<String> item10 = new ArrayList<>();
+        item10.add("");
+        item10.add("BC");
+        item10.add("BCC");
+
+        ArrayAdapter<String> adapter10 = new ArrayAdapter<>(FormActivity.this,
+                android.R.layout.simple_spinner_dropdown_item, item10);
+        adapter10.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spPenghantarbj.setAdapter(adapter10);
+        ////////////////////////////////////
 
         ButterKnife.bind(this);
         myCalendar = Calendar.getInstance();
@@ -501,6 +512,16 @@ public class FormActivity extends AppCompatActivity {
                 ActivityCompat.requestPermissions(FormActivity.this,
                         new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},
                         MY_PERMISSIONS_REQUEST_FINE_LOCATION);
+                ActivityCompat.requestPermissions(FormActivity.this,
+                        new String[]{Manifest.permission.CAMERA},CAMERA_REQUEST);
+                ActivityCompat.requestPermissions(FormActivity.this,
+                        new String[]{Manifest.permission.CAMERA},CAMERA_REQUEST1);
+                ActivityCompat.requestPermissions(FormActivity.this,
+                        new String[]{Manifest.permission.CAMERA},CAMERA_REQUEST2);
+                ActivityCompat.requestPermissions(FormActivity.this,
+                        new String[]{Manifest.permission.CAMERA},CAMERA_REQUEST3);
+                ActivityCompat.requestPermissions(FormActivity.this,
+                        new String[]{Manifest.permission.CAMERA},CAMERA_REQUEST4);
 
             } else {
                 Toast.makeText(FormActivity.this, "Mengijinkan Permission", Toast.LENGTH_SHORT).show();
@@ -509,6 +530,7 @@ public class FormActivity extends AppCompatActivity {
             }
         }
     }
+
 
 //    @AfterPermissionGranted(7777)
     private void postCamera1() {
@@ -534,7 +556,7 @@ public class FormActivity extends AppCompatActivity {
 //        }
     }
 
-    @AfterPermissionGranted(8888)
+//    @AfterPermissionGranted(8888)
     private void postCamera3() {
         permission(CAMERA_REQUEST2);
 //        String[] perms ={Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -655,10 +677,10 @@ public class FormActivity extends AppCompatActivity {
             return;
         }
 
-        final ProgressDialog p;
-        p = new ProgressDialog(this);
-        p.setMessage("Proses Upload Foto");
-        p.show();
+//        final ProgressDialog p;
+//        p = new ProgressDialog(this);
+//        p.setMessage("Proses Upload Foto");
+//        p.show();
 
         RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/from-data"), foto1);
         MultipartBody.Part body = MultipartBody.Part.createFormData("foto1", foto1.getName(), requestFile);
@@ -703,7 +725,7 @@ public class FormActivity extends AppCompatActivity {
         RequestBody jenisPengeCab1 = RequestBody.create(MediaType.parse("text/plain"), spJenispengcab.getSelectedItem().toString().trim());
         RequestBody jenisPengAkhir1 = RequestBody.create(MediaType.parse("text/plain"), spJenispengakhir.getSelectedItem().toString().trim());
 
-        RequestBody penghantarbj = RequestBody.create(MediaType.parse("text/plain"), etPenghantarbj.getText().toString().trim());
+        RequestBody penghantarbj = RequestBody.create(MediaType.parse("text/plain"), spPenghantarbj.getSelectedItem().toString().trim());
         RequestBody penghantarbp = RequestBody.create(MediaType.parse("text/plain"), etPenghantarbp.getText().toString().trim());
 
 //        RequestBody penghantarbs = RequestBody.create(MediaType.parse("text/plain"), etPenghantarbs.getText().toString().trim());
@@ -783,7 +805,7 @@ public class FormActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<FormResultModel> call, Response<FormResultModel> response) {
                         if (response.isSuccessful()) {
-                            p.dismiss();
+//                            p.dismiss();
                             Intent intent = new Intent(FormActivity.this, ListLaporanActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             Toast.makeText(FormActivity.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
@@ -793,7 +815,7 @@ public class FormActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<FormResultModel> call, Throwable t) {
-                        p.dismiss();
+//                        p.dismiss();
                         Toast.makeText(FormActivity.this, "Gagal Menyimpan Data Belum Lengkap", Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -856,11 +878,11 @@ public class FormActivity extends AppCompatActivity {
 //            return false;
 //        }
 
-        if (etPenghantarbj.getText().toString().isEmpty()) {
-            etPenghantarbj.setError("Penghantar Pembumian(Jenis) tidak boleh Kosong");
-            etPenghantarbj.requestFocus();
-            return false;
-        }
+//        if (etPenghantarbj.getText().toString().isEmpty()) {
+//            etPenghantarbj.setError("Penghantar Pembumian(Jenis) tidak boleh Kosong");
+//            etPenghantarbj.requestFocus();
+//            return false;
+//        }
         if (etPenghantarbp.getText().toString().isEmpty()) {
             etPenghantarbp.setError("Penghantar Pembumian(Luas Penampang) tidak boleh Kosong");
             etPenghantarbp.requestFocus();
@@ -1177,7 +1199,7 @@ public class FormActivity extends AppCompatActivity {
 //        etJenispengut = (EditText) findViewById(R.id.et_jenispengut);
 //        etJenispengcab = (EditText) findViewById(R.id.et_jenispengcab);
 //        etJenispengakhir = (EditText) findViewById(R.id.et_jenispengakhir);
-        etPenghantarbj = (EditText) findViewById(R.id.et_penghantarbj);
+//        etPenghantarbj = (EditText) findViewById(R.id.et_penghantarbj);
         etPenghantarbp = (EditText) findViewById(R.id.et_penghantarbp);
 //        etPenghantarbs = (EditText) findViewById(R.id.et_penghantarbs);
 //        etSaklarutm = (EditText) findViewById(R.id.et_saklarutm);
@@ -1253,6 +1275,8 @@ public class FormActivity extends AppCompatActivity {
         spJeniskk = (Spinner) findViewById(R.id.sp_jeniskk);
         spTandakmp = (Spinner) findViewById(R.id.sp_tandakmp);
         spPengujipbbn = (Spinner) findViewById(R.id.sp_pengujipbbn);
+        spPenghantarbj = (Spinner) findViewById(R.id.sp_penghantarbj);
+
     }
 
 //    @Override

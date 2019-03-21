@@ -468,6 +468,7 @@
                         android:id="@+id/et_tgllhpp"
                         android:layout_width="match_parent"
                         android:layout_height="45sp"
+                        android:layout_marginTop="3dp"
                         android:gravity="center"
                         android:layout_marginLeft="4sp"
                         android:layout_marginRight="3sp"
@@ -876,18 +877,24 @@
                 android:layout_margin="2dp"
                 app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/et_penghantarbj"
-                    android:layout_width="match_parent"
-                    android:layout_height="45sp"
-                    android:layout_marginLeft="4sp"
-                    android:layout_marginRight="3sp"
-                    android:hint="BC"
-                    android:textSize="18sp"
-                    android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
-                    android:textColor="@color/Black"/>
+                <!--<EditText-->
+                    <!--android:id="@+id/et_penghantarbj"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45sp"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:layout_marginRight="3sp"-->
+                    <!--android:hint="BC"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:inputType="textPersonName|textMultiLine"-->
+                    <!--android:textColor="@color/Black"/>-->
 
+                <Spinner
+                    android:id="@+id/sp_penghantarbj"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp">
+
+                </Spinner>
             </android.support.v7.widget.CardView>
 
         </LinearLayout>
@@ -1794,7 +1801,7 @@
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
-                    android:hint="tinggi_kotak_kontak"
+                    android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
@@ -1829,7 +1836,7 @@
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
-                    android:hint="tinggi_kotak_kontak"
+                    android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
@@ -1864,7 +1871,7 @@
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
-                    android:hint="tinggi_kotak_kontak"
+                    android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
@@ -1898,7 +1905,7 @@
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
-                    android:hint=""
+                    android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
@@ -1933,7 +1940,7 @@
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
-                    android:hint=""
+                    android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
@@ -1968,7 +1975,7 @@
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
-                    android:hint=""
+                    android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
@@ -2003,7 +2010,7 @@
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
-                    android:hint=""
+                    android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
@@ -2038,7 +2045,7 @@
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
-                    android:hint=""
+                    android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
@@ -2073,7 +2080,7 @@
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
-                    android:hint=""
+                    android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
@@ -2108,7 +2115,7 @@
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
-                    android:hint=""
+                    android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
@@ -2143,7 +2150,7 @@
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
-                    android:hint=""
+                    android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
@@ -2178,7 +2185,7 @@
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
-                    android:hint=""
+                    android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
@@ -2213,7 +2220,7 @@
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
-                    android:hint=""
+                    android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
@@ -2248,7 +2255,7 @@
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
-                    android:hint=""
+                    android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"
@@ -2283,7 +2290,7 @@
                     android:layout_height="45sp"
                     android:layout_marginLeft="4sp"
                     android:layout_marginRight="3sp"
-                    android:hint=""
+                    android:hint="Isi"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
                     android:inputType="textPersonName|textMultiLine"

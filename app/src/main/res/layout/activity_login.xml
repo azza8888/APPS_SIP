@@ -33,13 +33,14 @@
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/white">
 
                     <EditText
                         android:id="@+id/et_emaill"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hint="Username"
+                        android:hint="Username atau Email"
                         android:inputType="textEmailAddress"
                         android:shadowColor="@color/white"
                         android:textColor="@color/white"
@@ -67,7 +68,8 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:passwordToggleEnabled="true">
+                    app:passwordToggleEnabled="true"
+                    android:textColorHint="@color/white">
 
                     <EditText
                         android:id="@+id/et_password"
