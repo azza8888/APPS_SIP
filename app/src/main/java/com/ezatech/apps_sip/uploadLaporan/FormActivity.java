@@ -374,18 +374,18 @@ public class FormActivity extends AppCompatActivity {
         setSupportActionBar(mActionToolbar);
         getSupportActionBar().setTitle("Laporan Pemeriksaan");
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            if (ContextCompat.checkSelfPermission(FormActivity.this,
-                    Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED &&
-                    ContextCompat.checkSelfPermission(FormActivity.this,
-                            Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(FormActivity.this,
-                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                        MY_PERMISSIONS_REQUEST_FINE_LOCATION);
-                return;
-
-            }
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            if (ContextCompat.checkSelfPermission(FormActivity.this,
+//                    Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED &&
+//                    ContextCompat.checkSelfPermission(FormActivity.this,
+//                            Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+//                ActivityCompat.requestPermissions(FormActivity.this,
+//                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},
+//                        MY_PERMISSIONS_REQUEST_FINE_LOCATION);
+//                return;
+//
+//            }
+//        }
 
 
         if (getSupportActionBar() != null) {
@@ -417,12 +417,12 @@ public class FormActivity extends AppCompatActivity {
                 postCamera4();
             }
         });
-        ivFoto5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                postCamera5();
-            }
-        });
+//        ivFoto5.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                postCamera5();
+//            }
+//        });
         btnBatal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -512,16 +512,16 @@ public class FormActivity extends AppCompatActivity {
                 ActivityCompat.requestPermissions(FormActivity.this,
                         new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},
                         MY_PERMISSIONS_REQUEST_FINE_LOCATION);
-                ActivityCompat.requestPermissions(FormActivity.this,
-                        new String[]{Manifest.permission.CAMERA},CAMERA_REQUEST);
-                ActivityCompat.requestPermissions(FormActivity.this,
-                        new String[]{Manifest.permission.CAMERA},CAMERA_REQUEST1);
-                ActivityCompat.requestPermissions(FormActivity.this,
-                        new String[]{Manifest.permission.CAMERA},CAMERA_REQUEST2);
-                ActivityCompat.requestPermissions(FormActivity.this,
-                        new String[]{Manifest.permission.CAMERA},CAMERA_REQUEST3);
-                ActivityCompat.requestPermissions(FormActivity.this,
-                        new String[]{Manifest.permission.CAMERA},CAMERA_REQUEST4);
+//                ActivityCompat.requestPermissions(FormActivity.this,
+//                        new String[]{Manifest.permission.CAMERA},CAMERA_REQUEST);
+//                ActivityCompat.requestPermissions(FormActivity.this,
+//                        new String[]{Manifest.permission.CAMERA},CAMERA_REQUEST1);
+//                ActivityCompat.requestPermissions(FormActivity.this,
+//                        new String[]{Manifest.permission.CAMERA},CAMERA_REQUEST2);
+//                ActivityCompat.requestPermissions(FormActivity.this,
+//                        new String[]{Manifest.permission.CAMERA},CAMERA_REQUEST3);
+//                ActivityCompat.requestPermissions(FormActivity.this,
+//                        new String[]{Manifest.permission.CAMERA},CAMERA_REQUEST4);
 
             } else {
                 Toast.makeText(FormActivity.this, "Mengijinkan Permission", Toast.LENGTH_SHORT).show();
@@ -580,9 +580,8 @@ public class FormActivity extends AppCompatActivity {
 //        }
     }
 
-//    @AfterPermissionGranted(9954)
-    private void postCamera5() {
-        permission(CAMERA_REQUEST4);
+//    private void postCamera5() {
+//        permission(CAMERA_REQUEST4);
 //        String[] perms ={Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 //        if (EasyPermissions.hasPermissions(this, perms)){
 //            Toast.makeText(this, "Buka Kamera", Toast.LENGTH_SHORT).show();
@@ -590,7 +589,7 @@ public class FormActivity extends AppCompatActivity {
 //            EasyPermissions.requestPermissions(this, "Kamera Membutuhkan Permissions",
 //                    CAMERA_REQUEST4, perms);
 //        }
-    }
+//    }
 
 //    @Override
 //    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -647,15 +646,15 @@ public class FormActivity extends AppCompatActivity {
                             .into(ivFoto4);
                     return;
                 }
-                if (foto5 == null) {
-                    foto5 = imageFile;
-                    Picasso.with(FormActivity.this)
-                            .load(foto5)
-                            .centerCrop()
-                            .resize(128,128)
-                            .into(ivFoto5);
-                    return;
-                }
+//                if (foto5 == null) {
+//                    foto5 = imageFile;
+//                    Picasso.with(FormActivity.this)
+//                            .load(foto5)
+//                            .centerCrop()
+//                            .resize(128,128)
+//                            .into(ivFoto5);
+//                    return;
+//                }
 //                else {
 //                    Toast.makeText(FormActivity.this, "Kosong 5", Toast.LENGTH_SHORT).show();
 //                }
@@ -694,8 +693,8 @@ public class FormActivity extends AppCompatActivity {
         RequestBody requestFile4 = RequestBody.create(MediaType.parse("multipart/from-data"), foto4);
         MultipartBody.Part body4 = MultipartBody.Part.createFormData("foto4", foto4.getName(), requestFile4);
 
-        RequestBody requestFile5 = RequestBody.create(MediaType.parse("multipart/from-data"), foto5);
-        MultipartBody.Part body5 = MultipartBody.Part.createFormData("foto5", foto5.getName(), requestFile5);
+//        RequestBody requestFile5 = RequestBody.create(MediaType.parse("multipart/from-data"), foto5);
+//        MultipartBody.Part body5 = MultipartBody.Part.createFormData("foto5", foto5.getName(), requestFile5);
 
         RequestBody idPelanggan = RequestBody.create(MediaType.parse("text/plain"), etIdPelanggan.getText().toString().trim());
         RequestBody noPendaftaran = RequestBody.create(MediaType.parse("text/plain"), etNopendaftaran.getText().toString().trim());
@@ -799,7 +798,7 @@ public class FormActivity extends AppCompatActivity {
                 jumlahPhb3fs, jumlahPhbCb, jumlahSalurancb, jumlahSaluranAkhir, jmlTitiklmp, jmlSakelar,
                 kkb, kkk, tahananIsolasiP, resistanPmb, jmlmlu, jmlmlk, catatan
                 ,location, lat, lng
-                , body, body2, body3, body4, body5
+                , body, body2, body3, body4
         )
                 .enqueue(new Callback<FormResultModel>() {
                     @Override
@@ -832,9 +831,9 @@ public class FormActivity extends AppCompatActivity {
             etTgllhpp.requestFocus();
             return false;
         }
-//        if (etGambarins.getText().toString().isEmpty()) {
-//            etGambarins.setError("Gambar instalasi tidak boleh kosong");
-//            etGambarins.requestFocus();
+//        if (spGambarins.getSelectedItem().toString().isEmpty()) {
+//            spGambarins.setEmptyView("Gambar instalasi tidak boleh kosong");
+//            spGambarins.requestFocus();
 //            return false;
 //        }
 //        if (etDiagramgt.getText().toString().isEmpty()) {
@@ -1088,10 +1087,10 @@ public class FormActivity extends AppCompatActivity {
             Toast.makeText(this, "Foto 4 belum Di isi", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (foto5 == null) {
-            Toast.makeText(this, "Foto 5 belum Di isi", Toast.LENGTH_SHORT).show();
-            return false;
-        }
+//        if (foto5 == null) {
+//            Toast.makeText(this, "Foto 5 belum Di isi", Toast.LENGTH_SHORT).show();
+//            return false;
+//        }
         return true;
     }
 
@@ -1247,7 +1246,7 @@ public class FormActivity extends AppCompatActivity {
         ivFoto2 = (ImageView) findViewById(R.id.iv_foto2);
         ivFoto3 = (ImageView) findViewById(R.id.iv_foto3);
         ivFoto4 = (ImageView) findViewById(R.id.iv_foto4);
-        ivFoto5 = (ImageView) findViewById(R.id.iv_foto5);
+//        ivFoto5 = (ImageView) findViewById(R.id.iv_foto5);
         spGambarins = (Spinner) findViewById(R.id.sp_gambarins);
         spDiagramgt = (Spinner) findViewById(R.id.sp_diagramgt);
         spPeutama = (Spinner) findViewById(R.id.sp_peutama);

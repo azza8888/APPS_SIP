@@ -20,9 +20,9 @@
         android:layout_marginTop="10sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Aplikasi SIP"
+        android:text="APLIKASI SIP"
         android:textSize="28sp"
-        android:textStyle="bold|italic"
+        android:textStyle="bold"
         android:textColor="@color/colorPrimary"
         android:gravity="center"/>
 
@@ -93,7 +93,7 @@
                     android:layout_margin="8dp"
                     android:gravity="start"
                     android:lineSpacingExtra="4sp"
-                    android:text="1.	MEMUPUK KEUNTUNGAN YANG WAJAR
+                    android:text="1. MEMUPUK KEUNTUNGAN YANG WAJAR
 2.	MELAKSANAKAN PELATIHAN DAN PEMBELAJARAN YANG BERKELANJUTAN
 3.	MENGHARGAI INOVASI DAN KREATIFI "
                     android:textAlignment="viewStart"

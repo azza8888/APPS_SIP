@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:focusableInTouchMode="true"
+    android:background="#E4E4E4"
     tools:context=".uploadLaporan.FormActivity">
 
     <android.support.v7.widget.Toolbar
@@ -927,7 +928,7 @@
                     android:hint="4 mm2"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
+                    android:inputType="number|textMultiLine"
                     android:textColor="@color/Black"/>
 
             </android.support.v7.widget.CardView>
@@ -1609,7 +1610,7 @@
                     android:hint="140"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
+                    android:inputType="number|textMultiLine"
                     android:textColor="@color/Black"/>
 
             </android.support.v7.widget.CardView>
@@ -1644,7 +1645,7 @@
                     android:hint="180"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
+                    android:inputType="number|textMultiLine"
                     android:textColor="@color/Black"/>
 
             </android.support.v7.widget.CardView>
@@ -1804,7 +1805,7 @@
                     android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
+                    android:inputType="number|textMultiLine"
                     android:textColor="@color/Black"/>
 
             </android.support.v7.widget.CardView>
@@ -1839,7 +1840,7 @@
                     android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
+                    android:inputType="number|textMultiLine"
                     android:textColor="@color/Black"/>
 
             </android.support.v7.widget.CardView>
@@ -1874,7 +1875,7 @@
                     android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
+                    android:inputType="number|textMultiLine"
                     android:textColor="@color/Black"/>
 
             </android.support.v7.widget.CardView>
@@ -1908,7 +1909,7 @@
                     android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
+                    android:inputType="number|textMultiLine"
                     android:textColor="@color/Black"/>
 
             </android.support.v7.widget.CardView>
@@ -1943,7 +1944,7 @@
                     android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
+                    android:inputType="number|textMultiLine"
                     android:textColor="@color/Black"/>
 
             </android.support.v7.widget.CardView>
@@ -1978,7 +1979,7 @@
                     android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
+                    android:inputType="number|textMultiLine"
                     android:textColor="@color/Black"/>
 
             </android.support.v7.widget.CardView>
@@ -2013,7 +2014,7 @@
                     android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
+                    android:inputType="number|textMultiLine"
                     android:textColor="@color/Black"/>
 
             </android.support.v7.widget.CardView>
@@ -2048,7 +2049,7 @@
                     android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
+                    android:inputType="number|textMultiLine"
                     android:textColor="@color/Black"/>
 
             </android.support.v7.widget.CardView>
@@ -2083,7 +2084,7 @@
                     android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
+                    android:inputType="number|textMultiLine"
                     android:textColor="@color/Black"/>
 
             </android.support.v7.widget.CardView>
@@ -2118,7 +2119,7 @@
                     android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
+                    android:inputType="number|textMultiLine"
                     android:textColor="@color/Black"/>
 
             </android.support.v7.widget.CardView>
@@ -2153,7 +2154,7 @@
                     android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
+                    android:inputType="number|textMultiLine"
                     android:textColor="@color/Black"/>
 
             </android.support.v7.widget.CardView>
@@ -2188,7 +2189,7 @@
                     android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
+                    android:inputType="number|textMultiLine"
                     android:textColor="@color/Black"/>
 
             </android.support.v7.widget.CardView>
@@ -2223,7 +2224,7 @@
                     android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
+                    android:inputType="number|textMultiLine"
                     android:textColor="@color/Black"/>
 
             </android.support.v7.widget.CardView>
@@ -2258,7 +2259,7 @@
                     android:hint="0"
                     android:textSize="18sp"
                     android:background="@android:color/transparent"
-                    android:inputType="textPersonName|textMultiLine"
+                    android:inputType="number|textMultiLine"
                     android:textColor="@color/Black"/>
 
             </android.support.v7.widget.CardView>
@@ -2482,43 +2483,43 @@
                 <android.support.v7.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
+                    android:layout_margin="15dp"
                     app:cardElevation="8dp">
 
                     <ImageView
                         android:id="@+id/iv_foto3"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:src="@drawable/ic_add_a_photo_black_24dp" />
 
                 </android.support.v7.widget.CardView>
                 <android.support.v7.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
+                    android:layout_margin="15dp"
                     app:cardElevation="8dp">
 
                     <ImageView
                         android:id="@+id/iv_foto4"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:src="@drawable/ic_add_a_photo_black_24dp" />
 
                 </android.support.v7.widget.CardView>
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    app:cardElevation="8dp">
+                <!--<android.support.v7.widget.CardView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--app:cardElevation="8dp">-->
 
-                    <ImageView
-                        android:id="@+id/iv_foto5"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/ic_add_a_photo_black_24dp" />
+                    <!--<ImageView-->
+                        <!--android:id="@+id/iv_foto5"-->
+                        <!--android:layout_width="80dp"-->
+                        <!--android:layout_height="80dp"-->
+                        <!--android:src="@drawable/ic_add_a_photo_black_24dp" />-->
 
-                </android.support.v7.widget.CardView>
+                <!--</android.support.v7.widget.CardView>-->
             </LinearLayout>
 
 

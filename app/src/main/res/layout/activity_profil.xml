@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:focusableInTouchMode="true"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/sipbgm"
     tools:context=".pengguna.ProfilActivity">
 
     <android.support.v7.widget.Toolbar
@@ -23,11 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        app:cardBackgroundColor="#D8D7D7"
-        android:layout_marginLeft="4dp"
-        android:layout_marginBottom="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginRight="4dp">
+        app:cardBackgroundColor="@android:color/transparent">
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -36,7 +32,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
-                android:padding="19dp"
+                android:layout_marginTop="15dp"
+                android:layout_margin="12dp"
                 android:focusableInTouchMode="true"
                 android:orientation="vertical">
                 <EditText
@@ -56,23 +53,32 @@
                     android:id="@+id/cv_profilsr"
                     android:layout_width="119dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/ic_mode_edit_black_24dp"
+                    android:src="@drawable/iconuser"
+                    app:civ_circle_background_color="@color/white"
                     app:civ_border_color="@color/Black"
                     android:layout_gravity="center"
-                    app:civ_border_width="2dp"
-                    app:civ_circle_background_color="@color/Black" />
+                    app:civ_border_width="2dp"/>
 
 
                 <LinearLayout
+                    android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="-2dp"
+                        android:background="@drawable/ic_code_black_24dp"
+                        android:backgroundTint="@color/white"
+                        android:layout_marginRight="4dp"/>
+                    <TextView
+                        android:layout_width="110dp"
+                        android:textColor="@color/white"
+                        android:layout_height="wrap_content"
                         android:textSize="18sp"
-                        android:backgroundTint="@color/Black"
-                        android:background="@drawable/ic_code_black_24dp"/>
+                        android:text="NIp"
+                        android:backgroundTint="@color/white"/>
                     <EditText
                         android:id="@+id/et_nip"
                         android:layout_width="match_parent"
@@ -80,11 +86,10 @@
                         android:hint="NIP"
                         android:enabled="false"
                         android:layout_marginLeft="10sp"
-                        android:textColorHint="@color/Black"
+                        android:textColorHint="@color/white"
                         android:textSize="18sp"
-                        android:inputType="textPersonName"
-                        android:textColor="@color/Black"
-                        android:backgroundTint="@color/white"/>
+                        android:inputType="textPersonName|textMultiLine"
+                        android:textColor="@color/white"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -93,9 +98,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="-2dp"
+                        android:background="@drawable/ic_person_black_24dp"
+                        android:backgroundTint="@color/white"
+                        android:layout_marginRight="4dp"/>
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
                         android:textSize="18sp"
-                        android:backgroundTint="@color/Black"
-                        android:background="@drawable/ic_person_black_24dp"/>
+                        android:text="Nama"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/white"/>
                     <EditText
                         android:id="@+id/et_namap"
                         android:layout_width="match_parent"
@@ -103,11 +116,10 @@
                         android:hint="EzaTech"
                         android:enabled="false"
                         android:layout_marginLeft="10sp"
-                        android:textColorHint="@color/Black"
+                        android:textColorHint="@color/white"
                         android:textSize="18sp"
-                        android:inputType="textPersonName"
-                        android:textColor="@color/Black"
-                        android:backgroundTint="@color/white"/>
+                        android:inputType="textPersonName|textMultiLine"
+                        android:textColor="@color/white"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -117,9 +129,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="-2dp"
+                        android:background="@drawable/ic_person_black_24dp"
+                        android:backgroundTint="@color/white"
+                        android:layout_marginRight="4dp"/>
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
                         android:textSize="18sp"
-                        android:backgroundTint="@color/Black"
-                        android:background="@drawable/ic_person_black_24dp"/>
+                        android:text="Username"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/white"/>
                     <EditText
                         android:id="@+id/et_username"
                         android:layout_width="match_parent"
@@ -127,11 +147,10 @@
                         android:hint="EzaTech"
                         android:enabled="false"
                         android:layout_marginLeft="10sp"
-                        android:textColorHint="@color/Black"
+                        android:textColorHint="@color/white"
                         android:textSize="18sp"
-                        android:inputType="textPersonName"
-                        android:textColor="@color/Black"
-                        android:backgroundTint="@color/white"/>
+                        android:inputType="textPersonName|textMultiLine"
+                        android:textColor="@color/white"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -141,9 +160,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="-2dp"
+                        android:background="@drawable/ic_email_black_24dp"
+                        android:backgroundTint="@color/white"
+                        android:layout_marginRight="4dp"/>
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
                         android:textSize="18sp"
-                        android:backgroundTint="@color/Black"
-                        android:background="@drawable/ic_email_white_24dp"/>
+                        android:text="Email"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/white"/>
 
                     <EditText
                         android:id="@+id/et_emailp"
@@ -151,12 +178,11 @@
                         android:layout_height="wrap_content"
                         android:hint="Ezatech@gmail.com"
                         android:enabled="false"
-                        android:backgroundTint="@color/white"
                         android:textSize="18sp"
-                        android:textColorHint="@color/Black"
+                        android:textColorHint="@color/white"
                         android:layout_marginLeft="10sp"
-                        android:inputType="textEmailAddress"
-                        android:textColor="@color/Black"/>
+                        android:inputType="textEmailAddress|textMultiLine"
+                        android:textColor="@color/white"/>
 
                 </LinearLayout>
                 <LinearLayout
@@ -166,8 +192,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:background="@drawable/ic_portrait_black_24dp"/>
+                        android:layout_marginTop="-2dp"
+                        android:background="@drawable/ic_portrait_black_24dp"
+                        android:backgroundTint="@color/white"
+                        android:layout_marginRight="4dp"/>
+
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:text="Jabatan"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
 
                     <EditText
                         android:id="@+id/et_jabatan"
@@ -176,9 +211,10 @@
                         android:hint="Jabatan"
                         android:enabled="false"
                         android:textSize="18sp"
+                        android:textColorHint="@color/white"
                         android:layout_marginLeft="10sp"
-                        android:inputType="textEmailAddress"
-                        android:textColor="@color/Black"/>
+                        android:inputType="textEmailAddress|textMultiLine"
+                        android:textColor="@color/white"/>
                 </LinearLayout>
 
 
@@ -189,9 +225,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="-2dp"
+                        android:background="@drawable/departemen_24"
+                        android:backgroundTint="@color/white"
+                        android:layout_marginRight="4dp"/>
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
                         android:textSize="18sp"
-                        android:backgroundTint="@color/Black"
-                        android:background="@drawable/departemen_24"/>
+                        android:backgroundTint="@color/white"
+                        android:text="Departemen"
+                        android:textColor="@color/white"/>
 
                     <EditText
                         android:id="@+id/et_departemen"
@@ -201,8 +245,9 @@
                         android:enabled="false"
                         android:textSize="18sp"
                         android:layout_marginLeft="10sp"
-                        android:inputType="textEmailAddress"
-                        android:textColor="@color/Black"/>
+                        android:inputType="textEmailAddress|textMultiLine"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -212,9 +257,18 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="-2dp"
+                        android:background="@drawable/ic_list_black_24dp"
+                        android:backgroundTint="@color/white"
+                        android:layout_marginRight="4dp"/>
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
                         android:textSize="18sp"
-                        android:backgroundTint="@color/Black"
-                        android:background="@drawable/ic_class_black_24dp"/>
+                        android:text="Wewenang"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
 
                     <EditText
                         android:id="@+id/et_wewenang"
@@ -224,8 +278,9 @@
                         android:enabled="false"
                         android:textSize="18sp"
                         android:layout_marginLeft="10sp"
-                        android:inputType="textEmailAddress"
-                        android:textColor="@color/Black"/>
+                        android:inputType="textEmailAddress|textMultiLine"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
                 </LinearLayout>
 
                 <LinearLayout

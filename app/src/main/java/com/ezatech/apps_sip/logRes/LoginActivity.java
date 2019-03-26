@@ -122,7 +122,7 @@ public class LoginActivity extends AppCompatActivity {
                     tvTokenFirebase.setText("Token not generated");
                 }
 
-                loading = ProgressDialog.show(mContext, null, "Harap Tunggu...", true, true);
+//                loading = ProgressDialog.show(mContext, null, "Harap Tunggu...", true, true);
                 requestLogin();
             }
         });
@@ -151,10 +151,8 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                         if (response.isSuccessful()) {
-                            loading.dismiss();
                             try {
                                 JSONObject JsonResult = new JSONObject(response.body().string());
-
                                 String id = JsonResult.getJSONObject("user").getString("id");
                                 String nip = JsonResult.getJSONObject("user").getString("nip");
                                 String nama = JsonResult.getJSONObject("user").getString("nama");
@@ -191,7 +189,6 @@ public class LoginActivity extends AppCompatActivity {
                                 editor.putString("username", username);
                                 editor.putString("acces_token", access_token);
                                 editor.commit();
-                                loading.dismiss();
 
                                 Intent intent = new Intent(mContext, MainActivity.class);
                                 intent.putExtra("acces_token",access_token);
@@ -201,22 +198,20 @@ public class LoginActivity extends AppCompatActivity {
 
                                 Toast.makeText(mContext, "Berhasil Login", Toast.LENGTH_SHORT).show();
                             } catch (JSONException e) {
-                                Toast.makeText(mContext, "Akun Anda Sedang Digunakan", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(mContext, "Password Atau Email Salah", Toast.LENGTH_SHORT).show();
                                 e.printStackTrace();
                             } catch (IOException e) {
-                                Toast.makeText(mContext, "Akun Anda Sedang Digunakan", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(mContext, "Password Atau Email Salah", Toast.LENGTH_SHORT).show();
                                 e.printStackTrace();
                             }
                         } else {
-                            loading.dismiss();
-                            Toast.makeText(mContext, "Akun Anda Sedang Digunakan", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mContext, "Password Atau Email Salah", Toast.LENGTH_SHORT).show();
                         }
                     }
 
                     @Override
                     public void onFailure(Call<ResponseBody> call, Throwable t) {
-                        loading.dismiss();
-                        Toast.makeText(mContext, "Akun Anda Sedang Digunakan", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, "Password Atau Email Salah", Toast.LENGTH_SHORT).show();
                     }
                 });
     }

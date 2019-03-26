@@ -138,8 +138,7 @@ public interface BaseApi {
             @Part MultipartBody.Part file,
             @Part MultipartBody.Part file2,
             @Part MultipartBody.Part file3,
-            @Part MultipartBody.Part file4,
-            @Part MultipartBody.Part file5
+            @Part MultipartBody.Part file4
     );
 
     @GET("generate-lhpp")
@@ -200,9 +199,9 @@ public interface BaseApi {
             @Field("foto1") String foto1);
 
 
-    @FormUrlEncoded
+    @Multipart
     @POST("password/create")
-    Call<ResponseBody> resetPass(@Field("email")String email);
+    Call<ResponseBody> resetPass(@Part("email") RequestBody email);
 
     @FormUrlEncoded
     @POST("password/reset")

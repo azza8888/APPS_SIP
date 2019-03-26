@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/sipbgm"
     tools:context=".pengaturan.InfoActivity">
 
     <android.support.v7.widget.Toolbar
@@ -18,7 +19,7 @@
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
-        android:gravity="center"
+        android:layout_marginTop="150dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -30,29 +31,33 @@
             android:layout_gravity="center"
             android:textStyle="bold|italic"
             android:textSize="18dp"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/white"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Versi 1.0"
             android:textSize="18dp"
+            android:textColor="@color/white"
             android:layout_gravity="center" />
 
         <ImageView
-            android:layout_marginTop="10dp"
-            android:background="@drawable/logosiiip"
-            android:id="@+id/iv"
-            android:layout_width="140dp"
-            android:layout_height="190dp"
+            android:id="@+id/iv_infotttt"
+            android:src="@drawable/logoaja"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="290dp"
+            android:layout_height="150dp"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
             android:layout_gravity="center" />
 
         <TextView
             android:textAlignment="center"
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:textColor="@color/white"
             android:text="© 2018-2019"
             android:textSize="18dp"/>
 
@@ -63,6 +68,7 @@
             android:layout_gravity="center"
             android:text="All right reserved"
             android:textStyle="bold|italic"
+            android:textColor="@color/white"
             android:textSize="18dp"/>
 
     </LinearLayout>

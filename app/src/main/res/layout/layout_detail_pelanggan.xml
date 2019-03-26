@@ -29,11 +29,13 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:cardBackgroundColor="#73ADA5A5"
                 android:layout_margin="4dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp">
 
                 <Button
+                    android:background="@android:color/transparent"
                     android:id="@+id/tv_nopendaf"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

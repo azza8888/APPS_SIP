@@ -20,8 +20,8 @@ import com.ezatech.apps_sip.R;
         setContentView(R.layout.activity_slide_screen);
 
         iv = (ImageView) findViewById(R.id.iv);
-//        Animation myanim = new AnimationUtils().loadAnimation(this,R.anim.mytransitions);
-//        iv.startAnimation(myanim);
+        Animation myanim = new AnimationUtils().loadAnimation(this,R.anim.mytransitions);
+        iv.startAnimation(myanim);
         final Intent i = new Intent(this, SplashPermssionActivity.class);
         Thread timer = new Thread(){
             public void run(){

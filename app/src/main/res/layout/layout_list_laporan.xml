@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimary"
+    android:background="@android:color/transparent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools"
     android:orientation="vertical">
@@ -26,27 +26,13 @@
         android:layout_margin="3dp"
         android:padding="5dp">
 
-
-        <!--<ImageView-->
-            <!--android:id="@+id/iv_list"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="250dp"-->
-            <!--android:padding="4dp"-->
-            <!--android:layout_margin="2dp"-->
-            <!--android:layout_marginRight="2dp"/>-->
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             card_view:cardCornerRadius="8dp"
             card_view:cardElevation="8dp"
             android:layout_margin="4dp">
-        <!--<Button-->
-            <!--android:id="@+id/btn_nopel"-->
-            <!--android:background="@drawable/ripple_effect"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:backgroundTint="#39aae9"-->
-            <!--android:text="Nomer Laporan"/>-->
+
             <TextView
                 android:id="@+id/tv_nosurat"
                 android:layout_width="match_parent"
@@ -69,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
-                android:textStyle="bold|italic"
+                android:textStyle="bold"
                 android:text="Nama Pemeriksa 1   "
                 android:textSize="18dp" />
 
@@ -79,10 +65,13 @@
         <android.support.v7.widget.CardView
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#73e2dada"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
 
             <LinearLayout
-                android:background="#73e2dada"
+                android:background="@android:color/transparent"
                 style="@style/Widget.CardContent"
                 android:layout_width="match_parent"
                 android:layout_height="45dp">
@@ -110,7 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
-                android:textStyle="bold|italic"
+                android:textStyle="bold"
                 android:text="Nama Pemeriksa 2    "
                 android:textSize="18sp" />
 
@@ -118,11 +107,14 @@
 
         <android.support.v7.widget.CardView
             android:layout_marginTop="5dp"
+            app:cardBackgroundColor="#73e2dada"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp">
 
             <LinearLayout
-                android:background="#73e2dada"
+                android:background="@android:color/transparent"
                 style="@style/Widget.CardContent"
                 android:layout_width="match_parent"
                 android:layout_height="45dp">
@@ -145,12 +137,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="8dp">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
-                android:textStyle="bold|italic"
+                android:textStyle="bold"
                 android:text="Status Pemeriksaan"
                 android:textSize="18sp" />
 
@@ -158,14 +150,17 @@
         </LinearLayout>
 
         <android.support.v7.widget.CardView
-            android:layout_marginLeft="180dp"
+            android:layout_marginLeft="200dp"
             android:layout_marginTop="5dp"
+            app:cardBackgroundColor="#73e2dada"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
 
             <LinearLayout
-                android:background="#73e2dada"
-                android:layout_gravity="right"
+                android:background="@android:color/transparent"
+                android:layout_gravity="center"
                 style="@style/Widget.CardContent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -173,7 +168,7 @@
                 <EditText
                     android:id="@+id/et_status"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="Status"
                     android:gravity="center"
                     android:textColor="#EE0606"
@@ -204,26 +199,28 @@
 
         <!--</LinearLayout>-->
 
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:layout_marginTop="15dp"
                 android:orientation="horizontal">
                 <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
+                    android:layout_width="170dp"
                     android:layout_height="wrap_content"
-                    card_view:cardCornerRadius="8dp"
-                    card_view:cardElevation="8dp"
+                    app:cardBackgroundColor="#73ADA5A5"
+                    card_view:cardCornerRadius="10dp"
+                    card_view:cardElevation="10dp"
                     android:layout_margin="4dp">
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent">
                         <Button
+                            android:background="@android:color/transparent"
                             android:id="@+id/btn_periksa"
-                            android:layout_width="150dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="PERIKSA"/>
 
@@ -231,17 +228,21 @@
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
+                    android:layout_width="170dp"
                     android:layout_height="wrap_content"
-                    card_view:cardCornerRadius="8dp"
-                    card_view:cardElevation="8dp"
+                    app:cardBackgroundColor="#73ADA5A5"
+                    card_view:cardCornerRadius="10dp"
+                    card_view:cardElevation="10dp"
                     android:layout_margin="4dp">
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent">
                         <Button
                             android:id="@+id/btn_cetak"
-                            android:layout_width="150dp"
+                            android:layout_width="wrap_content"
+                            android:background="@android:color/transparent"
                             android:layout_height="wrap_content"
                             android:text="cetak surat "/>
                     </LinearLayout>
@@ -251,7 +252,6 @@
 
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
         <LinearLayout
             android:gravity="center"
             android:layout_width="match_parent"
